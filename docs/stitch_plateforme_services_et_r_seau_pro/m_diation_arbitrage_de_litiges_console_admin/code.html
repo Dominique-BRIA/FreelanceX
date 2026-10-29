@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary":"#ffffff","secondary-fixed":"#ffdbc8","surface-container":"#eceef0","inverse-on-surface":"#eff1f3","on-primary-container":"#8db9e5","primary-fixed-dim":"#9fcbf7","secondary":"#994700","secondary-fixed-dim":"#ffb68a","primary-fixed":"#cee5ff","on-tertiary-fixed":"#00201d","tertiary-fixed":"#89f5e7","on-primary-fixed":"#001d33","tertiary-fixed-dim":"#6bd8cb","secondary-container":"#ff9247","error-container":"#ffdad6","surface-container-high":"#e6e8ea","on-secondary-fixed":"#321300","primary-container":"#174a70","surface-container-lowest":"#ffffff","surface-variant":"#e0e3e5","on-tertiary-fixed-variant":"#005049","on-tertiary":"#ffffff","outline":"#72777f","on-primary":"#ffffff","outline-variant":"#c2c7cf","error":"#ba1a1a","on-secondary-fixed-variant":"#743500","on-surface-variant":"#42474e","on-surface":"#191c1e","on-error":"#ffffff","on-error-container":"#93000a","inverse-primary":"#9fcbf7","primary":"#003353","surface-bright":"#f8f9fb","background":"#f8f9fb","surface-dim":"#d8dadc","on-background":"#191c1e","surface":"#f8f9fb","surface-tint":"#346289","surface-container-highest":"#e0e3e5","on-secondary-container":"#6c3000","inverse-surface":"#2d3133","tertiary-container":"#005049","surface-container-low":"#f2f4f6","on-tertiary-container":"#58c6b9","tertiary":"#003732","on-primary-fixed-variant":"#174a70"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","space-xs":"0.25rem","margin-sm":"1rem","gutter":"1.5rem","gutter-sm":"1rem","space-xl":"2.5rem","margin":"2rem","space-md":"1rem","space-sm":"0.5rem"},fontFamily:{"label-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"caption":["Plus Jakarta Sans"]},fontSize:{"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"700"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"800"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-lg":["15px",{lineHeight:"22px",letterSpacing:"0.005em",fontWeight:"600"}],"headline-xl-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"caption":["12px",{lineHeight:"16px",fontWeight:"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex flex-col gap-space-xs"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-primary-fixed"><span class="material-symbols-outlined text-[22px]">shield_person</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-primary">ProRelay</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>v3.4.1</span></div><p class="font-caption text-caption text-on-primary-container tracking-wider uppercase pl-11">Console SuperAdmin</p></div><div class="mx-space-md my-space-xs p-space-sm rounded-lg bg-primary-container/60 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-tertiary-fixed"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-primary">TLS 1.3 Chiffré</span><span class="font-caption text-caption text-on-primary-container">#ADM-04 • Superviseur</span></div></div><span class="material-symbols-outlined text-primary-fixed-dim text-[16px]">verified_user</span></div><nav class="flex flex-col gap-1 px-space-md mt-space-sm" data-active-classes="bg-primary-container text-on-primary font-bold shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="supervision-globale" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-md text-label-md">Supervision Globale</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="verification-kyc-decennale" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-label-md text-label-md">Vérification KYC & Décennale</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold">5</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="moderation-realisations" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">photo_library</span><span class="font-label-md text-label-md">Modération Réalisations</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary font-bold">2</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="mediations-litiges" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">balance</span><span class="font-label-md text-label-md">Médiations & Litiges</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-secondary text-on-secondary font-bold">1</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="artisans-annuaires" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">badge</span><span class="font-label-md text-label-md">Artisans & Annuaires</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="controles-insee-apis" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-md text-label-md">Contrôles INSEE & APIs</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="logs-audit" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">Logs d'Audit</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-primary-fixed-dim hover:bg-primary-container hover:text-on-primary transition-colors" data-path="parametres-systeme" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-md text-label-md">Paramètres</span></div></a></nav></div><div class="p-space-md mx-space-md mb-space-md rounded-xl bg-primary-container/40 flex flex-col gap-space-xs"><div class="flex items-center justify-between text-on-primary-container font-caption text-caption"><span>Statut Plateforme</span><span class="font-label-sm text-label-sm text-tertiary-fixed">99.98%</span></div><div class="w-full h-1.5 rounded-full bg-primary-container overflow-hidden"><div class="w-full h-full bg-tertiary-fixed"></div></div><span class="font-caption text-caption text-primary-fixed-dim text-right">Services Actifs</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md w-1/3"><div class="flex items-center gap-space-sm w-full bg-surface-container-low px-space-md py-2 rounded-lg"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span><input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-full" placeholder="Rechercher un dossier, SIRET, artisan..." type="text"/></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-low"><span class="material-symbols-outlined text-outline text-[18px]">public</span><select class="bg-transparent border-none outline-none font-label-md text-label-md text-on-surface-variant cursor-pointer"><option>France Métropolitaine</option><option>DOM-TOM (Guadeloupe/Martinique)</option><option>La Réunion</option><option>Monaco / Frontalier</option></select></div><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container"><span class="material-symbols-outlined text-secondary text-[18px]">timelapse</span><div class="flex items-center gap-1 font-label-md text-label-md"><span class="text-on-surface-variant">SLA :</span><span class="text-secondary font-bold">04h 12m</span></div></div><div class="flex items-center gap-space-sm"><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help_outline</span></button></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col"><span class="font-label-md text-label-md text-on-surface">M. Dupont</span><span class="font-caption text-caption text-on-surface-variant">Conformité Lead</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Zone Contenu Principal avec Grid 12 colonnes -->
+<div class="p-space-lg flex flex-col gap-space-lg max-w-[1440px] mx-auto w-full">
+<!-- Top Metadata Breadcrumb & Action Banner -->
+<header class="flex flex-col gap-space-md">
+<!-- Breadcrumb & SHA Stamp -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-caption text-caption uppercase tracking-wider">
+<span class="hover:text-primary transition-colors cursor-pointer">Console SuperAdmin</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Médiations & Litiges</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="font-label-md text-label-md text-primary font-bold">Dossier #MED-8924</span>
+<span class="text-outline">/</span>
+<span class="text-on-surface truncate">Marc D. vs SARL BatiReno</span>
+</nav>
+<div class="flex items-center gap-space-xs px-2.5 py-1 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant font-mono">
+<span class="material-symbols-outlined text-[15px] text-tertiary">fingerprint</span>
+<span>SHA256: 9e3f...81a4d2 (eIDAS Timestamped)</span>
+</div>
+</div>
+<!-- Dossier Headline & Admin Actions -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+              Arbitrage & Médiation Judicieuse — #MED-8924
+            </h1>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wide flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Instruction contradictoire
+            </span>
+</div>
+<!-- Badges & Métriques clés -->
+<div class="flex flex-wrap items-center gap-space-sm pt-1">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">alarm</span>
+<span>SLA Médiateur :</span>
+<span class="text-secondary font-bold">< 24h restantes</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-primary-container text-[18px]">lock</span>
+<span>Séquestre ProRelay :</span>
+<span class="font-bold text-primary">3 200 €</span>
+<span class="text-on-surface-variant text-caption font-normal">(Acompte versé 1 600 €)</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-fixed">gavel</span>
+<span>Chambre Arbitrale BTP</span>
+</div>
+</div>
+</div>
+<!-- SuperAdmin Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary-container">engineering</span>
+<span>Assigner Expert BTP</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">send</span>
+<span>Notifier les Parties</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+<span>Rédiger Protocole</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2.5 rounded-lg bg-error-container text-on-error-container hover:bg-error hover:text-on-error font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Clôturer Dossier</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Grid : 2/3 Gauche & 1/3 Droite -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- ==========================================
+           COLONNE GAUCHE (8/12 - 2/3) : INSTRUCTION
+           ========================================== -->
+<section class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- A. Synthèse du Litige & Parties engagées -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">handshake</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Parties Engagées & Synthèse Juridique
+              </h2>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">Dossier ouvert le 18 mai 2025</span>
+</div>
+<!-- Dual Cards Parties -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Client Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-headline-sm font-bold">
+                    MD
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Marc D.</span>
+<span class="font-caption text-caption text-on-surface-variant">Donneur d'ordre (Particulier)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> 99% Fiabilité
+                </span>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+<span>75011 Paris • Métro Voltaire</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">receipt</span>
+<span>Marché privé de rénovation #BAT-7702</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">account_balance_wallet</span>
+<span>Acompte libéré : 1 600,00 € TTC (50%)</span>
+</div>
+</div>
+</div>
+<!-- Artisan Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-headline-sm font-bold">
+                    BR
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">SARL BatiReno</span>
+<span class="font-caption text-caption text-on-surface-variant">Alexandre V. (Gérant)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">workspace_premium</span> Pro Niveau 2
+                </span>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">shield</span>
+<span class="text-tertiary font-bold">Décennale SMABTP n°884920/1</span>
+<span class="text-caption text-outline">(Valide 2026)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">domain</span>
+<span>SIRET 849 201 938 00021 • RGE Qualibat</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">pending_actions</span>
+<span>Solde réclamé : 1 600,00 € TTC bloqué</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Objet du litige -->
+<div class="p-space-md bg-secondary-fixed/30 rounded-xl flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant uppercase tracking-wider">Objet officiel de la contestation</span>
+<p class="font-body-md text-body-md text-on-surface font-medium">
+              « Non-conformité flagrante des finitions et plinthes salon/couloir, multiples traces d'embus et reprises au rouleau sur peinture satinée, retard constaté de 14 jours calendaires sans avenant formel signé. »
+            </p>
+</div>
+<!-- Pièces versées & Galerie EXIF vérifiée -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">attachment</span>
+                Pièces Versées au Dossier Contradictoire (Métadonnées eIDAS)
+              </h3>
+<span class="font-caption text-caption text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> 3 éléments certifiés intègres
+              </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Item 1 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-high flex flex-col shadow-sm">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close up architectural detail showing flawed interior wall paint finish with visible roller overlap marks and uneven texture in natural window light in a modern Parisian apartment living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDvm_4FtA_fReIdf4I9sCy_0DRbbBSw6jP1onMBo28Rqndz22zFlz1xINxY69zjx18fKhuCir2a_rmlzjMkw2B41zqRfHX6HEzw4DReJOuBK82XdziB163-aB-EaPwx2YI3V0Auo7n92ru1dF1z0ooZEWuFDyWRuAmO9lYbbT3H0m6PmGp6iv39xYKQHRijAK2thGGmACCSSd6aWucPLv4E_7koIiU671xPcbQ17I"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-on-surface/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Photo 1 • Salon</span>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-mono text-[10px] text-on-surface">EXIF 18/05 14:22</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Traces d'embus & reprises</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Mur Ouest (Lumière rasante)</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-high flex flex-col shadow-sm">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High quality detailed inspection photo of detached wooden baseboards with visible adhesive failure and gap along newly installed oak parquet floor in hallway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWKePQxBRqLORfDHPMU2svQYEXfl6WdLzhSIEU33lZS6bqFN0nrxoZxi9iRwblGxqTMz7V51yosBkY5jxIQTomgEKwHi37zu6C0E8l1GgRiuKXhVmEdmhWo_nDnGfrrTVbTixu0Dui8jl6YUl4BXDlU_6S6PY_RMqsezOSVpfgLY2MAhy9DQpuh7AW1MYDrOWjNMX0gWO2pYBvoIRUMvGZGwDAjJpucJNWJknLI9o"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-on-surface/80 backdrop-blur-md text-on-secondary font-label-sm text-label-sm">Photo 2 • Couloir</span>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-mono text-[10px] text-on-surface">EXIF 18/05 14:28</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Plinthes décollées</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Absence colle polymère continue</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-high flex flex-col shadow-sm">
+<div class="h-44 w-full relative overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Professional scan of signed commercial construction quote and work contract document showing detailed line items and signatures with blue company validation stamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAus_7uMJOAtl7GJOMSUZrs78jujV-t8a5sMq6LEBFA8-30H6du5_B4UAC9oHnvS9FLuQhzMsZ3hkHyJl41JzOZuzuO3YX80M5uaf0fOvNguWWokxcqrDz5EsNeuG8Qeh-AdBd1qSoKuq6SWAplSgtuXskjpGnpf4_nfWNdlLXbgATR6IZE3sfoFfak6rQYIUIAgs6ZCOgJGQOMjJeGD1vKAyMMrmMOjhP2Hd3FMNw"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-primary/90 backdrop-blur-md text-on-primary font-label-sm text-label-sm">Devis Validé</span>
+<span class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 font-mono text-[10px] text-on-surface">PDF Certifié</span>
+</div>
+<div class="p-2.5 bg-surface-container-lowest flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Devis n°2025-04 signé</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Montant total : 3 200,00 € TTC</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- B. Fil d'instruction contradictoire horodaté & certifié eIDAS -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                  Échanges Contradictoires Horodatés
+                </h2>
+<p class="font-caption text-caption text-on-surface-variant">Archivage à force probante (Règlement UE n°910/2014)</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Canal Sécurisé Ouvert</span>
+</div>
+</div>
+<!-- Timeline Threads -->
+<div class="flex flex-col gap-space-md">
+<!-- Message 1: Client -->
+<div class="flex gap-space-sm items-start">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-label-md shrink-0">
+                MD
+              </div>
+<div class="flex-1 bg-surface-container-low p-space-md rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Marc D.</span>
+<span class="font-caption text-caption text-outline">Donneur d'ordre</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">19 Mai 2025 • 09:14 CEST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                  Bonjour. Les travaux devaient se terminer le 5 mai. Non seulement le retard est inadmissible, mais la qualité des finitions n'est pas au rendez-vous : sous lumière rasante le matin, les raccords de rouleau sont partout dans le séjour, et deux plinthes se soulèvent déjà au passage de l'aspirateur. Je refuse catégoriquement de régler le solde restant de 1 600 € tant que ce n'est pas repris intégralement selon les règles de l'art du DTU 59.1.
+                </p>
+<div class="flex items-center gap-2 pt-1 text-caption text-on-surface-variant font-mono">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock</span>
+<span>Signature numérique validée (ID: #SIG-CLIENT-991A)</span>
+</div>
+</div>
+</div>
+<!-- Message 2: Prestataire -->
+<div class="flex gap-space-sm items-start">
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold text-label-md shrink-0">
+                AV
+              </div>
+<div class="flex-1 bg-surface-container-low p-space-md rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Alexandre V.</span>
+<span class="font-caption text-caption text-outline">SARL BatiReno (Artisan)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">19 Mai 2025 • 15:42 CEST</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                  Monsieur Dupont, comme expliqué sur place, nous avons dû attendre le séchage complet d'un ragréage humide en sous-couche non prévu au devis initial, ce qui a causé ce décalage technique indépendant de notre volonté. Concernant la peinture, un voile léger d'égalisation règle le problème en 3 heures. Nous proposons d'intervenir ce vendredi 30 mai dès 8h30 pour recoller les deux plinthes et appliquer une passe de finition uniforme, sous réserve de validation du solde à la livraison.
+                </p>
+<div class="flex items-center gap-2 pt-1 text-caption text-on-surface-variant font-mono">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock</span>
+<span>Signature numérique validée (ID: #SIG-PRO-4421B)</span>
+</div>
+</div>
+</div>
+<!-- Message 3: Médiateur Tiers Agréé -->
+<div class="flex gap-space-sm items-start">
+<div class="w-9 h-9 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary font-bold text-label-md shrink-0">
+                JV
+              </div>
+<div class="flex-1 bg-tertiary-container/10 p-space-md rounded-xl flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Jean-Luc Verneuil</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Médiateur Assermenté</span>
+<span class="font-caption text-caption text-on-surface-variant">Près la Cour d'Appel</span>
+</div>
+<span class="font-caption text-caption text-tertiary-container font-mono font-bold">20 Mai 2025 • 11:05 CEST</span>
+</div>
+<div class="p-space-sm bg-surface-container-lowest rounded-lg flex flex-col gap-1.5 shadow-sm">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider">Préconisation de Protocole Transactionnel Amiable</span>
+<p class="font-body-md text-body-md text-on-surface">
+                    « Au vu des éléments photographiques contradictoires, un défaut de projection et de reprise est effectivement avéré sans engager la garantie décennale (dommage purement esthétique relevant du parfait achèvement). 
+                    <br/><br/>
+<strong>Protocole recommandé :</strong>
+<br/>1. Intervention de SARL BatiReno le 30 mai : égrenage doux, application d'un voile complet velours Tollens Orizon sur le pan litigieux et recollage néoprène des plinthes.
+                    <br/>2. Réfaction commerciale forfaitaire accordée au client de <strong>200,00 € TTC</strong> en dédommagement du retard.
+                    <br/>3. Déblocage du solde ajusté séquestré soit <strong>1 400,00 € TTC</strong> en faveur de BatiReno dès signature du PV sans réserve. »
+                  </p>
+</div>
+<div class="flex items-center justify-between text-caption text-on-surface-variant">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[15px] text-tertiary">check_circle</span>
+                    Avis d'expert n°MED-REC-8924 déposé
+                  </span>
+<span class="text-tertiary font-bold cursor-pointer hover:underline">Consulter le rapport complet (PDF)</span>
+</div>
+</div>
+</div>
+<!-- Message 4: Espace d'intervention en direct du Superviseur ProRelay -->
+<div class="bg-surface-container-high p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">admin_panel_settings</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Intervention Superviseur ProRelay (Direct Console)</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-primary text-on-primary">Admin Only</span>
+</div>
+<!-- Bloc note confidentielle interne -->
+<div class="p-3 bg-secondary-fixed/40 rounded-lg flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-secondary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span> Note Interne Confidentielle (Invisible aux parties)
+                  </span>
+<span class="font-caption text-caption text-on-secondary-fixed-variant">Modifié par M. Dupont (Conformité Lead)</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest p-2 rounded text-body-sm font-body-sm text-on-surface outline-none focus:ring-2 focus:ring-primary" placeholder="Ajouter des notes internes sur la solvabilité de l'artisan ou antécédents..." rows="2">L'artisan BatiReno a 14 chantiers sans incident sur la plateforme. Risque de défaillance quasi-nul. Marc D. a déjà contesté un chantier de plomberie en 2024 mais avait conclu l'accord amiable sans procédure. Privilégier la solution A.</textarea>
+</div>
+<!-- Formulaire d'injonction contradictoire officielle -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Transmission d'une Injonction / Instruction Officielle</span>
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest p-3 rounded-lg text-body-sm font-body-sm text-on-surface outline-none focus:ring-2 focus:ring-primary placeholder:text-outline" placeholder="Rédiger une instruction formelle qui sera notifiée aux deux parties avec accusé de réception certifié..." rows="3"></textarea>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Joindre un acte juridique" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" title="Insérer formule de conciliation type" type="button">
+<span class="material-symbols-outlined text-[20px]">magic_button</span>
+</button>
+</div>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Publier au Dossier Contradictoire</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+           COLONNE DROITE (4/12 - 1/3) : ARBITRAGE & OUTILS
+           ========================================== -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- C. Panneau de Décision & Arbitrage Administrateur -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-md sticky top-20">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">balance</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                Décision & Arbitrage
+              </h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-mono text-[11px] text-on-surface-variant">Art. 2044 C. Civ.</span>
+</div>
+<!-- Protocole Info Banner -->
+<div class="p-space-sm rounded-lg bg-primary-container/10 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary font-bold">Protocole de Transaction Amiable</span>
+<p class="font-caption text-caption text-on-surface-variant">
+              L'arbitrage rendu par le SuperAdmin entraîne l'émission d'un acte transactionnel revêtu de la force exécutoire entre les deux parties enregistrées.
+            </p>
+</div>
+<!-- Choix de Résolution (Options A / B / C / D) -->
+<div class="flex flex-col gap-space-sm" id="resolution-options">
+<!-- Option A (Recommandée) -->
+<label class="relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors group">
+<input checked="" class="mt-1 text-primary focus:ring-primary h-4 w-4" name="arbitration_decision" type="radio" value="option_a"/>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Option A : Valider le protocole amiable</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption text-[10px] font-bold">Recommandé</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+                  Reprise technique BatiReno le 30/05 + réfaction de 200 € sur le solde client (Solde versé ramené à 1 400 €).
+                </p>
+</div>
+</label>
+<!-- Option B -->
+<label class="relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors group">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="arbitration_decision" type="radio" value="option_b"/>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Option B : Ordonner expertise contradictoire</span>
+<p class="font-caption text-caption text-on-surface-variant">
+                  Délégation d'un sapiteur expert judiciaire sous 72h aux frais partagés (Séquestre maintenu complet).
+                </p>
+</div>
+</label>
+<!-- Option C -->
+<label class="relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors group">
+<input class="mt-1 text-primary focus:ring-primary h-4 w-4" name="arbitration_decision" type="radio" value="option_c"/>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Option C : Clôture sans reprise / Annulation solde</span>
+<p class="font-caption text-caption text-on-surface-variant">
+                  Chantier soldé en l'état. Restitution des 1 600 € séquestrés au client Marc D. BatiReno ne perçoit pas le reliquat.
+                </p>
+</div>
+</label>
+<!-- Option D -->
+<label class="relative flex items-start gap-3 p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors group">
+<input class="mt-1 text-error focus:ring-error h-4 w-4" name="arbitration_decision" type="radio" value="option_d"/>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-bold text-error">Option D : Transmission assurance & Radiation</span>
+<p class="font-caption text-caption text-on-surface-variant">
+                  Sinistre déclaré à la SMABTP, blocage temporaire du compte artisan et transmission au contentieux.
+                </p>
+</div>
+</label>
+</div>
+<!-- Action Button de Confirmation Arbitrale -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full py-3 px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold shadow-md transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">how_to_reg</span>
+<span>Exécuter la Sentence Arbitrale</span>
+</button>
+<span class="font-caption text-caption text-center text-on-surface-variant">
+              Génère automatiquement la convention tripartite eIDAS signée par certificat ProRelay CA.
+            </span>
+</div>
+<!-- Séparateur visuel tonal -->
+<div class="h-px bg-surface-container w-full my-1"></div>
+<!-- Journal d'audit et horodatage eIDAS -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">receipt_long</span>
+              Audit Trail & Empreinte Numérique
+            </span>
+<div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-1.5 font-mono text-[11px] text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Certificat CA :</span>
+<span class="text-on-surface font-bold">PRORELAY-EIDAS-2025-V2</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Horodatage :</span>
+<span>2025-05-20T11:42:01.442Z</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Hash Block :</span>
+<span class="truncate ml-2 text-primary font-bold">#c4f8...339b-eidas</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Régulateur :</span>
+<span>DGCCRF / ARCEP Conforme</span>
+</div>
+</div>
+</div>
+<!-- Coordonnées directes des parties & permanence médiateur -->
+<div class="flex flex-col gap-space-xs pt-1">
+<span class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">contacts</span>
+              Lignes Directes Superviseur
+            </span>
+<div class="flex flex-col gap-2">
+<!-- Contact Client -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">person</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold">Marc Dupont (Client)</span>
+<span class="font-caption text-[11px] text-on-surface-variant">+33 6 49 ** ** 91</span>
+</div>
+</div>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-primary" title="Appeler via VOIP sécurisée ProRelay" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Contact Artisan -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">store</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold">Alexandre V. (SARL)</span>
+<span class="font-caption text-[11px] text-on-surface-variant">+33 1 43 ** ** 00</span>
+</div>
+</div>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-primary" title="Appeler via VOIP sécurisée ProRelay" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Permanence Médiateur -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-tertiary-fixed/30 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">support_agent</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-tertiary-fixed">J-L. Verneuil (Médiateur)</span>
+<span class="font-caption text-[11px] text-tertiary font-bold">Ligne d'urgence médiateur</span>
+</div>
+</div>
+<button class="p-1.5 rounded-md hover:bg-tertiary-fixed text-on-tertiary-fixed" title="Contacter l'expert en direct" type="button">
+<span class="material-symbols-outlined text-[18px]">phone_in_talk</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div></main></div></body></html>

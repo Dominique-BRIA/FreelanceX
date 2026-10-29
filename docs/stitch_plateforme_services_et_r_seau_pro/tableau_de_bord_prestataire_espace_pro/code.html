@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-thumb { background: #c2c7cf; border-radius: 9999px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-bright": "#f8f9fb",
+            "on-primary-fixed-variant": "#174a70",
+            "primary-container": "#174a70",
+            "on-secondary-fixed-variant": "#743500",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ffdbc8",
+            "outline-variant": "#c2c7cf",
+            "error": "#ba1a1a",
+            "secondary-container": "#ff9247",
+            "background": "#f8f9fb",
+            "surface-tint": "#346289",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#8db9e5",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "primary": "#003353",
+            "inverse-surface": "#2d3133",
+            "on-tertiary-fixed": "#00201d",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#e6e8ea",
+            "on-tertiary-container": "#58c6b9",
+            "surface-container-low": "#f2f4f6",
+            "on-surface-variant": "#42474e",
+            "inverse-on-surface": "#eff1f3",
+            "tertiary": "#003732",
+            "tertiary-container": "#005049",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#9fcbf7",
+            "surface": "#f8f9fb",
+            "secondary": "#994700",
+            "surface-container": "#eceef0",
+            "tertiary-fixed-dim": "#6bd8cb",
+            "secondary-fixed-dim": "#ffb68a",
+            "outline": "#72777f",
+            "inverse-primary": "#9fcbf7",
+            "surface-dim": "#d8dadc",
+            "on-secondary-container": "#6c3000",
+            "on-background": "#191c1e",
+            "surface-variant": "#e0e3e5",
+            "primary-fixed": "#cee5ff",
+            "on-tertiary-fixed-variant": "#005049",
+            "tertiary-fixed": "#89f5e7",
+            "on-secondary-fixed": "#321300",
+            "on-surface": "#191c1e",
+            "on-primary-fixed": "#001d33",
+            "surface-container-highest": "#e0e3e5"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem",
+            "margin-sm": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem"
+          },
+          fontFamily: {
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "caption": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "700" }],
+            "label-lg": ["15px", { lineHeight: "22px", letterSpacing: "0.005em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+            "headline-xl": ["44px", { lineHeight: "52px", letterSpacing: "-0.025em", fontWeight: "800" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-md": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- ========================================================================= -->
+<!-- SIDEBAR FIXE À GAUCHE (Espace Pro Artisan) -->
+<!-- ========================================================================= -->
+<aside class="w-72 shrink-0 h-full bg-surface-container-lowest border-r border-surface-container flex flex-col justify-between z-40 overflow-y-auto">
+<!-- Zone supérieure : Marque + Profil + Menus -->
+<div class="flex flex-col">
+<!-- 1. En-tête de Marque Espace Pro -->
+<div class="p-space-md border-b border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img alt="ProRelay Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-base text-primary font-bold tracking-tight">ProRelay</span>
+<span class="font-label-sm text-[10px] text-tertiary-container uppercase tracking-wider font-extrabold">Espace Pro Artisan</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption text-[11px] font-bold" title="Identité et RC Décennale vérifiées">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span> Pro
+        </span>
+</div>
+<!-- 2. Profil Résumé de l'Artisan -->
+<div class="p-space-md border-b border-surface-container bg-surface-container-low/40">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<img alt="Laurent Mercier" class="w-11 h-11 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLWSBRTdOqH-9cEA9FTCA644TFpWb5u52hfNs5Khvl5VwnXyizH05JgDCC02kY8FakP11tkyEFza6Tq3ehOp2vm31wXTDdYLFekuIGy8TahO7gwsVourl87fe5SMNLTyjLtgoevrRmEK86biB_qd1Os4Yq7JQvnsdhufGKAROd56JuY4d5wRmVA7CWAIQAjaLvNGYdTcWlvJWTjAuRLS78Fh3o7HQJzbkfega9x0"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-600 ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<h2 class="font-label-lg text-sm text-on-surface font-bold truncate">Laurent Mercier</h2>
+<p class="font-caption text-xs text-on-surface-variant truncate">Menuiserie &amp; Agencement</p>
+<div class="flex items-center gap-1 mt-0.5 text-emerald-700 font-caption text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="truncate">Dispo sous 15j • Lyon 35km</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Navigation Verticale avec Badges -->
+<nav class="p-space-sm flex flex-col gap-1">
+<!-- Dashboard (Actif) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-sm" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Vue d'ensemble</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+</a>
+<!-- Demandes & Devis -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">request_quote</span>
+<span>Demandes &amp; Devis</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-xs font-bold">3</span>
+</a>
+<!-- Chantiers en cours -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">handyman</span>
+<span>Chantiers en cours</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-caption text-xs font-bold">2</span>
+</a>
+<!-- Messagerie directe -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span>Messagerie directe</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-caption text-xs font-bold">2 non lus</span>
+</a>
+<!-- Fil Réalisations (Social Selling) -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">camera_outdoor</span>
+<span>Mes Réalisations</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-caption text-xs">7 posts</span>
+</a>
+<!-- Avis & Évaluations -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">star</span>
+<span>Avis &amp; Évaluations</span>
+</div>
+<div class="flex items-center gap-1 font-caption text-xs font-bold text-on-surface">
+<span>4.96</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</a>
+<!-- Certification & Assurances -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl text-tertiary-container">verified_user</span>
+<span>Certification &amp; Assurances</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption text-[10px] font-bold">Niveau 2</span>
+</a>
+<!-- Paramètres & Facturation -->
+<a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">tune</span>
+<span>Paramètres &amp; Tarifs</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Zone basse de la Sidebar : Info Modèle 0% + Mode Client / Déconnexion -->
+<div class="p-space-md flex flex-col gap-space-sm border-t border-surface-container bg-surface-container-lowest">
+<!-- Badge Pédagogique 0% Commission -->
+<div class="rounded-xl p-3 bg-tertiary-fixed/30 border border-tertiary-fixed text-on-tertiary-fixed flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-label-sm text-xs font-bold text-tertiary-container">
+<span class="material-symbols-outlined text-base">payments</span>
+<span>0% de Commission</span>
+</div>
+<p class="font-caption text-[11px] text-on-surface-variant leading-snug">
+          Tous vos paiements s'effectuent de gré à gré directement par virement ou chèque sans retenue.
+        </p>
+</div>
+<!-- Bascule Mode Client -->
+<a class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors border border-outline-variant/40" href="#">
+<span class="material-symbols-outlined text-lg text-primary">swap_horiz</span>
+<span>Passer en Mode Client</span>
+</a>
+<!-- Bouton déconnexion -->
+<button class="flex items-center justify-center gap-2 px-3 py-1.5 text-outline hover:text-error font-caption text-caption transition-colors" type="button">
+<span class="material-symbols-outlined text-base">logout</span>
+<span>Déconnexion</span>
+</button>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- ZONE PRINCIPALE DU DASHBOARD (Contenu Scrollable) -->
+<!-- ========================================================================= -->
+<div class="flex-1 flex flex-col h-full overflow-hidden bg-background">
+<!-- Topbar compacte du Dashboard -->
+<header class="h-16 shrink-0 bg-surface-container-lowest border-b border-surface-container px-space-lg flex items-center justify-between gap-space-md z-30">
+<!-- Fil d'ariane & Recherche rapide -->
+<div class="flex items-center gap-space-md flex-1 max-w-xl">
+<div class="hidden sm:flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md shrink-0">
+<span class="text-primary font-bold">Espace Prestataire</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface">Tableau de bord</span>
+</div>
+<div class="relative flex items-center w-full max-w-sm">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg pointer-events-none">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all border border-transparent focus:border-outline-variant" placeholder="Rechercher client, chantier, devis..." type="text"/>
+</div>
+</div>
+<!-- Actions Rapides & Profil -->
+<div class="flex items-center gap-space-sm shrink-0">
+<!-- Sélecteur Période -->
+<div class="hidden md:inline-flex items-center bg-surface-container-low rounded-xl px-2.5 py-1.5 text-on-surface border border-surface-container">
+<span class="material-symbols-outlined text-primary text-base mr-1.5">calendar_today</span>
+<select aria-label="Sélectionner la période d'analyse" class="bg-transparent font-label-md text-label-md text-on-surface cursor-pointer focus:outline-none pr-2">
+<option value="current">Ce mois-ci (Avril 2025)</option>
+<option value="30days">30 derniers jours</option>
+<option value="year2025">Année complète 2025</option>
+</select>
+</div>
+<!-- Bouton Publier -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-secondary-container text-on-secondary-container font-label-md text-label-md shadow-sm hover:opacity-95 transition-transform active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">post_add</span>
+<span class="hidden sm:inline">+ Publier sur le fil</span>
+</button>
+<!-- Bouton Nouveau Devis -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary-container transition-transform active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-lg">request_quote</span>
+<span class="hidden sm:inline">+ Nouveau devis direct</span>
+</button>
+<!-- Cloche notification & Messagerie -->
+<div class="flex items-center gap-1 border-l border-surface-container pl-space-xs ml-space-xs">
+<button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container ring-2 ring-surface"></span>
+</button>
+<button aria-label="Messagerie directe" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-tertiary-container ring-2 ring-surface"></span>
+</button>
+</div>
+<a class="shrink-0 ring-2 ring-surface-container-high rounded-full hover:ring-primary-container transition-all" href="#">
+<img alt="Laurent" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLWSBRTdOqH-9cEA9FTCA644TFpWb5u52hfNs5Khvl5VwnXyizH05JgDCC02kY8FakP11tkyEFza6Tq3ehOp2vm31wXTDdYLFekuIGy8TahO7gwsVourl87fe5SMNLTyjLtgoevrRmEK86biB_qd1Os4Yq7JQvnsdhufGKAROd56JuY4d5wRmVA7CWAIQAjaLvNGYdTcWlvJWTjAuRLS78Fh3o7HQJzbkfega9x0"/>
+</a>
+</div>
+</header>
+<!-- Contenu Principal Défilable -->
+<main class="flex-1 overflow-y-auto px-space-lg py-space-lg">
+<div class="max-w-[1360px] mx-auto flex flex-col gap-space-lg">
+<!-- En-tête de bienvenue & Statut opérationnel -->
+<section class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-2xl lg:text-3xl text-primary tracking-tight font-extrabold">
+                Bonjour Laurent,
+              </h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-xs shadow-sm">
+<span class="material-symbols-outlined text-sm font-bold" style="font-variation-settings: 'FILL' 1;">verified</span>
+                Identité Vérifiée • Niveau Pro 2
+              </span>
+</div>
+<p class="font-body-md text-body-sm text-on-surface-variant">
+              Voici le résumé de votre activité artisanale aujourd'hui à <span class="text-on-surface font-semibold">Lyon &amp; Métropole</span>.
+            </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-xs">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span>Disponible sous 15 jours</span>
+<button class="text-primary hover:underline ml-1 font-semibold cursor-pointer" type="button">modifier</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Baromètre d'alertes & Actions prioritaires requises -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Alerte 1: Devis en attente -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">pending_actions</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Devis en attente</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed font-caption text-caption font-semibold">Réponse sous 24h</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">1 450 €</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Réf. DEM-9421 • Salle d'eau zellige (Mme Dujardin, Lyon 3e)</p>
+</div>
+<div class="pt-space-sm mt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="font-caption text-caption text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Envoyé il y a 3 jours
+              </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-bold flex items-center gap-0.5" type="button">
+                Relancer <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Alerte 2: Messages non lus -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">chat</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Messagerie Directe</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-caption text-caption font-semibold">2 non lus</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Dressing sur-mesure</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Caluire • M. Barret a joint 3 croquis techniques et cotes</p>
+</div>
+<div class="pt-space-sm mt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span> Reçu il y a 14 min
+              </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-bold flex items-center gap-0.5" type="button">
+                Répondre <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Alerte 3: Validation chantier & avis -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">rate_review</span>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-container font-bold">Clôture &amp; Avis</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-caption text-caption font-semibold">Action requise</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1">Pose Parquet Hongrie</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chantier terminé le 12/04. En attente de validation client pour avis officiel.</p>
+</div>
+<div class="pt-space-sm mt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">person</span> Julie V. (Croix-Rousse)
+              </span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-bold flex items-center gap-0.5" type="button">
+                Demander avis <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 3: Indicateurs Clés de Performance (Commercial vs Rayonnement Social) -->
+<section class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-xl text-primary tracking-tight font-bold">Indicateurs de Performance</h2>
+<p class="font-body-sm text-xs text-on-surface-variant">Suivi en temps réel de votre chiffre d'affaires direct et de l'impact de vos publications.</p>
+</div>
+<div class="hidden sm:flex items-center gap-2 bg-surface-container px-3 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm text-tertiary-container">info</span>
+              Modèle ProRelay : 0% de commission prélevée sur vos chantiers
+            </div>
+</div>
+<!-- Bento Grid des KPIs -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Bloc A : Commercial & Devis Directs (7 colonnes) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm border border-surface-container flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Activité Commerciale Directe</span>
+</div>
+<span class="text-caption font-caption text-tertiary-container font-semibold bg-tertiary-fixed px-2.5 py-1 rounded-full">Paiements de gré à gré</span>
+</div>
+<!-- Grand Chiffre + Graphique d'évolution SVG -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md items-end">
+<div>
+<span class="font-caption text-caption text-on-surface-variant block uppercase tracking-wider">Total devisé &amp; encaissé ce mois</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">5 850 €</span>
+<span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-xs">trending_up</span> +18%
+                      </span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2">
+                      100% perçu en direct par virement ou chèque sans retenue.
+                    </p>
+</div>
+<!-- Sparkline SVG dynamique minimaliste -->
+<div class="flex flex-col gap-1">
+<div class="h-16 w-full flex items-end">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 200 60">
+<path d="M0,50 Q25,45 50,38 T100,30 T150,22 T200,8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,50 Q25,45 50,38 T100,30 T150,22 T200,8 L200,60 L0,60 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+<div class="flex justify-between font-caption text-[11px] text-on-surface-variant">
+<span>Semaine 1</span>
+<span>Semaine 2</span>
+<span>Semaine 3</span>
+<span class="font-semibold text-primary">En cours</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Métriques secondaires du bloc commercial -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-md mt-space-md border-t border-surface-container">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Demandes reçues</span>
+<span class="font-headline-sm text-lg text-on-surface font-bold mt-0.5">14</span>
+<span class="font-caption text-[11px] text-emerald-700 flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-xs">bolt</span> Réponse &lt; 20 min
+                  </span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Chantiers clos</span>
+<span class="font-headline-sm text-lg text-on-surface font-bold mt-0.5">42</span>
+<span class="font-caption text-[11px] text-on-surface-variant mt-0.5">Depuis l'adhésion</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Note certifiée</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="font-headline-sm text-lg text-on-surface font-bold">4.96</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-caption text-[11px] text-on-surface-variant mt-0.5">38 avis contrôlés</span>
+</div>
+</div>
+</div>
+<!-- Bloc B : Rayonnement & Social Selling (5 colonnes) -->
+<div class="lg:col-span-5 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed text-xl">camera_outdoor</span>
+<span class="font-label-lg text-label-lg font-bold">Impact du Fil Réalisations</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">Social Selling</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mb-space-md">
+                  Vos photos Avant/Après inspirent les propriétaires lyonnais et déclenchent des devis ciblés.
+                </p>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-lowest/10 backdrop-blur-md rounded-xl p-space-md">
+<span class="font-caption text-caption text-primary-fixed-dim block">Vues cumulées</span>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-headline-md text-xl font-extrabold">18 420</span>
+<span class="text-xs text-tertiary-fixed font-bold">+32%</span>
+</div>
+<span class="font-caption text-[11px] text-primary-fixed-dim mt-1 block">Sur vos 7 publications</span>
+</div>
+<div class="bg-surface-container-lowest/10 backdrop-blur-md rounded-xl p-space-md">
+<span class="font-caption text-caption text-primary-fixed-dim block">Interactions</span>
+<div class="flex items-baseline gap-1.5 mt-1">
+<span class="font-headline-md text-xl font-extrabold">390</span>
+</div>
+<span class="font-caption text-[11px] text-primary-fixed-dim mt-1 block">342 J'aime • 48 retours</span>
+</div>
+</div>
+</div>
+<!-- Highlight ROI Social -->
+<div class="mt-space-md bg-surface-container-lowest/15 rounded-xl p-space-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-lg">conversion_path</span>
+</div>
+<div>
+<span class="font-label-md text-sm font-bold block text-white">6 Devis initiés via vos posts</span>
+<span class="font-caption text-caption text-primary-fixed-dim">Valeur estimée : ~8 900 € de projets</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary-fixed">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Pipeline des Demandes & Chantiers -->
+<section class="flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-md text-xl text-primary tracking-tight font-bold">Suivi des Demandes &amp; Chantiers</h2>
+<p class="font-body-sm text-xs text-on-surface-variant">Supervisez l'état de vos contrats en cours de négociation ou d'exécution.</p>
+</div>
+<!-- Onglets / Filtres de statut -->
+<div class="flex flex-wrap items-center gap-1 bg-surface-container-low p-1 rounded-xl border border-surface-container">
+<button class="px-2.5 py-1 rounded-lg bg-primary text-on-primary font-label-sm text-xs shadow-sm cursor-pointer" type="button">
+                Tous (8)
+              </button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-xs transition-colors cursor-pointer" type="button">
+                Nouvelles demandes (2)
+              </button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-xs transition-colors cursor-pointer" type="button">
+                Devis transmis (3)
+              </button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-xs transition-colors cursor-pointer" type="button">
+                Chantiers en cours (2)
+              </button>
+<button class="px-2.5 py-1 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-xs transition-colors cursor-pointer" type="button">
+                Attente avis (1)
+              </button>
+</div>
+</div>
+<!-- Grille des Cartes Pipeline -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Carte 1 : Nouvelle Demande -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Architectural photograph of a bright bedroom space in Caluire Lyon needing a custom wooden wardrobe and dressing install, natural morning light with measured blueprint on table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvs3Ef40LvnC5EUfQj6_zMWHghC59yDSNQzImxEfSqg54-UTpExatoHk6fFSCw--yOtr-n8nzpekl4WqWu-T9DoNlzL5ti3vH3uyhusZ7HsB3t_OER-wokjahsFwA8mQRxV--uvKUMvZZ3sjNR1ap7R9Id5t0-AjFD6ytBkK8xv69K_26mQHPCy_-MafClV6-l9Nw33LcwESBnOikODQv8DaI8GOFSP9pbow9FUaQ"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-bold shadow-sm">
+                    Nouvelle Demande
+                  </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-caption text-[11px] backdrop-blur-sm">
+                    Aujourd'hui, 09:15
+                  </span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-sm text-primary font-bold">Dressing chêne clair</span>
+<span class="font-label-md text-xs text-on-surface font-bold">Budget ~2 800 €</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">location_on</span> Caluire-et-Cuire (69300)
+                  </p>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">
+                    "Bonjour M. Mercier, nous souhaitons aménager une sous-pente de 3m50 avec penderie intégrée et tiroirs coulissants."
+                  </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 border-t border-surface-container">
+<button class="flex-1 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-xs font-bold hover:bg-primary-container transition-colors text-center cursor-pointer" type="button">
+                  Répondre / Deviser
+                </button>
+<button aria-label="Consulter détails" class="p-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+</div>
+<!-- Carte 2 : Devis transmis -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Renovation bathroom project in progress with emerald green zellige tiles and copper pipes in an old bourgeois apartment in Lyon 3rd district" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEq5Xw3AFaNzfoE83o1CjnuEASp9P37RN3RvA5yVSRnh5yiElF5EuFxhZsyIxW1IdbEdIRJH8QO2lrAH5lhaVM0loWgS2DC7y08lwHwIzyOZL003jNaU4rKB1_ZfAjxb_E0-dfKZvpv3UGuJxWR4IaXuqkMv4tlu3be--QzEBbfee1lZuZsv-VsKcJcOSLVuOv1fZPVeBdzGJaeF2TP9jr9nYdeeOdSIsN0aVUPOI"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px] font-bold shadow-sm">
+                    Devis Transmis
+                  </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-caption text-[11px] backdrop-blur-sm">
+                    Envoyé le 15/04
+                  </span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-sm text-primary font-bold">Rénov. Salle d'eau Zellige</span>
+<span class="font-label-md text-xs text-secondary font-bold">1 450 €</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">location_on</span> Lyon 3ème • V. Dujardin
+                  </p>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">
+                    Devis direct n°2025-042. Remplacement meuble vasque et faïence murale zellige artisanale.
+                  </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 border-t border-surface-container">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-xs font-bold hover:bg-surface-container-highest transition-colors text-center cursor-pointer" type="button">
+                  Modifier devis
+                </button>
+<button class="px-2.5 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-xs font-bold hover:opacity-90 transition-opacity" type="button">
+                  Relancer
+                </button>
+</div>
+</div>
+<!-- Carte 3 : Chantier En cours d'exécution -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Custom crafted oak wooden table and kitchen counter in modern renovation loft in Croix-Rousse Lyon, warm timber texture, artisan tools visible in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWlN4GNbRawerOQybQQmxuG3IK5shlMVG1AsJlHV2vJ3DWxOA493tG2VRge7UWZZy5KS0z-AslRBTfdhwmIXqpI8yS32atLMN7t1WhOzLSKlLKt3Sbkm0wxQ1n2uyy95jCAtZSfudNkSL-Jw_tjx4OHP6Zyw6JFuxNoIF90st89-9Z-tztlnL5ndse3wwfe-mLsCGe7I-KjtGX-3B8w7yGgZiSmjsixh0iYTorUrg"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-sm text-[11px] font-bold shadow-sm">
+                    Chantier En Cours
+                  </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-caption text-[11px] backdrop-blur-sm">
+                    Fin prévue 24/04
+                  </span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-sm text-primary font-bold">Îlot Central Chêne</span>
+<span class="font-label-md text-xs text-primary font-bold">3 200 €</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">location_on</span> Villeurbanne • M. Girard
+                  </p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-2.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 70%;"></div>
+</div>
+<span class="font-caption text-[11px] text-on-surface-variant block mt-1">Avancement : 70% (Pose finale)</span>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 border-t border-surface-container">
+<button class="flex-1 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-sm text-xs font-bold hover:bg-surface-container-highest transition-colors text-center cursor-pointer" type="button">
+                  Messagerie
+                </button>
+<button class="px-2.5 py-1.5 rounded-lg bg-tertiary-container text-on-tertiary font-label-sm text-xs font-bold hover:opacity-90 transition-opacity" type="button">
+                  Terminer
+                </button>
+</div>
+</div>
+<!-- Carte 4 : En attente d'avis officiel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Finished herringbone oak parquet floor installation in classic French Haussmann salon with large windows, natural varnish finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoe-V2btemNj_qQFuwd9sLJD7CJ6qKufbjIEac0BvwSaTTmLmI-dR0fzZLrM0KZwM8_9A7_D5Lz9BJGzUl_s35-4PBk3xw_ruNS13pC3E95Fc2LT3iSHiU1OoPV8LTzhlkT167_-3sYqyekXy_A8SmxZca-ulYPN2wWMfDi7yHrOAOZ4oQYtmlsaHvHp6gSTrDV4k9HLGqJ_vJucuuoHsr4IjwbCHAf8GE0Q6AqCs"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-bold shadow-sm">
+                    En Attente d'Avis
+                  </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-caption text-[11px] backdrop-blur-sm">
+                    Terminé le 12/04
+                  </span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-sm text-primary font-bold">Parquet Point de Hongrie</span>
+<span class="font-label-md text-xs text-emerald-700 font-bold">Encaissé 2 100 €</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-sm">location_on</span> Lyon 4e • Julie V.
+                  </p>
+<p class="font-body-sm text-xs text-on-surface-variant mt-2 line-clamp-2">
+                    Paiement direct reçu par virement. Notification de demande d'avis officiel ProRelay envoyée à Julie.
+                  </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 border-t border-surface-container">
+<button class="w-full py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-xs font-bold hover:opacity-95 transition-opacity text-center cursor-pointer flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-base">reviews</span>
+<span>Inviter à déposer l'avis</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Vos Publications Récentes sur le Fil Social -->
+<section class="flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-md text-xl text-primary tracking-tight font-bold">Vos Réalisations sur le Fil</h2>
+<p class="font-body-sm text-xs text-on-surface-variant">L'historique visuel de vos interventions avant/après visibles par tous les clients de la région.</p>
+</div>
+<button class="inline-flex items-center gap-1 text-primary hover:underline font-label-md text-xs font-bold" type="button">
+              Voir mon profil public complet <span class="material-symbols-outlined text-xs">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Post 1 : Rénovation avant/après salle d'eau -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container flex flex-col group">
+<div class="relative h-44 w-full bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Split comparison photo of bathroom renovation before messy tiles and after elegant sage green zellige tiling with custom floating wood vanity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrS2ypExusIV5Z9RxcKXh0epkKJ3K8QTmrwgQnur81eHmtnbY2FSWPK-JdyWQWrUX9v2imHuWf4vpUsvNRQDGIWqQvRpmKfqvRkF0tH8WJbsKrPXnA1I0jZ-XDfdEOmjvQ5N3BmZ-vW5gUJLeW1bp5oBYD7zj0cK0AjIZX333Eslp456cTpmndgQ_WsT_H_Vw174xbjT1iI_0am9_H1sfbxo96hyaqUqiRy0btZow"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-caption text-caption font-semibold backdrop-blur-sm">
+                    Avant / Après
+                  </span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-white font-caption text-[11px] px-2 py-1 rounded bg-inverse-surface/60 backdrop-blur-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">visibility</span> 7 840</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">favorite</span> 142</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 24</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h3 class="font-label-lg text-sm text-primary font-bold">Salle d'eau zellige &amp; meuble sur-mesure</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2">
+                  Chantier mené en 5 jours à Lyon 3ème. Faïence artisanale zellige vert d'eau et plan en chêne massif huilé.
+                </p>
+<div class="pt-space-sm mt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="text-caption font-caption text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">
+                    +3 Devis générés via ce post
+                  </span>
+<button class="text-primary hover:underline font-label-sm text-xs font-semibold" type="button">
+                    Commentaires (24)
+                  </button>
+</div>
+</div>
+</div>
+<!-- Post 2 : Parquet Hongrie -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container flex flex-col group">
+<div class="relative h-44 w-full bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Artisan hands measuring and adjusting herringbone wooden parquet flooring with level and precision woodworking tools in Lyon apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIVU3B4_wesGx0Uy0ikpfl4zobCxAFnQ_vame9nuntRhO8zxDyqPJEfTwW3f6Kfv1TVpUy3KYPrlycqz9GGnWo7TCUy2QgYAzmsEFOJbN8Tk_rqw6NRAgmn7R3I8RQrxjy-x0BiNNgh4usiMYyavGxUvVEELvRoOWHvtMfGNFbquqszrtP-V6vFjcMwOmbiulwWHc0D2Wm3UV42DzLz59s-X3ko1BmLdSSL1ZTkhA"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-xs font-semibold shadow-sm">
+                    En détail
+                  </span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-white font-caption text-[11px] px-2 py-1 rounded bg-inverse-surface/60 backdrop-blur-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">visibility</span> 5 920</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">favorite</span> 118</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 16</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h3 class="font-label-lg text-sm text-primary font-bold">Restauration &amp; Pose Parquet Point de Hongrie</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2">
+                  Ponçage fin, réparation des lames anciennes et vitrification mat écologique dans appartement haussmannien.
+                </p>
+<div class="pt-space-sm mt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="text-caption font-caption text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">
+                    +2 Devis générés
+                  </span>
+<button class="text-primary hover:underline font-label-sm text-xs font-semibold" type="button">
+                    Commentaires (16)
+                  </button>
+</div>
+</div>
+</div>
+<!-- Post 3 : Meuble vasque chêne massif -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-container flex flex-col group">
+<div class="relative h-44 w-full bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Handcrafted solid French oak vanity bathroom cabinet with dovetail joints and brass handles, clean workshop background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0gxbmEGcqmQg6ePX0I9Q79mUB4h6LxkxmB-345x4OPgQLwsu6nYhMLPYzU2kNLOpROIBWvSusqMZoPigYGb6cpNjpYPdMWFXQ6G0SSB13rxwY37NU1xcCqAAL_TwTpOtXgQHVZC2R6IbrBjIEWYC1WfcJCKNBqEb3DuRP9hKpv4iDlz_0mwPFrTS-4D1_Ytg2lOFdepRBULstShhvfpMrRwfzdw35r6761ciblBo"/>
+<div class="absolute top-2 left-2 flex items-center gap-1">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-xs font-semibold shadow-sm">
+                    Atelier
+                  </span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-white font-caption text-[11px] px-2 py-1 rounded bg-inverse-surface/60 backdrop-blur-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">visibility</span> 4 660</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">favorite</span> 82</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-xs">chat_bubble</span> 8</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<h3 class="font-label-lg text-sm text-primary font-bold">Fabrication Meuble Vasque Chêne Massif</h3>
+<p class="font-body-sm text-xs text-on-surface-variant line-clamp-2">
+                  Assemblage en queue d'aronde traditionnelle, finition hydrofuge et intégration de poignées en laiton brossé.
+                </p>
+<div class="pt-space-sm mt-space-xs flex items-center justify-between border-t border-surface-container">
+<span class="text-caption font-caption text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded text-[11px]">
+                    +1 Devis généré
+                  </span>
+<button class="text-primary hover:underline font-label-sm text-xs font-semibold" type="button">
+                    Commentaires (8)
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Bloc Pédagogique & Cadre de Confiance ProRelay -->
+<section class="bg-surface-container-low rounded-xl p-space-md lg:p-space-lg border border-surface-container shadow-sm mb-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md lg:gap-space-lg items-center">
+<div class="flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">handshake</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-label-lg text-sm text-primary font-bold">Modèle 100% Direct de Gré à Gré</h3>
+<p class="font-body-sm text-xs text-on-surface-variant">
+                  ProRelay ne prélève aucun pourcentage sur le montant de vos travaux. Vos clients règlent directement par virement bancaire, chèque ou acompte selon vos propres conditions générales.
+                </p>
+<span class="text-caption font-caption text-tertiary-container font-semibold mt-1">
+                  Aucun intermédiaire financier • Encaissement immédiat
+                </span>
+</div>
+</div>
+<div class="flex items-start gap-space-md">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-label-lg text-sm text-primary font-bold">Statut de votre Certification Pro</h3>
+<p class="font-body-sm text-xs text-on-surface-variant">
+                  Votre badge d'identité et votre assurance décennale sont vérifiés et actifs jusqu'en <span class="font-semibold text-on-surface">Décembre 2025</span>. Vos futurs clients voient ce sceau de confiance sur chacun de vos devis.
+                </p>
+<div class="flex items-center gap-space-sm mt-1">
+<span class="inline-flex items-center gap-1 font-caption text-caption text-emerald-700 font-bold">
+<span class="material-symbols-outlined text-xs">check_circle</span> Dossier complet &amp; valide
+                  </span>
+<button class="text-primary hover:underline font-label-sm text-xs font-semibold" type="button">
+                    Gérer mes justificatifs
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

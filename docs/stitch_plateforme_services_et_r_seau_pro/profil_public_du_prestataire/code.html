@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#743500","on-primary-container":"#8db9e5","inverse-surface":"#2d3133","on-tertiary-fixed-variant":"#005049","secondary-fixed-dim":"#ffb68a","surface-container-low":"#f2f4f6","on-background":"#191c1e","on-tertiary-container":"#58c6b9","error":"#ba1a1a","surface-bright":"#f8f9fb","inverse-primary":"#9fcbf7","secondary":"#994700","on-primary-fixed-variant":"#174a70","on-secondary-container":"#6c3000","on-tertiary-fixed":"#00201d","surface-container-lowest":"#ffffff","tertiary-fixed":"#89f5e7","tertiary":"#003732","tertiary-fixed-dim":"#6bd8cb","primary":"#003353","on-primary-fixed":"#001d33","secondary-fixed":"#ffdbc8","primary-container":"#174a70","surface-dim":"#d8dadc","error-container":"#ffdad6","surface-container-highest":"#e0e3e5","surface-container":"#eceef0","surface-variant":"#e0e3e5","secondary-container":"#ff9247","primary-fixed":"#cee5ff","background":"#f8f9fb","on-surface":"#191c1e","on-error-container":"#93000a","on-secondary-fixed":"#321300","surface-container-high":"#e6e8ea","on-tertiary":"#ffffff","inverse-on-surface":"#eff1f3","outline-variant":"#c2c7cf","primary-fixed-dim":"#9fcbf7","on-surface-variant":"#42474e","surface-tint":"#346289","on-error":"#ffffff","on-primary":"#ffffff","outline":"#72777f","tertiary-container":"#005049","on-secondary":"#ffffff","surface":"#f8f9fb"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"1rem",margin:"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2.5rem","space-lg":"1.5rem","margin-sm":"1rem",gutter:"1.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],caption:["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"22px",letterSpacing:"0.005em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-xl-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"700"}],caption:["12px",{lineHeight:"16px",fontWeight:"500"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"800"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,74,112,0.06)]"><div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm" data-path="trouver-un-pro" href="#"><img alt="ProRelay Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">ProRelay</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-base text-tertiary-container">public</span><select aria-label="Sélectionner un pays et une devise" class="bg-transparent text-on-surface-variant font-label-md text-label-md outline-none cursor-pointer pr-1"><option value="FR">🇫🇷 France • EUR €</option><option value="SN">🇸🇳 Sénégal • XOF</option><option value="CI">🇨🇮 Côte d'Ivoire • XOF</option><option value="CA">🇨🇦 Canada • CAD $</option></select></div></div><div class="flex-1 max-w-lg hidden md:block"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-xl pointer-events-none">search</span><input class="w-full pl-11 pr-space-md py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" placeholder="Trouver un besoin, un métier, un mot-clé (ex: plombier, menuiserie)..." type="text"/></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden lg:flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-low" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl"><a class="px-space-md py-2 rounded-xl text-on-surface-variant font-label-lg text-label-lg transition-colors hover:text-on-surface" data-path="trouver-un-pro" href="#">Trouver un pro / Services</a><a class="px-space-md py-2 rounded-xl text-on-surface-variant font-label-lg text-label-lg transition-colors hover:text-on-surface" data-path="fil-realisations" href="#">Fil Réalisations</a></nav><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-2xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-secondary-container ring-2 ring-surface"></span></button><button aria-label="Messagerie directe" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-2xl">chat_bubble</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface"></span></button></div><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:opacity-95 transition-opacity" data-path="mode-prestataire" href="#"><span class="material-symbols-outlined text-base">swap_horiz</span><span>Mode Prestataire</span></a><a class="shrink-0 ring-2 ring-surface-container-high rounded-full hover:ring-primary-container transition-all" data-path="profil-utilisateur" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLWSBRTdOqH-9cEA9FTCA644TFpWb5u52hfNs5Khvl5VwnXyizH05JgDCC02kY8FakP11tkyEFza6Tq3ehOp2vm31wXTDdYLFekuIGy8TahO7gwsVourl87fe5SMNLTyjLtgoevrRmEK86biB_qd1Os4Yq7JQvnsdhufGKAROd56JuY4d5wRmVA7CWAIQAjaLvNGYdTcWlvJWTjAuRLS78Fh3o7HQJzbkfega9x0"/></a></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- BANNIÈRE ATELIER & COUVERTURE -->
+<div class="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden bg-primary-container">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="Atelier de menuiserie et rénovation haut de gamme à Lyon, établi en chêne massif avec outils d'ébénisterie soignés, lumière naturelle chaude du matin filtrant à travers de grandes verrières industrielles, copeaux de bois, atmosphère artisanale et rigoureuse, tons bleu profond et accents ambrés." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAX2xs5upq3Wur1tmieq6AKEiPnjrr6CTsHq7jqM8AfCb-Bp3YHWuD3XmXriWOZedbmxOmmmXJMEAQLMCejU7qFf8QqhOgCmEYZDyhFns8_elxtZggG92cD8UVbZU_vHb0NQT-EFpcYpPtAycGxMEq0smGQUcT5tGjT1eLzMUchtis7bOvJDoEfaBU4TPKOyPp1bEdmKzqJxQz8cchsi0zrkNDbcqh7Iynztz9_t0I')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute top-4 right-4 flex items-center gap-space-sm z-10">
+<button class="px-space-md py-2 rounded-xl bg-surface/90 backdrop-blur-md text-primary font-label-md text-label-md hover:bg-surface transition-all shadow-md flex items-center gap-space-xs" onclick="navigator.clipboard?.writeText(window.location.href); alert('Lien du profil copié dans le presse-papier !');">
+<span class="material-symbols-outlined text-base">share</span>
+<span class="hidden sm:inline">Partager</span>
+</button>
+<button class="p-2 rounded-xl bg-surface/90 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-surface transition-all shadow-md" title="Signaler ce profil">
+<span class="material-symbols-outlined text-base">flag</span>
+</button>
+</div>
+</div>
+<!-- CONTENEUR PRINCIPAL DU PROFIL -->
+<div class="max-w-[1280px] mx-auto px-gutter w-full -mt-24 md:-mt-32 relative z-20 pb-space-xl">
+<!-- CARTE D'EN-TÊTE ARTISAN -->
+<div class="bg-surface-container-lowest rounded-xl shadow-xl p-space-lg md:p-space-xl mb-space-lg">
+<div class="flex flex-col lg:flex-row gap-space-lg items-start justify-between">
+<!-- Identité & Avatar -->
+<div class="flex flex-col sm:flex-row gap-space-lg items-start sm:items-center">
+<div class="relative shrink-0">
+<img class="w-28 h-28 md:w-36 md:h-36 rounded-2xl object-cover shadow-lg bg-surface-container-high" data-alt="Portrait professionnel de l'artisan Laurent Mercier souriant et confiant dans son atelier de menuiserie à Lyon, tablier en cuir de travail, barbe soignée, lumière douce de trois quarts, fond atelier flou, expression d'expertise et de bienveillance digne de confiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUyl2dpTuB3AMtBinmy4ZJri6mlARyAX5NwmD8vFcYLGbtGQTsfx7LQ9abLjqTUUts0jPRAEOjR00oS8R0jiDRHc0Tw-KGTEZVq460ykvZy4pjQvJUqAMq1CGfI9-jQPv9GAxJU-IFclVHXlwL28HAvy1EmHnGTFzlN9Qe3gYN13AsKyolOatLgEgcbAxzTLCp47Qw5mrpYZf-NAvjGRBycEjUHv7fHN8Wxkttrxo"/>
+<span class="absolute -bottom-2 -right-2 p-1.5 rounded-xl bg-tertiary text-on-tertiary shadow-md flex items-center justify-center" title="Statut vérifié niveau 2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary font-extrabold tracking-tight">Laurent Mercier</h1>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Membre Pro • 2 ans</span>
+</div>
+<p class="font-body-lg text-body-lg text-secondary-container font-semibold">
+              Rénovation Globale &amp; Ébénisterie d'Art
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
+              Menuiserie sur-mesure • Rénovation de Salles de bain • Pose de carrelage zellige &amp; marbre
+            </p>
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-primary">location_on</span>
+<span>Lyon &amp; Métropole (Rayon 35 km)</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-tertiary-fixed-variant bg-tertiary-fixed/30 px-space-sm py-0.5 rounded-full font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span>Disponible sous 15 jours</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Colonne d'Actions Rapides -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-space-sm w-full lg:w-72 shrink-0">
+<a class="w-full py-3 px-space-md rounded-xl bg-secondary-container text-on-secondary-container font-label-lg text-label-lg flex items-center justify-center gap-space-sm shadow-md hover:brightness-105 active:scale-95 transition-all text-center" href="#devis-modal">
+<span class="material-symbols-outlined text-xl">request_quote</span>
+<span>Demander un devis direct</span>
+</a>
+<button class="w-full py-2.5 px-space-md rounded-xl bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-space-sm hover:bg-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+<span>Message chiffré direct</span>
+</button>
+<button class="w-full py-2 px-space-md rounded-xl bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-sm transition-all" id="favorite-btn" onclick="this.classList.toggle('text-secondary-container'); const icon=this.querySelector('.material-symbols-outlined'); icon.textContent = icon.textContent === 'bookmark_border' ? 'bookmark' : 'bookmark_border';">
+<span class="material-symbols-outlined text-lg">bookmark_border</span>
+<span>Ajouter aux favoris</span>
+</button>
+</div>
+</div>
+<!-- BANDEAU AUDIT & STATS CREDIBILITÉ -->
+<div class="mt-space-lg pt-space-lg grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-1 text-secondary-container">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">4.96</span>
+<span class="font-caption text-caption text-on-surface-variant">/5</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium">38 avis certifiés réels</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-xl">bolt</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">&lt; 20 min</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium">Temps de réponse médian</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-tertiary-container">
+<span class="material-symbols-outlined text-xl">handshake</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">100%</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium">Règlement direct de gré à gré</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-xl">task_alt</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">42</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium">Chantiers clos avec succès</span>
+</div>
+</div>
+<!-- BADGE D'IDENTITÉ VÉRIFIÉE PROMINENT & INTERACTIF -->
+<div class="mt-space-md p-space-md rounded-xl bg-tertiary-fixed/20 text-on-surface flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg font-bold text-tertiary">Identité &amp; Pièces Officielles Vérifiées</span>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm uppercase">Niveau Pro 2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vérification documentaire rigoureuse opérée par l'équipe ProRelay en France.</p>
+</div>
+</div>
+<!-- Déclencheur Popover Modal Explicatif -->
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-tertiary font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm flex items-center gap-space-xs shrink-0" onclick="document.getElementById('verification-popover').classList.toggle('hidden');">
+<span class="material-symbols-outlined text-base">info</span>
+<span>Détail des garanties</span>
+</button>
+</div>
+<!-- ENCART EXPLICATIF CAHIER DES CHARGES (POPOVER) -->
+<div class="hidden mt-space-sm p-space-lg rounded-xl bg-surface-container-lowest shadow-lg" id="verification-popover">
+<div class="flex items-start justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-xl">policy</span>
+<span>Protocole de Contrôle ProRelay</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('verification-popover').classList.add('hidden');">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md mt-space-sm font-body-sm text-body-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-tertiary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Ce qui est certifié par ProRelay :</span>
+</div>
+<ul class="list-disc list-inside text-on-surface-variant flex flex-col gap-1">
+<li>CNI / Passeport officiel vérifié avec scan biométrique.</li>
+<li>Selfie de vivacité et concordance faciale en temps réel.</li>
+<li>Justificatif de domicile / siège fiscal vérifié à Lyon (69003).</li>
+<li>Numéro SIRET actif au registre des métiers (Code APE 4332A).</li>
+</ul>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-base">error_outline</span>
+<span>Ce qui n'est pas garanti automatiquement :</span>
+</div>
+<p class="text-on-surface-variant">
+              La vérification ProRelay confirme l'identité réelle de la personne physique. Elle <strong>n'engage pas automatiquement la garantie décennale</strong> sur tous types d'ouvrages ni un diplôme d'État spécifique sauf mention explicite ci-dessous. Consultez directement l'artisan pour l'attestation décennale spécifique à votre chantier.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- NAVIGATION PAR ONGLETS DU PROFIL -->
+<div class="sticky top-20 z-30 bg-surface/95 backdrop-blur-md rounded-xl p-1.5 mb-space-lg flex items-center gap-space-xs shadow-md overflow-x-auto">
+<button class="tab-button px-space-lg py-2.5 rounded-xl font-label-md text-label-md text-on-primary bg-primary shadow-sm flex items-center gap-space-xs shrink-0 transition-all" id="tab-btn-services" onclick="switchTab('services')">
+<span class="material-symbols-outlined text-base">design_services</span>
+<span>Services &amp; Tarifs</span>
+</button>
+<button class="tab-button px-space-lg py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center gap-space-xs shrink-0 transition-all" id="tab-btn-chantiers" onclick="switchTab('chantiers')">
+<span class="material-symbols-outlined text-base">photo_library</span>
+<span>Réalisations &amp; Chantiers (14)</span>
+</button>
+<button class="tab-button px-space-lg py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center gap-space-xs shrink-0 transition-all" id="tab-btn-avis" onclick="switchTab('avis')">
+<span class="material-symbols-outlined text-base">rate_review</span>
+<span>Avis Clients Officiels (38)</span>
+</button>
+<button class="tab-button px-space-lg py-2.5 rounded-xl font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high flex items-center gap-space-xs shrink-0 transition-all" id="tab-btn-apropos" onclick="switchTab('apropos')">
+<span class="material-symbols-outlined text-base">badge</span>
+<span>À propos &amp; Équipements</span>
+</button>
+</div>
+<!-- MISE EN PAGE DEUX COLONNES (CONTENU PRINCIPAL + COLONNE DE RÉASSURANCE) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- CONTENU DYNAMIQUE DES ONGLETS (COLONNE GAUCHE / 8 COLS) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- ================= ONGLET 1 : SERVICES & TARIFS ================= -->
+<section class="tab-pane flex flex-col gap-space-lg" id="tab-content-services">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Services phares &amp; Tarifs indicatifs</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prix transparents sans frais de plateforme. Chiffrage final après échange direct.</p>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 font-caption text-caption px-space-sm py-1 rounded bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">payments</span>
+              Sans commission intermédiaire
+            </span>
+</div>
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-48 h-36 rounded-xl overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Rénovation complète d'une salle de bain contemporaine avec vasque en bois sur-mesure, robinetterie laiton brossé, carrelage zellige vert sauge, miroir rétroéclairé, ambiance lumineuse zen et chaleureuse, photographie d'intérieur d'architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2i0QPuoUm-kmHP2LW2sWeBPBb4hO9--NMuzfjm7t6zwjYABoWh6UsQQIM4-sBA9_BdNCVi0bvcTIwnr7fQ2guDKgcbIhBbL0ZCKCubbTnMN7wk8-a8Rs5VYZhX76fXNM3_x9mzzcKRlbjyD6yeV9cUgeYXSj-ri-FLAbYvn0m2pwHswqRBxS6Ks-7Z4sj3PPJ99NqCGql6OkQJjDsIZEPhKXfBokV_3hoG2bF8qo"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-primary/90 text-on-primary font-label-sm text-label-sm">Clé en main</span>
+</div>
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Rénovation complète salle de bain</h3>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase">Dès</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-secondary-container">1 200 €</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Dépose d'ancienne cabine, reprise d'étanchéité, plomberie multicouche apparente ou encastrée, pose carrelage sol et faïence murale, pose meuble vasque sur-mesure.
+                </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-sm text-tertiary-container">check</span> Main d'œuvre incluse</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-sm text-tertiary-container">schedule</span> 4 à 8 jours</span>
+</div>
+<button class="px-space-md py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors">
+                  Demander un chiffrage
+                </button>
+</div>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-48 h-36 rounded-xl overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Pose impeccable de parquet en chêne massif en point de Hongrie dans un appartement haussmannien rénové, reflets soyeux du vernis mat écologique, plinthes assorties parfaites, rendu chaleureux et artisanal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa3w-Ca8Ed5tFVsPT7EFvXJcJj_6xDZMS-qZfgsKetuAQqZ00e2oN74dd6QcrFInH6RM6oTw5kwenPAMjf00JU6MfQJN2D3nO3rSXrfRerq01xHJda0LGbyv5NM-9-l_fmcHjbh_HW9bXIgtSaZkiJpDsWfUsqox7VwLkv11sHLtzy_PJOChk6SomjHfRO1Y330KMVVXaxhRKjb0Hkkkb2H8HP1CygzVAFHlajrxQ"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-primary/90 text-on-primary font-label-sm text-label-sm">Au m²</span>
+</div>
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Pose parquet massif &amp; Ponçage rénovation</h3>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-extrabold text-secondary-container">45 € <span class="font-body-sm text-body-sm font-normal text-on-surface-variant">/ m²</span></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Ragréage fibré si nécessaire, pose collée ou flottante, isolation phonique sous-couche liège, ponçage 3 passes et vitrification 3 couches haute résistance mat ou satiné.
+                </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-sm text-tertiary-container">check</span> Matériel pro fourni</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-sm text-tertiary-container">inventory_2</span> Option fourniture bois</span>
+</div>
+<button class="px-space-md py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors">
+                  Demander un chiffrage
+                </button>
+</div>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-48 h-36 rounded-xl overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Meuble vasque suspendu taillé sur mesure en noyer massif avec assemblages à queue d'aronde apparents, plateau traité anti-humidité, tiroirs à fermeture amortie, finition huile naturelle de lin." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2QM9k7ZiNhwI3MPLmO-UcbKvB3qRyCe599Mb6kV0m0U7QZOY1WcukCddxHqp49797UFEwBK-n_-sgd1qfR1Jv_r0Z_0zQFKV-bivuL3EsJD7vXXVPQ9QwPaBbbjZnQT67jzT1l4Zvhu6xOQczrKMxslcKgr40imPPNpQ9fYaRTVg5aYX00gYEA86OmJONL8IXhLruzyuE41xsnmdB80A1uPKs7MZqrn5FHdX5fo8"/>
+<span class="absolute top-2 left-2 px-space-xs py-0.5 rounded bg-tertiary text-on-tertiary font-label-sm text-label-sm">Ébénisterie</span>
+</div>
+<div class="flex-1 flex flex-col justify-between gap-space-sm">
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Conception meuble &amp; agencement sur-mesure</h3>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm font-extrabold text-secondary-container">Sur devis</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Étude 3D préalable, sélection des essences en scierie locale (chêne, noyer, frêne), façonnage à l'atelier de Villeurbanne et installation soignée à domicile.
+                </p>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-sm text-tertiary-container">check</span> Modélisation 3D offerte</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-sm text-tertiary-container">verified</span> Bois certifié PEFC</span>
+</div>
+<button class="px-space-md py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors">
+                  Demander un chiffrage
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ONGLET 2 : CHANTIERS & FIL SOCIAL ================= -->
+<section class="tab-pane hidden flex flex-col gap-space-lg" id="tab-content-chantiers">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Chantiers récents &amp; Avant/Après</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Publications authentiques synchronisées directement depuis le fil social ProRelay.</p>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-space-xs" href="#">
+<span>Voir tout sur le fil</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Projet Carte 1 avec comparateur visuel Avant/Après -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-64 grid grid-cols-2 gap-1 bg-surface-container-high p-1">
+<div class="relative h-full overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Ancienne salle de bain décrépite des années 1970 avant rénovation, carrelage marron ébréché, tuyauterie apparente rouillée, lavabo usé, éclairage néon blafard, chantier avant travaux." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC86jAJxuI0zXoiUM8vIAMRSEzYeV-KU2z3Su0rfG1g6wvavlBb5vftmhU0tKYCvHvM_5oINGateIOF3nZuSfRLhKUaZhjGevGT5SXU0RVyhz2HvAPwXe122zHULZXXCLagy1T-lvETUV6_ET-QtXiX9E0_Nl66wK0Hhp-R_aEqGAOtpr9A-aXyzdesIJHBJ7veP7id1lG0vccsEQcw8egDKjoq1oRBXNuqoW1J19w"/>
+<span class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm">AVANT</span>
+</div>
+<div class="relative h-full overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Nouvelle salle de bain luxueuse et épurée après rénovation par l'artisan Laurent Mercier, carrelage blanc terrazzo, douche à l'italienne spacieuse avec paroi verrière noire, robinetterie encastrée dorée, spot tamisé." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPLagDdFrGqWDOqN2gbzLyExinJVfwfQa-ouuV61KlWzIbuCtSqmQaOr3XNLBgaztqMHqQ90pkMrbG0CdbTc5tZK1EVL2vdbhfH9_ft3gszwpWqJ0sgH6k301_vWAml_D7GE-X042HFooMvuK7oApIkAC2GIvQimg9I7c2fgZauABMbimoEsC9ds1FI7Sn6_LA-YkniCUFF-J3lrgQeQGryIg69S-mMsWoD3FwByM"/>
+<span class="absolute bottom-2 right-2 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">APRÈS</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Lyon 6e • Foch</span>
+<span>Terminé il y a 3 sem.</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-1">Métamorphose d'une salle de bain de 5m²</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+                    Dépose intégrale des gravats, réfection de l'étanchéité sous carrelage et pose d'un carrelage grand format avec niche murale éclairée.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm bg-surface-container-low px-space-sm py-1.5 rounded-lg font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary-container">thumb_up</span> 42 appréciations</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">forum</span> 8 retours</span>
+</div>
+</div>
+</div>
+<!-- Projet Carte 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-64 grid grid-cols-2 gap-1 bg-surface-container-high p-1">
+<div class="relative h-full overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Séjour encombré avec sol linoleum usé et coin bureau improvisé avant agencement sur-mesure, pièces sombres et manque total de rangement, vue brute." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNwTqMd_29bUsLNUO8zf9KsT2TXXubflNCUu91KFCkE-dWMGBVTMeFIFDviqE_g6eo7eZn_zkqJ9zm1kNtTjtPPOEjcInDjk2P0HBkRfVnAz-QiJUmOr89ejqPNRVF3ricnkn6_SvbgcwtGtm6nm_k8bg2xlPOJ_lmf3iwBRXc46NP_bci5RBvH4bcOWX0sbPNaxjbv5oHU7hqc_JFvanGiQbz9kMEjd7EMXhiS-g"/>
+<span class="absolute bottom-2 left-2 px-space-xs py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm">AVANT</span>
+</div>
+<div class="relative h-full overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="Bibliothèque magistrale en chêne massif et claustra ajourée sur mesure après intervention de menuiserie, intégration de spots LED chauds, coin lecture et banquette intégrée, esthétique contemporaine." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYbZw3R0lrS5_nZp6N5-wgZOgsOMVEEXLi1imiVdGohggpYLWrbC4UrbNP1IhQtCG6glnAvkzEDoRPV86ms3v54jvx1qMxSdW016CE9DcBr-gygJYJjQkz4ZeWwC9CvcvXkXG3m2PmsRoSv-zWmSCEc8RCYs47FiGxd9Z1iP6THi2v7Lq1HRdpMmubfsSjXlmK9Z15j2dI1v00mO54W-1_PFPqrH5jXu4ceytKFNQ"/>
+<span class="absolute bottom-2 right-2 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">APRÈS</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Caluire-et-Cuire</span>
+<span>Terminé il y a 1 mois</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-1">Bibliothèque murale &amp; Claustra en chêne blond</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+                    Conception complète pour structurer un grand espace à vivre avec rangements invisibles sans perçage de dalle chauffante.
+                  </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm mt-space-sm bg-surface-container-low px-space-sm py-1.5 rounded-lg font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary-container">thumb_up</span> 67 appréciations</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">forum</span> 14 retours</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ONGLET 3 : AVIS CLIENTS OFFICIELS ================= -->
+<section class="tab-pane hidden flex flex-col gap-space-lg" id="tab-content-avis">
+<!-- En-tête Avis & Pédagogie de Confiance -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">Avis Officiels Certifiés</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Basé sur 38 prestations entièrement clôturées et validées sur le protocole ProRelay.</p>
+</div>
+<div class="flex items-baseline gap-space-sm">
+<span class="font-headline-xl text-headline-xl font-extrabold text-primary">4.96</span>
+<div class="flex flex-col">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">38 clients réels</span>
+</div>
+</div>
+</div>
+<!-- Règle stricte anti-faux avis -->
+<div class="p-space-md rounded-xl bg-tertiary-fixed/20 text-on-surface flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-xl shrink-0 mt-0.5">verified</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Garantie Authenticité ProRelay :</strong> Ces avis ne peuvent <em>strictement</em> être déposés que par des clients ayant contractualisé, réalisé et clôturé un chantier avec Laurent Mercier sur la plateforme. Aucun avis sponsorisé ou anonyme non-vérifié.
+              </p>
+</div>
+<!-- Histogramme des notes avec SVG Progress Bars -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg pt-space-sm">
+<div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-12 text-on-surface-variant font-label-md text-label-md">5 étoiles</span>
+<div class="flex-1 h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 92%;"></div>
+</div>
+<span class="w-10 text-right font-label-md text-label-md text-on-surface">92%</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-12 text-on-surface-variant font-label-md text-label-md">4 étoiles</span>
+<div class="flex-1 h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 8%;"></div>
+</div>
+<span class="w-10 text-right font-label-md text-label-md text-on-surface">8%</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-12 text-on-surface-variant font-label-md text-label-md">3 étoiles</span>
+<div class="flex-1 h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 0%;"></div>
+</div>
+<span class="w-10 text-right font-label-md text-label-md text-on-surface">0%</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-12 text-on-surface-variant font-label-md text-label-md">2 étoiles</span>
+<div class="flex-1 h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 0%;"></div>
+</div>
+<span class="w-10 text-right font-label-md text-label-md text-on-surface">0%</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-12 text-on-surface-variant font-label-md text-label-md">1 étoile</span>
+<div class="flex-1 h-2.5 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 0%;"></div>
+</div>
+<span class="w-10 text-right font-label-md text-label-md text-on-surface">0%</span>
+</div>
+</div>
+<!-- Radar de satisfaction critères -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant">Propreté du chantier</span>
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">5.0 / 5</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant">Respect des délais</span>
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">4.9 / 5</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant">Communication &amp; Devis</span>
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">5.0 / 5</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col justify-center">
+<span class="font-caption text-caption text-on-surface-variant">Finitions &amp; Détails</span>
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary">4.9 / 5</span>
+</div>
+</div>
+</div>
+</div>
+<!-- LISTE DES AVIS RÉELS DÉTAILLÉS -->
+<div class="flex flex-col gap-space-md">
+<!-- Carte Avis 1 avec Audio Player interactif & photos client -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-lg">
+                    MD
+                  </div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Marc Delorme</h4>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">check</span>
+                        Prestation confirmée
+                      </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Chantier terminé le 12 Février 2025 • Rénovation Salle d'eau &amp; Vasque</span>
+</div>
+</div>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Note Vocale Client (Player Interactif) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-md">
+<button class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 hover:scale-105 transition-transform" onclick="toggleAudio(this)">
+<span class="material-symbols-outlined text-xl">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex items-center justify-between font-caption text-caption">
+<span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-base">mic</span>
+                      Témoignage vocal de Marc D.
+                    </span>
+<span class="text-on-surface-variant">0:34</span>
+</div>
+<!-- Ondes audio factices -->
+<div class="h-4 flex items-center gap-1">
+<div class="h-2 w-1 rounded-full bg-primary"></div>
+<div class="h-4 w-1 rounded-full bg-primary"></div>
+<div class="h-3 w-1 rounded-full bg-primary"></div>
+<div class="h-5 w-1 rounded-full bg-primary"></div>
+<div class="h-2 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-4 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-3 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-1 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-3 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-5 w-1 rounded-full bg-outline-variant"></div>
+<div class="h-2 w-1 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+</div>
+<!-- Texte d'avis -->
+<p class="font-body-md text-body-md text-on-surface">
+                "Laurent est un artisan d'une précision chirurgicale. Non seulement les découpes d'onglet sur le zellige vert sont invisibles, mais il a laissé le chantier aspiré et propre chaque soir. Devis respecté à l'euro près, paiement direct sans friction en fin de chantier."
+              </p>
+<!-- Photos réelles postées par le client -->
+<div class="flex items-center gap-space-sm">
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-container cursor-pointer hover:opacity-90">
+<img class="w-full h-full object-cover" data-alt="Détail haute résolution d'un carrelage mural vert sauge en zellige avec des joints parfaits et une robinetterie noire mat prise en photo par le client satisfait Marc D." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRsQREV_5GM0pHy5nQPU1Q-rNOluRmO9J7E8k16VxQBA9qlOG8HpNS6wzbV3Hn0cmBVB8U3aFPR-yMmDPExygwVfgw5AuvzhxJQ_2VEaR5oSFy0Dp8FvEJ0QLIwS14mn0sP77OyeW4zIyQnT6R6KqoaaUtsFlhTEa63tIEDLZASLphbwHKQtf553QpmGIIDkL1gNDjXmpf49IF93UnkBAmztUve4VwsNQpjJRBE-0"/>
+</div>
+<div class="w-24 h-24 rounded-lg overflow-hidden bg-surface-container cursor-pointer hover:opacity-90">
+<img class="w-full h-full object-cover" data-alt="Photo grand angle prise par le client Marc Delorme montrant sa salle de bain neuve et lumineuse après les travaux de menuiserie et faïence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_nqexy5aRvgZpK54NIQaSRX_BQW14ZjOkX69vPRaGaXxclwFuKSeVo0BVAq8ZoTqYUlSBDyiAOFQypI0Nh_Y_yaY-lmhUt-erZ8dXQFouB7DRYuxyiMrtF7vaZI4VI2Xa5k085b6Lb1Zvdm882mIPzDwXmvsUnM8ppMJTx0dvgk6KZkC8lIRtIo6lTW52A5yCt3rIjbZwt7KSceNaX_ZPkN41sVQ6r2_B9mNWc68"/>
+</div>
+</div>
+<!-- Réponse publique de l'artisan Laurent Mercier -->
+<div class="mt-space-xs p-space-md rounded-xl bg-surface-container-high/60 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-primary font-bold">
+<span class="material-symbols-outlined text-base">reply</span>
+<span>Réponse de Laurent Mercier (Artisan)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Le 14 Février 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  "Merci infiniment Marc ! Ce fut un plaisir de travailler sur un tel projet avec un client qui apprécie le travail des matières nobles. Profitez bien de votre nouvel espace !"
+                </p>
+</div>
+</div>
+<!-- Carte Avis 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary flex items-center justify-center font-bold text-lg">
+                    SL
+                  </div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Sophie Lefèvre</h4>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs">check</span>
+                        Prestation confirmée
+                      </span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Chantier terminé le 28 Janvier 2025 • Pose Parquet Point de Hongrie</span>
+</div>
+</div>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                "Rénovation complète du parquet de notre appartement ancien. Le ragréage était complexe vu l'état du sous-plancher, mais Laurent a su trouver la solution technique parfaite. Très pédagogue et rassurant."
+              </p>
+<!-- Réponse publique -->
+<div class="mt-space-xs p-space-md rounded-xl bg-surface-container-high/60 flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-primary font-bold">
+<span class="material-symbols-outlined text-base">reply</span>
+<span>Réponse de Laurent Mercier (Artisan)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Le 29 Janvier 2025</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  "Merci Sophie pour votre accueil et le café du matin ! Votre sol en chêne massif a retrouvé ses lettres de noblesse pour les 50 prochaines années."
+                </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= ONGLET 4 : À PROPOS & ÉQUIPEMENTS ================= -->
+<section class="tab-pane hidden flex flex-col gap-space-lg" id="tab-content-apropos">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<h2 class="font-headline-md text-headline-md text-primary font-bold">À propos de l'artisan</h2>
+<p class="font-body-md text-body-md text-on-surface">
+              Après 14 années passées au sein des Compagnons du Tour de France puis comme chef d'équipe en agencement haut de gamme, j'ai fondé mon atelier indépendant au cœur du bassin lyonnais. Mon objectif : associer la noblesse du bois massif aux exigences modernes de plomberie et d'étanchéité contemporaine.
+            </p>
+<p class="font-body-md text-body-md text-on-surface">
+              Chaque chantier est traité de manière personnalisée avec une charte de propreté stricte (aspiration cyclonique, protection des sols de circulation, évacuation en déchetterie professionnelle agréée).
+            </p>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-space-sm">Parc machine &amp; Équipement professionnel</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm font-body-sm text-body-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container">construction</span>
+<span>Scie sous table Festool &amp; rails de précision</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container">plumbing</span>
+<span>Sertisseuse multicouche professionnelle Virax</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container">cleaning_services</span>
+<span>Aspirateur classe M filtre HEPA (zéro poussière)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-container">local_shipping</span>
+<span>Véhicule atelier équipé 14m³</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-space-sm">Assurances &amp; Références administratives</h3>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="text-on-surface-variant">Raison sociale</span>
+<span class="font-bold text-on-surface">MERCIER RENOVATION SASU</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="text-on-surface-variant">SIREN</span>
+<span class="font-bold text-on-surface">892 411 028 (RCS Lyon)</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="text-on-surface-variant">Assurance RC Professionnelle</span>
+<span class="font-bold text-on-surface">SMABTP Police N° 419208-C (À jour 2025)</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-on-surface-variant">Attestation décennale</span>
+<span class="font-bold text-on-surface">Fournie systématiquement sur devis</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ================= COLONNE LATÉRALE DE RÉASSURANCE (4 COLS) ================= -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- ENCADRÉ PAIEMENT DIRECT SANS COMMISSION -->
+<div class="p-space-lg rounded-xl bg-primary text-on-primary shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">payments</span>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg font-bold">Règlement Direct</h3>
+<p class="font-caption text-caption text-primary-fixed">De la main à la main ou virement</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+            Sur ProRelay, <strong>aucune commission n'est prélevée sur votre paiement</strong>. Vous réglez directement Laurent Mercier selon les jalons convenus ensemble (acompte, intermédiaire, solde).
+          </p>
+<div class="p-space-sm rounded-lg bg-primary-container text-surface-container-highest flex items-center gap-space-sm font-caption text-caption">
+<span class="material-symbols-outlined text-base text-secondary-container">shield</span>
+<span>Facturation conforme &amp; devis signé obligatoire</span>
+</div>
+</div>
+<!-- ZONE D'INTERVENTION & CARTE ILLUSTRATIVE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base">explore</span>
+<span>Périmètre d'intervention</span>
+</h3>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">35 km</span>
+</div>
+<div class="w-full h-48 bg-cover bg-center rounded-xl relative overflow-hidden flex items-end p-space-sm shadow-inner" data-location="Lyon, France" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWYxVgONwA-KtnCPoKKuAkCojoge1tg0i_ejsLvUUdyqIUQ0g1XyPqmpxlD2lhJFgwSp8jVoiojHNv3pqosR-MmpvnMe7dVRg_Z9RCTMOV2BzwcLLASAOigqJ2WYTg0jWyn-4CjfnNwGRev27y9j2jlirHoCSL9uiGCCN4snByAi3CDFZ4hPO2bFMN5K3-yA-ZelDWQHGc4nWS1D0kI4cEBcQpx-w82UMvnpESxd8');">
+<div class="absolute inset-0 bg-primary/20 pointer-events-none"></div>
+<div class="relative z-10 px-space-md py-1.5 rounded-lg bg-surface/90 backdrop-blur-md text-primary font-label-sm text-label-sm shadow flex items-center gap-1">
+<span class="material-symbols-outlined text-base text-error">pin_drop</span>
+<span>Atelier : 69003 Lyon</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span>
+<span>Lyon 1er à 9e arrondissement</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span>
+<span>Villeurbanne, Bron, Vénissieux</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span>
+<span>Caluire, Écully, Tassin-la-Demi-Lune</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary">check_circle</span>
+<span>Monts d'Or &amp; Ouest Lyonnais (sur demande)</span>
+</div>
+</div>
+</div>
+<!-- HORAIRES D'INTERVENTION & CONTACT -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<h3 class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>Disponibilités &amp; Horaires</span>
+</h3>
+<div class="flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between py-1 text-on-surface">
+<span class="font-medium">Lundi - Vendredi</span>
+<span>07:30 - 18:30</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface">
+<span class="font-medium">Samedi</span>
+<span>08:30 - 12:30 (Urgences &amp; Devis)</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span class="font-medium">Dimanche &amp; Fériés</span>
+<span class="text-error font-medium">Fermé</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="w-full py-2.5 px-space-md rounded-xl bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center justify-center gap-space-sm hover:brightness-105 transition-all text-center" href="#devis-modal">
+<span class="material-symbols-outlined text-lg">event_available</span>
+<span>Prendre un créneau de visite</span>
+</a>
+</div>
+</div>
+<!-- CHARTE QUALITÉ DE L'ARTISAN -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex flex-col gap-space-sm">
+<h3 class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-base text-tertiary-container">verified</span>
+<span>Engagements Laurent Mercier</span>
+</h3>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-primary mt-1">check</span>
+<span>Devis gratuit et détaillé remis sous 48h maximum.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-primary mt-1">check</span>
+<span>Chantier protégé et nettoyé en fin de chaque journée.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-primary mt-1">check</span>
+<span>Utilisation prioritaire de bois français éco-certifié.</span>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</div>
+<!-- MODAL / DRAWER INTERACTIF DE DEVIS DIRECT (ACCESSIBLE VIA LIEN OU CLIC) -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-center justify-center p-4" id="devis-modal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-space-xl shadow-2xl relative">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-on-surface p-1 rounded-full hover:bg-surface-container" onclick="document.getElementById('devis-modal').classList.add('hidden'); document.getElementById('devis-modal').classList.remove('flex');">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="p-2 rounded-xl bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-xl">draw</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Demande de devis direct</h3>
+<p class="font-caption text-caption text-on-surface-variant">À destination de Laurent Mercier • Sans frais de service</p>
+</div>
+</div>
+<form class="flex flex-col gap-space-md font-body-sm text-body-sm" onsubmit="event.preventDefault(); alert('Votre demande de devis a été transmise directement à Laurent Mercier ! Vous recevrez une notification sous 20 minutes.'); document.getElementById('devis-modal').classList.add('hidden'); document.getElementById('devis-modal').classList.remove('flex');">
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-1">Prestation recherchée *</label>
+<select class="w-full p-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary text-on-surface" required="">
+<option>Rénovation complète salle de bain</option>
+<option>Pose parquet massif &amp; ponçage</option>
+<option>Meuble vasque / menuiserie sur-mesure</option>
+<option>Autre besoin de rénovation</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-1">Localisation du chantier (Commune / Arrondissement) *</label>
+<input class="w-full p-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary text-on-surface placeholder:text-outline" placeholder="Ex: Lyon 6e ou Villeurbanne" required="" type="text"/>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface block mb-1">Description sommaire de votre projet *</label>
+<textarea class="w-full p-3 rounded-xl bg-surface-container-low border border-outline-variant focus:outline-none focus:border-primary text-on-surface placeholder:text-outline" placeholder="Dimensions approximatives, matériaux souhaités, contraintes d'accès..." required="" rows="3"></textarea>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center gap-space-sm font-caption text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-container">verified_user</span>
+<span>Vos coordonnées ne sont partagées qu'avec Laurent Mercier. Aucun démarchage commercial.</span>
+</div>
+<button class="w-full py-3 rounded-xl bg-secondary-container text-on-secondary-container font-label-lg text-label-lg font-bold shadow-md hover:brightness-105 active:scale-95 transition-all" type="submit">
+          Transmettre la demande gratuitement
+        </button>
+</form>
+</div>
+</div>
+<!-- SCRIPT LOGIQUE DES ONGLETS & INTERACTIONS -->
+<script>
+    function switchTab(tabName) {
+      // Masquer tous les panneaux
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      
+      // Réinitialiser le style des boutons
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.add('text-on-surface-variant', 'hover:text-on-surface', 'hover:bg-surface-container-high');
+      });
+
+      // Afficher le bon panneau
+      const targetPane = document.getElementById('tab-content-' + tabName);
+      if (targetPane) targetPane.classList.remove('hidden');
+
+      // Styliser le bouton actif
+      const targetBtn = document.getElementById('tab-btn-' + tabName);
+      if (targetBtn) {
+        targetBtn.classList.remove('text-on-surface-variant', 'hover:text-on-surface', 'hover:bg-surface-container-high');
+        targetBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+    }
+
+    // Gestion du modal de devis
+    document.querySelectorAll('a[href="#devis-modal"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const modal = document.getElementById('devis-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      });
+    });
+
+    // Toggle bouton audio factice
+    function toggleAudio(btn) {
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (icon.textContent === 'play_arrow') {
+        icon.textContent = 'pause';
+        btn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        btn.classList.remove('bg-primary-container', 'text-on-primary');
+      } else {
+        icon.textContent = 'play_arrow';
+        btn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+        btn.classList.add('bg-primary-container', 'text-on-primary');
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(23,74,112,0.03)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="ProRelay Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/><span class="font-headline-sm text-headline-sm text-primary font-bold">ProRelay</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">La plateforme de confiance reliant clients exigeants et artisans certifiés. Comparez les réalisations avant/après réelles et réglez en direct sans frais cachés.</p><div class="flex flex-col gap-space-sm pt-space-xs"><div class="inline-flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-surface-container-low w-fit"><span class="material-symbols-outlined text-tertiary-container">payments</span><span class="font-label-md text-label-md text-on-surface">Paiement direct de la main à la main</span></div><div class="inline-flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-surface-container-low w-fit"><span class="material-symbols-outlined text-tertiary-container">verified_user</span><span class="font-label-md text-label-md text-on-surface">Vérification d'identité &amp; diplômes contrôlés</span></div></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Catégories Clés</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Bâtiment &amp; Rénovation</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Plomberie &amp; Sanitaire</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Électricité &amp; Énergie</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Menuiserie &amp; Agencement</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Mécanique &amp; Dépannage</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Services Numériques &amp; Design</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Confiance &amp; Sécurité</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Charte de vérification Pro</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Règles de paiement direct</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Médiation de litige</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Avis clients vérifiés</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Centre d'assistance</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Région &amp; Devises</h4><div class="flex flex-col gap-space-sm"><label class="font-caption text-caption text-on-surface-variant">Zone d'intervention</label><div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-base text-primary">language</span><select aria-label="Sélectionner la langue et la zone géographique" class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none w-full cursor-pointer"><option>Français (International)</option><option>English (Canada / Global)</option></select></div><label class="font-caption text-caption text-on-surface-variant mt-space-xs">Territoire &amp; Monnaie</label><div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-base text-primary">monetization_on</span><select aria-label="Sélectionner la devise et le pays" class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none w-full cursor-pointer"><option>France • EUR (€)</option><option>Sénégal • XOF (FCFA)</option><option>Côte d'Ivoire • XOF (FCFA)</option><option>Canada • CAD ($)</option></select></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 ProRelay Marketplace. Tous droits réservés. Transactions de gré à gré protégées.</p><div class="flex items-center gap-space-lg font-label-md text-label-md"><a class="hover:text-on-surface transition-colors" data-path="conditions-generales" href="#">Conditions Générales</a><a class="hover:text-on-surface transition-colors" data-path="confidentialite" href="#">Politique de Confidentialité</a><a class="hover:text-on-surface transition-colors" data-path="mentions-legales" href="#">Mentions Légales</a></div></div></div></footer></body></html>

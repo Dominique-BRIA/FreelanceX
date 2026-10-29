@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#743500","on-primary-container":"#8db9e5","inverse-surface":"#2d3133","on-tertiary-fixed-variant":"#005049","secondary-fixed-dim":"#ffb68a","surface-container-low":"#f2f4f6","on-background":"#191c1e","on-tertiary-container":"#58c6b9","error":"#ba1a1a","surface-bright":"#f8f9fb","inverse-primary":"#9fcbf7","secondary":"#994700","on-primary-fixed-variant":"#174a70","on-secondary-container":"#6c3000","on-tertiary-fixed":"#00201d","surface-container-lowest":"#ffffff","tertiary-fixed":"#89f5e7","tertiary":"#003732","tertiary-fixed-dim":"#6bd8cb","primary":"#003353","on-primary-fixed":"#001d33","secondary-fixed":"#ffdbc8","primary-container":"#174a70","surface-dim":"#d8dadc","error-container":"#ffdad6","surface-container-highest":"#e0e3e5","surface-container":"#eceef0","surface-variant":"#e0e3e5","secondary-container":"#ff9247","primary-fixed":"#cee5ff","background":"#f8f9fb","on-surface":"#191c1e","on-error-container":"#93000a","on-secondary-fixed":"#321300","surface-container-high":"#e6e8ea","on-tertiary":"#ffffff","inverse-on-surface":"#eff1f3","outline-variant":"#c2c7cf","primary-fixed-dim":"#9fcbf7","on-surface-variant":"#42474e","surface-tint":"#346289","on-error":"#ffffff","on-primary":"#ffffff","outline":"#72777f","tertiary-container":"#005049","on-secondary":"#ffffff","surface":"#f8f9fb"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"1rem",margin:"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2.5rem","space-lg":"1.5rem","margin-sm":"1rem",gutter:"1.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],caption:["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"22px",letterSpacing:"0.005em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-xl-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"700"}],caption:["12px",{lineHeight:"16px",fontWeight:"500"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"800"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,74,112,0.06)]"><div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm" data-path="trouver-un-pro" href="#"><img alt="ProRelay Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">ProRelay</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-base text-tertiary-container">public</span><select aria-label="Sélectionner un pays et une devise" class="bg-transparent text-on-surface-variant font-label-md text-label-md outline-none cursor-pointer pr-1"><option value="FR">🇫🇷 France • EUR €</option><option value="SN">🇸🇳 Sénégal • XOF</option><option value="CI">🇨🇮 Côte d'Ivoire • XOF</option><option value="CA">🇨🇦 Canada • CAD $</option></select></div></div><div class="flex-1 max-w-lg hidden md:block"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-xl pointer-events-none">search</span><input class="w-full pl-11 pr-space-md py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" placeholder="Trouver un besoin, un métier, un mot-clé (ex: plombier, menuiserie)..." type="text"/></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden lg:flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-low" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl"><a class="px-space-md py-2 rounded-xl text-on-surface-variant font-label-lg text-label-lg transition-colors hover:text-on-surface" data-path="trouver-un-pro" href="#">Trouver un pro / Services</a><a class="px-space-md py-2 rounded-xl text-on-surface-variant font-label-lg text-label-lg transition-colors hover:text-on-surface" data-path="fil-realisations" href="#">Fil Réalisations</a></nav><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-2xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-secondary-container ring-2 ring-surface"></span></button><button aria-label="Messagerie directe" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-2xl">chat_bubble</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface"></span></button></div><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:opacity-95 transition-opacity" data-path="mode-prestataire" href="#"><span class="material-symbols-outlined text-base">swap_horiz</span><span>Mode Prestataire</span></a><a class="shrink-0 ring-2 ring-surface-container-high rounded-full hover:ring-primary-container transition-all" data-path="profil-utilisateur" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLWSBRTdOqH-9cEA9FTCA644TFpWb5u52hfNs5Khvl5VwnXyizH05JgDCC02kY8FakP11tkyEFza6Tq3ehOp2vm31wXTDdYLFekuIGy8TahO7gwsVourl87fe5SMNLTyjLtgoevrRmEK86biB_qd1Os4Yq7JQvnsdhufGKAROd56JuY4d5wRmVA7CWAIQAjaLvNGYdTcWlvJWTjAuRLS78Fh3o7HQJzbkfega9x0"/></a></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Top Banner & Filter Matrix -->
+<section class="w-full bg-surface-container-low/70 py-space-md">
+<div class="max-w-[1280px] mx-auto px-gutter flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span>Galerie Vivante des Chantiers &amp; Services</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Fil Réalisations en direct</h1>
+</div>
+<!-- Quick Segmented Navigation -->
+<div class="flex items-center gap-space-xs overflow-x-auto p-1.5 rounded-xl bg-surface-container-lowest shadow-sm">
+<button class="tab-btn px-space-md py-2 rounded-lg bg-primary font-label-md text-label-md text-on-primary shadow-sm transition-all" data-target="all" type="button">
+          Toutes les réalisations
+        </button>
+<button class="tab-btn px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" data-target="categories" type="button">
+          Par catégorie
+        </button>
+<button class="tab-btn px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all flex items-center gap-1" data-target="nearby" type="button">
+<span class="material-symbols-outlined text-base text-secondary">near_me</span>
+          À proximité (15 km)
+        </button>
+<button class="tab-btn px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all flex items-center gap-1" data-target="before-after" type="button">
+<span class="material-symbols-outlined text-base text-tertiary-container">compare</span>
+          Vidéos &amp; Avant/Après
+        </button>
+</div>
+</div>
+</section>
+<!-- 3-Column Core Grid -->
+<div class="max-w-[1280px] mx-auto px-gutter py-space-lg w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- ================= LEFT RAIL: Filters & Pro Shortcut ================= -->
+<aside class="lg:col-span-3 flex flex-col gap-space-lg lg:sticky lg:top-24">
+<!-- Action Card: Poster ma réalisation (Mode Prestataire) -->
+<div class="bg-primary text-on-primary rounded-xl p-space-md shadow-md relative overflow-hidden flex flex-col gap-space-sm">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-primary-container/40 pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold">
+              Espace Pro
+            </span>
+<span class="material-symbols-outlined text-primary-fixed">photo_camera</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm leading-snug font-bold">Valorisez vos chantiers</h2>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+              Partagez une transformation avant/après pour recevoir des demandes directes de clients géolocalisés.
+            </p>
+</div>
+<button class="mt-space-xs w-full py-2.5 px-space-md rounded-xl bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Publier un chantier</span>
+</button>
+</div>
+<!-- Filter Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">tune</span>
+              Filtres
+            </h3>
+<button class="font-caption text-caption text-secondary hover:underline" type="button">Réinitialiser</button>
+</div>
+<!-- Metiers List -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">Corps de métier</label>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-xs" type="button">
+                Tous les métiers
+              </button>
+<button class="px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+                Bâtiment &amp; Maçonnerie
+              </button>
+<button class="px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+                Plomberie &amp; Sanitaire
+              </button>
+<button class="px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+                Électricité &amp; Domotique
+              </button>
+<button class="px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+                Menuiserie &amp; Cuisine
+              </button>
+<button class="px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+                Peinture &amp; Déco
+              </button>
+</div>
+</div>
+<!-- Ville & Distance -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface">Ville ou code postal</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-lg">location_on</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]" type="text" value="Lyon (69000)"/>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-1">
+<span>Rayon max:</span>
+<span class="font-label-md text-label-md text-primary font-bold">25 km</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container-high rounded-lg cursor-pointer" max="100" min="5" type="range" value="25"/>
+</div>
+<!-- Trust Checkbox -->
+<div class="pt-space-xs flex flex-col gap-2">
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 accent-tertiary-container rounded cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+                  Certifiés ProRelay
+                  <span class="material-symbols-outlined text-sm text-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+<span class="font-caption text-caption text-on-surface-variant">Identité, KBIS &amp; décennale vérifiés</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm cursor-pointer p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 accent-secondary rounded cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Disponible sous 48h</span>
+<span class="font-caption text-caption text-on-surface-variant">Prêt pour interventions d'urgence</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Mini Stats Box -->
+<div class="p-space-md rounded-xl bg-surface-container-high/60 flex items-center justify-around text-center">
+<div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">1 240+</span>
+<p class="font-caption text-caption text-on-surface-variant">Chantiers inspectés</p>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">98.4%</span>
+<p class="font-caption text-caption text-on-surface-variant">Satisfaction directe</p>
+</div>
+</div>
+</aside>
+<!-- ================= CENTER RAIL: Social Work Feed ================= -->
+<main class="lg:col-span-6 flex flex-col gap-space-xl">
+<!-- Post 1: Chantier Rénovation Salle de Bain (Avant / Après) -->
+<article class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col transition-all">
+<!-- Post Header -->
+<div class="p-space-md flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait professionnel souriant d'un artisan plombier chauffagiste carreleur portant un polo de chantier marine ProRelay dans son atelier baigné d'une lumière naturelle chaleureuse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO4XN0nGBcAXz_9KkXXVOUwCUOkXM10o3dBaSnv3b9lmuu1HmVG62o5f47IRD40jAiBSrjxeGUO4pefzgUtk_Q-CuVjbBdW8F67J-vi267f8l57ktmMQ4yrJH3YtwYdtJWgJzVpVgGh1BJa1P4XoxT-wLQJuKJMv4J7cROiA6BVBmg2VOyIftnZSHm1u6DRm08LvTqwG8CLd-SE2G0wbYhcM9DigU2LKeYJcArgEo"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold leading-none">Laurent Mercier</h4>
+<!-- Verified Badge -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Artisan Certifié
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">location_on</span>
+                    Lyon 6e • Il y a 3 heures
+                  </span>
+<span>•</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">Rénovation &amp; Carrelage</span>
+</div>
+</div>
+</div>
+<button aria-label="Options de la publication" class="text-on-surface-variant hover:text-on-surface p-1 rounded-full hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Work Summary & Detailed Scope -->
+<div class="px-space-md pb-space-sm flex flex-col gap-2">
+<h5 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Rénovation intégrale d'une salle d'eau vintage (6m²) : douche italienne &amp; faïence zellige
+            </h5>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Dépose complète des sanitaires anciens des années 80, reprise de l'étanchéité sous carrelage (SPEC), pose d'un receveur extra-plat 120x90cm et robinetterie encastrée thermostatique noir mat. Finition joints hydrofuges haute résistance.
+            </p>
+</div>
+<!-- Price & Time Tag Bar -->
+<div class="px-space-md py-2 bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-caption text-caption uppercase tracking-wider text-on-surface-variant">Tarif indicatif :</span>
+<span class="font-headline-sm text-headline-sm text-primary font-extrabold bg-surface-container-lowest px-2.5 py-0.5 rounded-lg shadow-xs">
+                1 450 €
+              </span>
+<span class="font-caption text-caption text-on-surface-variant">(Fourniture &amp; Pose main d'œuvre)</span>
+</div>
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-tertiary-container bg-surface-container-lowest px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Durée : 4 jours ouvrés</span>
+</div>
+</div>
+<!-- Interactive Before / After Dual Frame Gallery -->
+<div class="relative w-full bg-surface-dim overflow-hidden group">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-1 p-1 bg-surface-container">
+<!-- Before Image -->
+<div class="relative overflow-hidden rounded-lg aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="Photographie de chantier montrant une ancienne salle de bain défraîchie avec carrelage beige usé des années 1980 tuyauterie apparente et vieille baignoire émaillée avant travaux." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhfbviZQJIYrdHuQY72o568qNfDvS8Ukx50SEZaEZQyqWVGpZoUKKCgMEe9fPyCNziTedZBsG4O0hfpN1zQu_kdL-BTQwtgHfZej-_Us-nrPFxxj6rktTmzhb7Cta8STogtkOYsxqRb7RpR_YAeUhHsCE8twiengNzLKYWPSZOQQkW46VFyxtlgFvWJPMAzTI75HMeirtj-h-fRM3qIunCelIogAmKmdR_fCJWoKc"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/80 backdrop-blur-md text-on-primary font-label-sm text-label-sm tracking-wide font-bold">
+                  AVANT TRAVAUX
+                </span>
+</div>
+<!-- After Image -->
+<div class="relative overflow-hidden rounded-lg aspect-[4/3]">
+<img class="w-full h-full object-cover" data-alt="Photographie lumineuse d'une salle de bain moderne entièrement rénovée avec douche à l'italienne spacieuse parois de verre carrelage zellige vert émeraude et robinetterie moderne noir mat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWWVWaHw4nbx3UXguIOzm_yjC5pTcnXeMbaWH0a7XUJ1isMJbW8Rmy4DW-ckvIkbWekDFNOnU37GBJOnLBbHn6-fjoO3-i9Kw-BqSsUhiDcM7mssASED9mzGc2R0aL1nHNk2aIhS7-wIYB7tR83Lsyq3Y5bvB8Jpa6-Arekv5JsozdmXDgASsCftKMqGYgYTe2_7yOHHP2udAOeGtQcXYai4dMCiiRTd7Sfidecq0"/>
+<span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-container/90 backdrop-blur-md text-on-tertiary font-label-sm text-label-sm tracking-wide font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">auto_awesome</span>
+                  RÉSULTAT APRÈS
+                </span>
+<span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-surface-container-lowest/90 text-on-surface font-caption text-caption backdrop-blur-sm">
+                  +4 photos haute résolution
+                </span>
+</div>
+</div>
+</div>
+<!-- Primary Direct Conversion Trigger (Highlighted per Chapter 4/5) -->
+<div class="p-space-md bg-gradient-to-r from-primary-fixed/30 via-surface-container-lowest to-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">request_quote</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-primary font-bold">Vous avez un projet similaire ?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">L'artisan reçoit directement la référence de ce chantier.</span>
+</div>
+</div>
+<button class="px-space-md py-3 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-sm flex items-center justify-center gap-2 shrink-0" type="button">
+<span class="material-symbols-outlined text-lg">forward_to_inbox</span>
+<span>Demander un devis sur ce modèle</span>
+</button>
+</div>
+<!-- Social Engagement Bar -->
+<div class="px-space-md py-3 flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-md">
+<button class="like-button flex items-center gap-1.5 hover:text-secondary transition-colors" data-liked="false" type="button">
+<span class="material-symbols-outlined text-xl transition-transform active:scale-125">favorite</span>
+<span class="like-count">34</span>
+<span class="hidden sm:inline">J'aime</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">chat_bubble</span>
+<span>8 Commentaires</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">share</span>
+<span class="hidden sm:inline">Partager</span>
+</button>
+</div>
+<button class="flex items-center gap-1 hover:text-primary transition-colors" title="Enregistrer dans mes inspirations" type="button">
+<span class="material-symbols-outlined text-xl">bookmark_border</span>
+<span class="hidden sm:inline">Enregistrer</span>
+</button>
+</div>
+<!-- Multimedia Comments Section (Clients, Voice Notes & Pro Response) -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h6 class="font-label-lg text-label-lg text-primary font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">forum</span>
+                Questions &amp; Échanges sur ce chantier (8)
+              </h6>
+<span class="font-caption text-caption text-on-surface-variant">Visible publiquement</span>
+</div>
+<!-- Comment 1: Client question with image attachment -->
+<div class="flex gap-space-sm items-start">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait moderne d'une jeune femme cliente avec lunettes et chemisier bleu sur fond sobre urbain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9pR7m3PhEP29EAa1UJ9W3IdcfsNE-d4PI3Zt3DJKvfY4qfEc4oV4morEblhAiF8q1JkBTzdUoYE5SZcRsPolGHcNpEouOt983_S6yxGDBDKATuh8rtCGGZtpQMyI9SNqVp_Xk7raIVJCu9E6B-TwaCL1p0GLkj7V3gavbIw14evIRPdpvV8EpfS7fPmuc20veKTZZdiiLs1-053OCpYssSLKsgi3yXxt1n3dGQeY"/>
+<div class="flex-1 flex flex-col gap-1.5">
+<div class="bg-surface-container-lowest p-3 rounded-2xl rounded-tl-none shadow-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Camille D. (Villeurbanne)</span>
+<span class="font-caption text-caption text-on-surface-variant">Hier à 18:22</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+                    Bonjour Laurent, superbe travail ! Pour le carrelage zellige, est-ce compatible avec une cloison légère en placo standard ou avez-vous renforcé l'ossature ? Voici l'état actuel chez moi :
+                  </p>
+<!-- Client Attached Photo -->
+<div class="mt-2 w-32 h-20 rounded-lg overflow-hidden relative shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Gros plan sur une cloison de salle de bain avec échantillon de peinture et placo vert hydrofuge en cours de préparation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGHeUIP7kb-r3VSXkLdDH90Bt6ZpY_a-rauoikhfdOXJCLgMWPEiOvvzfD24jEGa7CNK4hnGR9I2hjQ-5P8F1vd_3fVbNksd5BY3eB2PwcX0kV_O9PAX_TDXhvOGcOyVoZIKHM5L90oC93kO7qTu761EC7fDh_ojH3I93RbwewnPABgIZaM09p4XXQTWUU1PsNOG-TTr_GlO4fpldc6C0FO02n6WrOl6Zch29iuWw"/>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-caption text-[10px]">Photo jointe</span>
+</div>
+</div>
+<!-- Pro Direct Reply Nested -->
+<div class="ml-4 flex gap-space-sm items-start">
+<img class="w-7 h-7 rounded-full object-cover shrink-0" data-alt="Miniature d'artisan Laurent Mercier avec badge vérifié discret." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8dXEAAvhOL0Bj6FKIVZ_qpHtz9J7l-z4tO15GlgmgzGhe9fuo9H4SbCkGnbvcEKYVU5lU-WZo8p7cWZ9zp5xreF1UOVc1_1h6U9IsBd1faPZDb0sA1RVwGza3bmc_rvbWCzYMK-wEetUJJm_T3vsJ4FA4HnxHZ4gxRzAVIWNMZAPU7PnilsZQQTUc3hVD1LjnanyfsfbaPw3IBfOdTVi8D9QdcOqaAbJ8T-gzNVM"/>
+<div class="flex-1 bg-primary-fixed/20 p-3 rounded-2xl rounded-tl-none">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary font-bold">Laurent Mercier</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold">Artisan créateur</span>
+<span class="font-caption text-caption text-on-surface-variant ml-auto">Il y a 14h</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">
+                      Bonjour Camille ! Oui tout à fait, nous utilisons systématiquement un primaire d'accrochage spécifique et une double peau placo marine (BA13 hydro). Je peux passer évaluer la portance si vous êtes sur Villeurbanne !
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment 2: Voice Note Audio Player Simulation -->
+<div class="flex gap-space-sm items-start">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait d'un homme en tenue décontractée souriant en extérieur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvv7F3cj0bjTRnCpSg4KWA3T-4zDOmj7H3KmudXpBVlhencbKRyiBOb6mPrxi6-tneHxcCmwgMTM8Sb1tfk5OPP8GauXUfqg0NCXs6pgDCeiNAnc5qu_tOTR3Yyn11DPcmIhp5SfS9xEwJ-cEKLt3yqLhm6ae8QEETLDTU3SF-9121WJREJKsHNrPAQdbdshT46PwhDu0Ma8umnjF9Q1BVWMTuyMwNVLrmI2SDR2w"/>
+<div class="flex-1 bg-surface-container-lowest p-3 rounded-2xl rounded-tl-none shadow-xs flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">Antoine Renaud</span>
+<span class="font-caption text-caption text-on-surface-variant">Hier à 21:05</span>
+</div>
+<!-- Audio Note Player Component -->
+<div class="audio-player flex items-center gap-space-sm p-2 rounded-xl bg-surface-container-low max-w-sm">
+<button aria-label="Lire la note vocale" class="audio-play-btn w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex items-center justify-between font-caption text-[11px] text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-xs">mic</span> Note vocale
+                      </span>
+<span class="audio-time">0:24</span>
+</div>
+<!-- Audio Waveform Visualization (SVG) -->
+<div class="flex items-center gap-0.5 h-4 w-full">
+<span class="w-1 h-2 bg-primary rounded-full"></span>
+<span class="w-1 h-3.5 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-2 bg-primary rounded-full"></span>
+<span class="w-1 h-3 bg-outline rounded-full"></span>
+<span class="w-1 h-2 bg-outline rounded-full"></span>
+<span class="w-1 h-4 bg-outline rounded-full"></span>
+<span class="w-1 h-3 bg-outline rounded-full"></span>
+<span class="w-1 h-1.5 bg-outline rounded-full"></span>
+<span class="w-1 h-3 bg-outline rounded-full"></span>
+<span class="w-1 h-2.5 bg-outline rounded-full"></span>
+<span class="w-1 h-1.5 bg-outline rounded-full"></span>
+</div>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant italic">
+                  "Question concernant la pression d'eau pour la colonne thermostatique"
+                </p>
+</div>
+</div>
+<!-- Comment Input Box with Voice & Photo Upload Controls -->
+<div class="flex items-center gap-space-sm pt-2">
+<img alt="Votre profil" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLWSBRTdOqH-9cEA9FTCA644TFpWb5u52hfNs5Khvl5VwnXyizH05JgDCC02kY8FakP11tkyEFza6Tq3ehOp2vm31wXTDdYLFekuIGy8TahO7gwsVourl87fe5SMNLTyjLtgoevrRmEK86biB_qd1Os4Yq7JQvnsdhufGKAROd56JuY4d5wRmVA7CWAIQAjaLvNGYdTcWlvJWTjAuRLS78Fh3o7HQJzbkfega9x0"/>
+<div class="flex-1 flex items-center bg-surface-container-lowest rounded-xl px-3 py-1.5 shadow-xs">
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface outline-none placeholder:text-outline" placeholder="Poser une question technique à Laurent..." type="text"/>
+<div class="flex items-center gap-1 text-on-surface-variant shrink-0">
+<button aria-label="Joindre une image" class="p-1 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">image</span>
+</button>
+<button aria-label="Enregistrer une note vocale" class="p-1 hover:text-secondary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">mic</span>
+</button>
+<button aria-label="Envoyer" class="p-1.5 bg-primary text-on-primary rounded-lg hover:bg-primary-container transition-colors ml-1" type="button">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Post 2: Dépannage Électricité & Domotique (Video Demo Showcase) -->
+<article class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col transition-all">
+<!-- Post Header -->
+<div class="p-space-md flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Portrait professionnel d'une électricienne souriante équipée de son gilet de sécurité et testeur multimètre dans un espace technique contemporain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACLm7qBIjVVXQALJZ7KmFjHJjDQ3YHviFUSrT_lQZxDG9F0p_LJJeJFrm_rmzgU_8RYtx5EtkSzS61y35MqDk5kjx_J9ls3r0ZX-xOfoNNGWiF1ZBoUtSe3Lq6i9bxZ2CcoRlv0wh4pkmSrl9dfllqWCTrtufUGOqGfKSXuAEbZMtbp8tIOeAZqjVkKUBrCqPbdKbP0DqLr2kfG11GmLtWw78jbinebu8bIrxyE1s"/>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold leading-none">ÉlecSmart • Sarah Belkacem</h4>
+<!-- Verified Badge -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Identité &amp; Décennale OK
+                  </span>
+</div>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs">location_on</span>
+                    Caluire-et-Cuire • Hier
+                  </span>
+<span>•</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">Domotique &amp; Réseau</span>
+</div>
+</div>
+</div>
+<button aria-label="Options" class="text-on-surface-variant hover:text-on-surface p-1 rounded-full hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<!-- Description -->
+<div class="px-space-md pb-space-sm flex flex-col gap-2">
+<h5 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+              Remplacement d'un tableau à fusibles obsolète par un coffret connecté Schneider + Gestion intelligente du chauffage
+            </h5>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Mise en conformité NF C 15-100 complète. Diagnostic différentiel 30mA, repérage intégral des circuits et intégration d'un module de délestage intelligent pour réduire la facture d'électricité de 22%. Démonstration en direct du basculement en vidéo !
+            </p>
+</div>
+<!-- Video Player Showcase Frame -->
+<div class="relative w-full aspect-video bg-inverse-surface overflow-hidden group">
+<img class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="Plan serré montrant un tableau électrique neuf étiqueté avec précision des câbles rangés au millimètre des voyants LED allumés et les mains d'une électricienne certifiée manipulant une tablette tactile de contrôle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3xhAja9uq3pSjKf6EIok6s5HSq6JeT28Leu7WjmWRV88FUmIhQ7-74TkmwG3tf4H5CbebRKanuSTTTF0FySXpqsJl7SOiyBVJfRcBFg1bbIKJ_hZh2SoQj3rPtK2DTEZwY8CWdAfxaHtWsdwo4jNiRZmmbaOsbZ5HlIRGoUkZ7rYmeiRltMkPXpKIgkAMag1gePuSy1BVZfhLuvBUxy4UO0a2M7WEDnpK8pw3uiQ"/>
+<!-- Video Overlay Controls -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex flex-col justify-between p-space-md">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest animate-ping"></span>
+                  VIDÉO DÉMO (0:48)
+                </span>
+<span class="px-2.5 py-1 rounded-lg bg-inverse-surface/70 text-inverse-on-surface font-caption text-caption backdrop-blur-sm">
+                  1080p HD • 60fps
+                </span>
+</div>
+<!-- Center Big Play Button -->
+<div class="self-center">
+<button aria-label="Lancer la démonstration vidéo" class="w-16 h-16 rounded-full bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary flex items-center justify-center shadow-xl hover:scale-110 transition-all cursor-pointer" type="button">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Bottom Bar with Context & Indicators -->
+<div class="flex items-center justify-between text-inverse-on-surface">
+<span class="font-caption text-caption">Test du déclenchement sélectif en temps réel</span>
+<span class="font-label-md text-label-md font-bold text-secondary-fixed">Coût d'intervention : 680 € TTC</span>
+</div>
+</div>
+</div>
+<!-- Direct Chat Contextual CTA -->
+<div class="p-space-md bg-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-2xl text-tertiary-container">forum</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Discuter directement avec Sarah</span>
+<span class="font-caption text-caption text-on-surface-variant">Lien immédiat vers le chat chiffré ProRelay sans engagement.</span>
+</div>
+</div>
+<button class="w-full sm:w-auto px-space-md py-2.5 rounded-xl bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2 shadow-xs" type="button">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span>Message Direct &amp; Devis</span>
+</button>
+</div>
+<!-- Bottom Action Strip -->
+<div class="px-space-md py-3 flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-space-md">
+<button class="like-button flex items-center gap-1.5 hover:text-secondary transition-colors" data-liked="false" type="button">
+<span class="material-symbols-outlined text-xl transition-transform active:scale-125">favorite</span>
+<span class="like-count">52</span>
+<span class="hidden sm:inline">J'aime</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">mode_comment</span>
+<span>14 Retours</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">share</span>
+<span>Partager</span>
+</button>
+</div>
+<button class="flex items-center gap-1 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-xl">bookmark_border</span>
+<span class="hidden sm:inline">Enregistrer</span>
+</button>
+</div>
+</article>
+</main>
+<!-- ================= RIGHT RAIL: Certified Stars & Trust Notice ================= -->
+<aside class="lg:col-span-3 flex flex-col gap-space-lg lg:sticky lg:top-24">
+<!-- Artisans certifiés de la semaine -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+              Pros de la semaine
+            </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">Top Notés</span>
+</div>
+<!-- Pro Mini Card 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col gap-2">
+<div class="flex items-center gap-space-sm">
+<img class="w-11 h-11 rounded-lg object-cover" data-alt="Portrait carré d'un menuisier ébéniste d'expérience souriant avec son mètre en bois et chemise en flanelle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLVxVIYAPRw957Hiq7sDRo7yrwswzR-zrZnAkCj6hM2Bfe8ADSYhX3V05U5TAxtDq7vTWV0V6GlWi6j_xLbCu6gdCT15ZEnBvZRJEFMpinrvuno0NS7jInVC1JCcIpRWclq-iLtIOTZU0EJbGgZOySnQp-LmU-2dpWUJvouEpjweUDmqQ2snc8HS186b_j2dsffkArdfS89DigSAl-6bcr8njnLrostB0A7MDHmoY"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Marc Dujardin</h4>
+<span class="material-symbols-outlined text-xs text-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant truncate">Menuiserie &amp; Parquet</p>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.98</span>
+<span class="text-on-surface-variant font-normal">(42 chantiers)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption text-caption text-tertiary-container font-semibold">Garantie décennale validée</span>
+<button class="text-primary hover:underline font-label-sm text-label-sm font-bold" type="button">Voir profil</button>
+</div>
+</div>
+<!-- Pro Mini Card 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col gap-2">
+<div class="flex items-center gap-space-sm">
+<img class="w-11 h-11 rounded-lg object-cover" data-alt="Portrait professionnel d'un paysagiste designer d'extérieurs souriant avec plans de jardin en main." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaJMpj26Ps97R_enBw_rhAz3QEtzLZ_aK9xbHcwMZ_fnabrtWRX-nObIT67MsJYinld2cD975gbzOI9-AGeu4tIRf6K4bB-VlsCU93IBaybfMso2x5rN9pQzXnjnOOs7EhkiJrdmumzJasEQD87Yi5g-iuBcS39Kox0ev97Rydip-0-DdMv3TE8fifAOp9Pc2Fb7bk0RAPrG1_HEqQu3xswnFyaiAZLhKdZ9PnFI4"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1">
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold truncate">Atelier Racine Végétale</h4>
+<span class="material-symbols-outlined text-xs text-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant truncate">Aménagement extérieur &amp; Terrasse</p>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>5.0</span>
+<span class="text-on-surface-variant font-normal">(28 chantiers)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption text-caption text-tertiary-container font-semibold">Identité contrôlée</span>
+<button class="text-primary hover:underline font-label-sm text-label-sm font-bold" type="button">Voir profil</button>
+</div>
+</div>
+<a class="w-full text-center py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors" href="#">
+            Explorer l'annuaire complet
+          </a>
+</div>
+<!-- Encart Explicatif Stratégique : Fil Réalisations vs Avis Officiels -->
+<div class="bg-primary/5 rounded-xl p-space-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-xl">info</span>
+<h4 class="font-label-lg text-label-lg font-bold">Fil vs Avis Officiels</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Sur <strong>ProRelay</strong>, nous distinguons deux mécanismes de réputation pour garantir une confiance absolue :
+          </p>
+<div class="flex flex-col gap-2 pt-1 font-body-sm text-body-sm">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-secondary text-base shrink-0 mt-0.5">forum</span>
+<p>
+<strong>Commentaires du fil :</strong> Échanges libres et techniques sous les photos de chantiers réels. Ouverts à la communauté pour poser des questions préalables.
+              </p>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-base shrink-0 mt-0.5">verified_user</span>
+<p>
+<strong>Avis Officiels Certifiés :</strong> Seuls les clients ayant finalisé une transaction directe réelle peuvent émettre une note contractuelle et un avis d'achèvement.
+              </p>
+</div>
+</div>
+<div class="pt-2">
+<a class="font-label-sm text-label-sm text-secondary hover:underline flex items-center gap-1 font-bold" href="#">
+              Consulter la Charte de Transparence
+              <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Bascule Mode Prestataire Footer Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm items-center text-center">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-2xl">construction</span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold">Vous êtes un artisan ou indépendant ?</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Créez votre vitrine, présentez vos réussites et encaissez en direct de la main à la main en toute indépendance.
+          </p>
+<button class="w-full py-2.5 px-space-md rounded-xl bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-md text-label-md transition-colors flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-base">swap_horiz</span>
+<span>Activer mon profil Prestataire</span>
+</button>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<script>
+  // Filter tabs visual state
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      btn.classList.remove('text-on-surface-variant');
+    });
+  });
+
+  // Like buttons micro-interaction
+  document.querySelectorAll('.like-button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isLiked = btn.getAttribute('data-liked') === 'true';
+      const countEl = btn.querySelector('.like-count');
+      let count = parseInt(countEl.textContent, 10);
+      const icon = btn.querySelector('.material-symbols-outlined');
+
+      if (!isLiked) {
+        btn.setAttribute('data-liked', 'true');
+        btn.classList.add('text-secondary');
+        icon.style.fontVariationSettings = "'FILL' 1";
+        countEl.textContent = count + 1;
+      } else {
+        btn.setAttribute('data-liked', 'false');
+        btn.classList.remove('text-secondary');
+        icon.style.fontVariationSettings = "'FILL' 0";
+        countEl.textContent = count - 1;
+      }
+    });
+  });
+
+  // Simulated Voice Note Play/Pause toggle
+  document.querySelectorAll('.audio-play-btn').forEach(playBtn => {
+    playBtn.addEventListener('click', () => {
+      const icon = playBtn.querySelector('.material-symbols-outlined');
+      if (icon.textContent.trim() === 'play_arrow') {
+        icon.textContent = 'pause';
+        playBtn.classList.add('bg-secondary-container', 'text-on-secondary-container');
+        playBtn.classList.remove('bg-primary', 'text-on-primary');
+      } else {
+        icon.textContent = 'play_arrow';
+        playBtn.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+        playBtn.classList.add('bg-primary', 'text-on-primary');
+      }
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(23,74,112,0.03)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="ProRelay Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/><span class="font-headline-sm text-headline-sm text-primary font-bold">ProRelay</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">La plateforme de confiance reliant clients exigeants et artisans certifiés. Comparez les réalisations avant/après réelles et réglez en direct sans frais cachés.</p><div class="flex flex-col gap-space-sm pt-space-xs"><div class="inline-flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-surface-container-low w-fit"><span class="material-symbols-outlined text-tertiary-container">payments</span><span class="font-label-md text-label-md text-on-surface">Paiement direct de la main à la main</span></div><div class="inline-flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-surface-container-low w-fit"><span class="material-symbols-outlined text-tertiary-container">verified_user</span><span class="font-label-md text-label-md text-on-surface">Vérification d'identité &amp; diplômes contrôlés</span></div></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Catégories Clés</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Bâtiment &amp; Rénovation</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Plomberie &amp; Sanitaire</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Électricité &amp; Énergie</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Menuiserie &amp; Agencement</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Mécanique &amp; Dépannage</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Services Numériques &amp; Design</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Confiance &amp; Sécurité</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Charte de vérification Pro</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Règles de paiement direct</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Médiation de litige</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Avis clients vérifiés</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Centre d'assistance</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Région &amp; Devises</h4><div class="flex flex-col gap-space-sm"><label class="font-caption text-caption text-on-surface-variant">Zone d'intervention</label><div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-base text-primary">language</span><select aria-label="Sélectionner la langue et la zone géographique" class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none w-full cursor-pointer"><option>Français (International)</option><option>English (Canada / Global)</option></select></div><label class="font-caption text-caption text-on-surface-variant mt-space-xs">Territoire &amp; Monnaie</label><div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-base text-primary">monetization_on</span><select aria-label="Sélectionner la devise et le pays" class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none w-full cursor-pointer"><option>France • EUR (€)</option><option>Sénégal • XOF (FCFA)</option><option>Côte d'Ivoire • XOF (FCFA)</option><option>Canada • CAD ($)</option></select></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 ProRelay Marketplace. Tous droits réservés. Transactions de gré à gré protégées.</p><div class="flex items-center gap-space-lg font-label-md text-label-md"><a class="hover:text-on-surface transition-colors" data-path="conditions-generales" href="#">Conditions Générales</a><a class="hover:text-on-surface transition-colors" data-path="confidentialite" href="#">Politique de Confidentialité</a><a class="hover:text-on-surface transition-colors" data-path="mentions-legales" href="#">Mentions Légales</a></div></div></div></footer></body></html>

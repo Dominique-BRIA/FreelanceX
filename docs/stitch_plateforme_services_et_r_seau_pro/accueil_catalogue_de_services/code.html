@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-fixed-variant":"#743500","on-primary-container":"#8db9e5","inverse-surface":"#2d3133","on-tertiary-fixed-variant":"#005049","secondary-fixed-dim":"#ffb68a","surface-container-low":"#f2f4f6","on-background":"#191c1e","on-tertiary-container":"#58c6b9","error":"#ba1a1a","surface-bright":"#f8f9fb","inverse-primary":"#9fcbf7","secondary":"#994700","on-primary-fixed-variant":"#174a70","on-secondary-container":"#6c3000","on-tertiary-fixed":"#00201d","surface-container-lowest":"#ffffff","tertiary-fixed":"#89f5e7","tertiary":"#003732","tertiary-fixed-dim":"#6bd8cb","primary":"#003353","on-primary-fixed":"#001d33","secondary-fixed":"#ffdbc8","primary-container":"#174a70","surface-dim":"#d8dadc","error-container":"#ffdad6","surface-container-highest":"#e0e3e5","surface-container":"#eceef0","surface-variant":"#e0e3e5","secondary-container":"#ff9247","primary-fixed":"#cee5ff","background":"#f8f9fb","on-surface":"#191c1e","on-error-container":"#93000a","on-secondary-fixed":"#321300","surface-container-high":"#e6e8ea","on-tertiary":"#ffffff","inverse-on-surface":"#eff1f3","outline-variant":"#c2c7cf","primary-fixed-dim":"#9fcbf7","on-surface-variant":"#42474e","surface-tint":"#346289","on-error":"#ffffff","on-primary":"#ffffff","outline":"#72777f","tertiary-container":"#005049","on-secondary":"#ffffff","surface":"#f8f9fb"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-sm":"1rem",margin:"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2.5rem","space-lg":"1.5rem","margin-sm":"1rem",gutter:"1.5rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],caption:["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},fontSize:{"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["15px",{lineHeight:"22px",letterSpacing:"0.005em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-xl-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"700"}],caption:["12px",{lineHeight:"16px",fontWeight:"500"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"800"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(23,74,112,0.06)]"><div class="h-20 max-w-[1280px] mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><a class="flex items-center gap-space-sm" data-path="trouver-un-pro" href="#"><img alt="ProRelay Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">ProRelay</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-base text-tertiary-container">public</span><select aria-label="Sélectionner un pays et une devise" class="bg-transparent text-on-surface-variant font-label-md text-label-md outline-none cursor-pointer pr-1"><option value="FR">🇫🇷 France • EUR €</option><option value="SN">🇸🇳 Sénégal • XOF</option><option value="CI">🇨🇮 Côte d'Ivoire • XOF</option><option value="CA">🇨🇦 Canada • CAD $</option></select></div></div><div class="flex-1 max-w-lg hidden md:block"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-xl pointer-events-none">search</span><input class="w-full pl-11 pr-space-md py-2.5 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]" placeholder="Trouver un besoin, un métier, un mot-clé (ex: plombier, menuiserie)..." type="text"/></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden lg:flex items-center gap-space-xs p-1 rounded-xl bg-surface-container-low" data-active-classes="bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl"><a aria-current="page" class="px-space-md py-2 transition-colors bg-primary-container text-on-primary font-label-lg text-label-lg rounded-xl" data-path="trouver-un-pro" href="#">Trouver un pro / Services</a><a class="px-space-md py-2 rounded-xl text-on-surface-variant font-label-lg text-label-lg transition-colors hover:text-on-surface" data-path="fil-realisations" href="#">Fil Réalisations</a></nav><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-2xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-secondary-container ring-2 ring-surface"></span></button><button aria-label="Messagerie directe" class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-2xl">chat_bubble</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface"></span></button></div><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:opacity-95 transition-opacity" data-path="mode-prestataire" href="#"><span class="material-symbols-outlined text-base">swap_horiz</span><span>Mode Prestataire</span></a><a class="shrink-0 ring-2 ring-surface-container-high rounded-full hover:ring-primary-container transition-all" data-path="profil-utilisateur" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLWSBRTdOqH-9cEA9FTCA644TFpWb5u52hfNs5Khvl5VwnXyizH05JgDCC02kY8FakP11tkyEFza6Tq3ehOp2vm31wXTDdYLFekuIGy8TahO7gwsVourl87fe5SMNLTyjLtgoevrRmEK86biB_qd1Os4Yq7JQvnsdhufGKAROd56JuY4d5wRmVA7CWAIQAjaLvNGYdTcWlvJWTjAuRLS78Fh3o7HQJzbkfega9x0"/></a></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- HERO BANNER & ADVANCED SEARCH SECTION -->
+<section class="relative w-full bg-surface-container-low overflow-hidden py-space-xl">
+<div class="max-w-[1280px] mx-auto px-gutter relative z-10 flex flex-col items-center text-center">
+<!-- Trust Indicator Tag -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-lowest shadow-sm mb-space-md">
+<span class="material-symbols-outlined text-tertiary-container text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-tertiary-container tracking-wider uppercase">100% Artisans &amp; Spécialistes Contrôlés</span>
+<span class="mx-space-xs text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Zéro commission cachée</span>
+</div>
+<!-- Main Catchphrase -->
+<h1 class="font-headline-xl text-headline-xl text-primary font-extrabold max-w-4xl tracking-tight leading-tight mb-space-sm">
+        Trouvez le bon artisan ou professionnel <span class="text-secondary-container">près de chez vous</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-xl">
+        Entrez en relation directe avec des prestataires aux identités vérifiées. Comparez les réalisations réelles, convenez des tarifs en toute clarté et réglez sans intermédiaire.
+      </p>
+<!-- Advanced Search Floating Console -->
+<div class="w-full max-w-5xl bg-surface-container-lowest p-space-md md:p-space-lg rounded-2xl shadow-xl">
+<form class="grid grid-cols-1 md:grid-cols-12 gap-space-md text-left items-center" onsubmit="event.preventDefault();">
+<!-- Query / Profession Input -->
+<div class="md:col-span-4 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-base">construction</span>
+              Métier ou besoin
+            </label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-low px-space-md py-3 rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]" placeholder="Ex: Plombier, Peintre, Webmaster..." type="text"/>
+</div>
+</div>
+<!-- Category Selector Dropdown -->
+<div class="md:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-base">category</span>
+              Catégorie
+            </label>
+<div class="relative flex items-center">
+<select class="w-full bg-surface-container-low px-space-md py-3 rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest cursor-pointer appearance-none">
+<option value="">Toutes les catégories</option>
+<option value="batiment">Bâtiment &amp; Rénovation</option>
+<option value="plomberie">Plomberie &amp; Dépannage</option>
+<option value="informatique">Informatique &amp; Digital</option>
+<option value="maison">Maison &amp; Entretien</option>
+<option value="beaute">Beauté &amp; Bien-être</option>
+<option value="education">Éducation &amp; Cours</option>
+<option value="transport">Transport &amp; Livraison</option>
+<option value="evenementiel">Événementiel &amp; Photo</option>
+<option value="jardin">Jardinage &amp; Espaces verts</option>
+<option value="conseil">Services Pro &amp; Conseil</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md text-on-surface-variant pointer-events-none text-lg">expand_more</span>
+</div>
+</div>
+<!-- Location Field -->
+<div class="md:col-span-3 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-base">location_on</span>
+              Localisation
+            </label>
+<div class="relative flex items-center">
+<input class="w-full bg-surface-container-low px-space-md py-3 rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)]" placeholder="Ville ou code postal" type="text"/>
+<button aria-label="Me géolocaliser" class="absolute right-2 p-1.5 text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">my_location</span>
+</button>
+</div>
+</div>
+<!-- Submit Action Button -->
+<div class="md:col-span-2 flex flex-col justify-end pt-1 md:pt-6">
+<button class="w-full bg-primary-container text-on-primary font-label-lg text-label-lg py-3 px-space-md rounded-xl shadow-md hover:bg-primary transition-all flex items-center justify-center gap-space-xs cursor-pointer" type="submit">
+<span class="material-symbols-outlined text-lg">search</span>
+<span>Rechercher</span>
+</button>
+</div>
+</form>
+<!-- Quick Suggestions Badges -->
+<div class="flex flex-wrap items-center gap-space-xs mt-space-md pt-space-md bg-surface-container-lowest">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-space-xs">Tendances :</span>
+<a class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" href="#">Rénovation salle de bain</a>
+<a class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" href="#">Dépannage serrurerie</a>
+<a class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" href="#">Création site web</a>
+<a class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" href="#">Élagage &amp; Tonte</a>
+<a class="px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors" href="#">Déménagement</a>
+</div>
+</div>
+<!-- Trust Metrics Inline Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md max-w-4xl w-full mt-space-xl pt-space-md">
+<div class="flex items-center gap-space-sm text-left">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-xl">format_image_left</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">100%</div>
+<div class="font-caption text-caption text-on-surface-variant">Identités contrôlées</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-left">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-xl">handshake</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-secondary font-bold">0% Frais</div>
+<div class="font-caption text-caption text-on-surface-variant">Paiement main à main</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-left">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-xl">bolt</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-tertiary font-bold">&lt; 15 min</div>
+<div class="font-caption text-caption text-on-surface-variant">Délai moyen de réponse</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm text-left">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-xl">photo_library</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">45k+</div>
+<div class="font-caption text-caption text-on-surface-variant">Projets Avant/Après réels</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 10 CORE CATEGORIES CATALOG MATRIX -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Catalogue Officiel</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold">Explorez les 10 catégories prioritaires</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+        Plus de 3 800 artisans et experts qualifiés, classés par domaine de compétence avec disponibilité immédiate.
+      </p>
+</div>
+<!-- 10 Cards Grid Layout -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-md">
+<!-- 1. Bâtiment & Rénovation -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">home_repair_service</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Bâtiment &amp; Rénovation</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Maçonnerie, plâtrerie, peinture, carrelage</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">842 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 2. Plomberie & Dépannage -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">plumbing</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Plomberie &amp; Dépannage</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Fuites d'eau, sanitaires, chaudières, urgences</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">514 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 3. Informatique & Digital -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">terminal</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Informatique &amp; Digital</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Dépannage PC, sites internet, graphisme</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">430 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 4. Maison & Entretien -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">cleaning_services</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Maison &amp; Entretien</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Ménage ponctuel, repassage, vitres, désinfection</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">398 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 5. Beauté & Bien-être -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">spa</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Beauté &amp; Bien-être</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Coiffure à domicile, massage, esthétique</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">275 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 6. Éducation & Cours -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Éducation &amp; Cours</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Soutien scolaire, musique, langues étrangères</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">312 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 7. Transport & Livraison -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Transport &amp; Livraison</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Déménagement avec utilitaire, coursiers, remorquage</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">288 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 8. Événementiel & Photo -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">photo_camera</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Événementiel &amp; Photo</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Photographe mariage, traiteurs, animateurs DJ</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">194 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 9. Jardinage & Espaces verts -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">yard</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Jardinage &amp; Espaces verts</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Taille de haies, paysagisme, débroussaillage</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">460 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+<!-- 10. Services Pro & Conseil -->
+<a class="group bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-xl transition-all flex flex-col justify-between cursor-pointer" href="#">
+<div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low text-primary flex items-center justify-center mb-space-md group-hover:bg-primary-container group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">balance</span>
+</div>
+<h3 class="font-label-lg text-label-lg text-on-surface group-hover:text-primary transition-colors leading-snug">Services Pro &amp; Conseil</h3>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Comptabilité, secrétariat, traduction, juristes</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center font-label-sm text-label-sm text-primary-container bg-surface-container-low px-2 py-0.5 rounded-full">215 pros</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary group-hover:translate-x-1 transition-all text-base">arrow_forward</span>
+</div>
+</a>
+</div>
+</section>
+<!-- RECOMMENDED & CERTIFIED PROVIDERS SECTION -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+            Réseau de Confiance
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold">Prestataires recommandés &amp; Certifiés</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Professionnels aux pièces d'identité et assurances contrôlées, notés par des clients authentiques après intervention.
+          </p>
+</div>
+<a class="inline-flex items-center gap-space-xs font-label-lg text-label-lg text-primary-container hover:text-primary transition-colors" href="#">
+<span>Explorer tous les professionnels</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Provider Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- CARD 1: Artisan Plombier Chauffagiste -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+<div>
+<!-- Top Meta & Availability Pill -->
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+                Disponible immédiatement
+              </span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">schedule</span>
+                Répond en ~10 min
+              </span>
+</div>
+<!-- Profile Info Row -->
+<div class="flex items-start gap-space-md mb-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="Portrait photography of a confident smiling male plumber in his late thirties wearing professional navy overalls holding a pipe wrench in a bright modern workshop, warm natural lighting, high resolution and authentic workplace aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSk6zl34Z5BPz_35vc8iV_Dcc7I8_tP3mh-oc9rgOo2AQS-hyp2j2-5veunIEm4ZJTAJfkobqxH5cZi_jfhLYuZb-I6LeysolYtKeLev6Tg741sjxnYey0oTBqlHKFsfPwWq8sb-PbYnl7qKe7xILxVBwVi6f4kolONHzKkpQF_BpOiyb5BYbvjGfM98lB18a4Ts7Dm4aZhXHUGCts-oCgmkJd6hcfB5DnL20_WvU"/>
+<span class="material-symbols-outlined absolute -bottom-1 -right-1 text-primary-container bg-surface-container-lowest rounded-full text-lg p-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Marc Dupont</h3>
+<!-- Official Verified Badge Pill -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Identité vérifiée
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">Plomberie Générale &amp; Recherche de fuite</p>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption mt-1">
+<span class="material-symbols-outlined text-sm text-outline">location_on</span>
+<span>Bordeaux (Gironde) • Rayon 25 km</span>
+</div>
+</div>
+</div>
+<!-- Social Proof / Ratings -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-1.5">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold ml-1">4.9</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">/ 5</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-base">task_alt</span>
+<span>87 Prestations confirmées</span>
+</div>
+</div>
+<!-- Pricing & Skills -->
+<div class="flex items-center justify-between text-on-surface mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Tarif indicatif</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">55 € / heure</span>
+</div>
+<div class="flex flex-wrap gap-1 justify-end max-w-[60%]">
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant">Chauffe-eau</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant">Débouchage</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-md">
+<button class="py-2.5 px-space-sm rounded-xl bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors cursor-pointer text-center" type="button">
+              Voir profil
+            </button>
+<button class="py-2.5 px-space-sm rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all cursor-pointer text-center shadow-sm" type="button">
+              Demander un devis
+            </button>
+</div>
+</div>
+<!-- CARD 2: Électricienne Bâtiment & Domotique -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+<div>
+<!-- Top Meta & Availability Pill -->
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                Dispo dès demain 08h
+              </span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">schedule</span>
+                Répond en ~25 min
+              </span>
+</div>
+<!-- Profile Info Row -->
+<div class="flex items-start gap-space-md mb-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="Close up portrait of a skilled female electrician in protective workwear with technical safety glasses, holding a multimeter meter, bright ambient lighting in a newly renovated architectural interior, photorealistic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz8Z_nCa0p2b_psCUcjcJT_RWydWV2SusUzjnlClUKLdqQL1F0YjYBcIzEp13fypcIkQqhmK-V2XaTHngPUX3TpbUVSFQNtWLKApLtdKNcruX-Ujh-HT5Jw9ne7LM8eAPWvMGF7klzmAkMPIb2uYUeTNHO9MFkXDBMnE85naOlBXSRBQebbkczbBKl4db1UJY8PPitQG-tf6cpkzoqSr1xx05kdDyKILvW_HfsZjQ"/>
+<span class="material-symbols-outlined absolute -bottom-1 -right-1 text-primary-container bg-surface-container-lowest rounded-full text-lg p-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Camille Renoir</h3>
+<!-- Official Verified Badge Pill -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Identité vérifiée
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">Électricité Générale &amp; Tableaux NF</p>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption mt-1">
+<span class="material-symbols-outlined text-sm text-outline">location_on</span>
+<span>Lyon 06 (Rhône) • Rayon 30 km</span>
+</div>
+</div>
+</div>
+<!-- Social Proof / Ratings -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-1.5">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold ml-1">5.0</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">/ 5</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-base">task_alt</span>
+<span>114 Prestations confirmées</span>
+</div>
+</div>
+<!-- Pricing & Skills -->
+<div class="flex items-center justify-between text-on-surface mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Tarif indicatif</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">Sur devis gratuit</span>
+</div>
+<div class="flex flex-wrap gap-1 justify-end max-w-[60%]">
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant">Mise aux normes</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant">Domotique</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-md">
+<button class="py-2.5 px-space-sm rounded-xl bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors cursor-pointer text-center" type="button">
+              Voir profil
+            </button>
+<button class="py-2.5 px-space-sm rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all cursor-pointer text-center shadow-sm" type="button">
+              Demander un devis
+            </button>
+</div>
+</div>
+<!-- CARD 3: Menuisier Agenceur Bois -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+<div>
+<!-- Top Meta & Availability Pill -->
+<div class="flex items-center justify-between gap-space-sm mb-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+                Disponible cette semaine
+              </span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-outline">schedule</span>
+                Répond en ~15 min
+              </span>
+</div>
+<!-- Profile Info Row -->
+<div class="flex items-start gap-space-md mb-space-md">
+<div class="relative shrink-0">
+<img class="w-16 h-16 rounded-2xl object-cover shadow-sm" data-alt="Portrait of an artisanal carpenter craftsman in his late forties with sawdust on his apron inside a bespoke woodworking studio with timber planks and precision tools in the soft golden hour background, authentic candid style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuG0qF5kSel-EfaevmShcM5ewdEh68OBHXzYq4c80qM-XQqh5vuC37G6kpro-QQaGa5C0Uv-vRm4tvj0W5nmBsgL7M_jI_AJeXhe7A17RywUGJEiePpKmgd1RHgDJXB5mrzduiJTCRu0CucVqaWfKOZRdIu0tDCfQEhA1GV1nyydK-GSa-1P5wgjY_6ptQYYtgbYw-Ij7wY1IjRjEwVeHZrcafwDSlhG6Kj83-yG4"/>
+<span class="material-symbols-outlined absolute -bottom-1 -right-1 text-primary-container bg-surface-container-lowest rounded-full text-lg p-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Tariq Al-Mansoor</h3>
+<!-- Official Verified Badge Pill -->
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    Identité vérifiée
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium mt-0.5">Menuiserie Sur Mesure &amp; Cuisines</p>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption mt-1">
+<span class="material-symbols-outlined text-sm text-outline">location_on</span>
+<span>Paris &amp; Île-de-France • Rayon 40 km</span>
+</div>
+</div>
+</div>
+<!-- Social Proof / Ratings -->
+<div class="flex items-center justify-between p-space-sm rounded-xl bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-1.5">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-lg text-label-lg font-bold ml-1">4.8</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">/ 5</span>
+</div>
+<div class="font-label-sm text-label-sm text-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-base">task_alt</span>
+<span>62 Prestations confirmées</span>
+</div>
+</div>
+<!-- Pricing & Skills -->
+<div class="flex items-center justify-between text-on-surface mb-space-md">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Tarif indicatif</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">Sur devis / dès 350 €</span>
+</div>
+<div class="flex flex-wrap gap-1 justify-end max-w-[60%]">
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant">Dressings</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container font-caption text-caption text-on-surface-variant">Parquets chêne</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-md">
+<button class="py-2.5 px-space-sm rounded-xl bg-surface-container-low text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors cursor-pointer text-center" type="button">
+              Voir profil
+            </button>
+<button class="py-2.5 px-space-sm rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all cursor-pointer text-center shadow-sm" type="button">
+              Demander un devis
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS / REASSURANCE SECTION (4 STEPS) -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter py-space-xl">
+<div class="bg-primary text-on-primary rounded-3xl p-space-lg md:p-space-xl relative overflow-hidden shadow-xl">
+<!-- Decorative Backdrop Graphic -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary-container/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mb-space-xl">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+<span class="material-symbols-outlined text-sm">shield_with_heart</span>
+          Processus Sans Commission Ni Surprise
+        </div>
+<h2 class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-primary">
+          Comment fonctionne la plateforme ?
+        </h2>
+<p class="font-body-md text-body-md text-on-primary-container mt-space-xs">
+          Un cadre direct et transparent : vous gardez le contrôle total sur votre budget et vos échanges, sans intermédiaire financier bloquant vos fonds.
+        </p>
+</div>
+<!-- 4 Stepper Process Grid -->
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Step 1 -->
+<div class="bg-primary-container/40 backdrop-blur-sm p-space-md rounded-2xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center">1</span>
+<span class="material-symbols-outlined text-secondary-container text-2xl">search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-space-xs text-on-primary">Trouvez un pro</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+              Parcourez le catalogue ou le fil de projets réels. Filtrez par spécialité, avis certifiés et proximité géographique.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-caption text-caption text-tertiary-fixed font-semibold">Identités &amp; qualifications 100% vérifiées</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-primary-container/40 backdrop-blur-sm p-space-md rounded-2xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">2</span>
+<span class="material-symbols-outlined text-on-primary text-2xl">forum</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-space-xs text-on-primary">Échangez &amp; convenez</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+              Discutez directement par messagerie ou téléphone. Détaillez vos besoins et recevez un devis clair et sans engagement.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-caption text-caption text-tertiary-fixed font-semibold">Messagerie instantanée directe</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-primary-container/40 backdrop-blur-sm p-space-md rounded-2xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-headline-sm text-headline-sm font-bold flex items-center justify-center">3</span>
+<span class="material-symbols-outlined text-tertiary-fixed text-2xl">payments</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-space-xs text-on-primary">Paiement direct</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+              Réglez de la main à la main ou par virement selon vos convenances une fois le travail convenu réalisé. Zéro commission déduite.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-caption text-caption text-tertiary-fixed font-semibold">Transparent et sans surcoût plateforme</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-primary-container/40 backdrop-blur-sm p-space-md rounded-2xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="w-10 h-10 rounded-xl bg-surface-container-high text-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center">4</span>
+<span class="material-symbols-outlined text-on-primary text-2xl">grade</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-space-xs text-on-primary">Évaluez après travaux</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container">
+              Attribuez une note et partagez une photo du résultat pour aider la communauté et valoriser le savoir-faire de l'artisan.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs">
+<span class="font-caption text-caption text-tertiary-fixed font-semibold">Avis 100% vérifiés et authentiques</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SOCIAL FEED SHOWCASE / LATEST BEFORE-AFTER PROJECTS -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<!-- Section Header with CTA -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-sm">photo_auto_merge</span>
+            Preuves Visuelles Réelles
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-bold">Dernières réalisations en direct du fil social</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Découvrez les chantiers fraîchement achevés par nos artisans partenaires avec comparatifs avant / après non retouchés.
+          </p>
+</div>
+<a class="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-all shadow-sm" href="#">
+<span>Découvrir tout le fil réalisations</span>
+<span class="material-symbols-outlined text-base">dynamic_feed</span>
+</a>
+</div>
+<!-- 3 Social Before/After Showcase Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- PROJECT 1: Salle de bain complète -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+<div>
+<!-- Pro Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Headshot of a senior French artisan tiler in uniform with pencil tucked behind ear, bright natural light, genuine friendly smile, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPNHcPo2EaZ4k7Qeag7TBAeqPHRlmEkPHsPd5ASuFuulLUXy622dXlfa0ihLrjJgOiaIGBtu0ZCwbYl-MojxiM-kcLpGi_m4nynFU1LCv1FWVilZwo2OY5mbFXUQP_8k7G-CUC8V-vRkhgRteCZDsezZds-YlwNQUydaM1YVrfVmD2R3oJvkTxCNP9xy4hA__NzlbZn35vNlSo3PHH7UnNHhozXrzWW6OE9h5gxXs"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold flex items-center gap-1">
+                    Éric Vasseur
+                    <span class="material-symbols-outlined text-xs text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Carreleur • Nantes (44)</span>
+</div>
+</div>
+<span class="font-caption text-caption text-outline">Il y a 3h</span>
+</div>
+<!-- Before / After Dual Frame Display -->
+<div class="relative w-full rounded-xl overflow-hidden mb-space-sm bg-surface-container">
+<div class="grid grid-cols-2 gap-1 h-52">
+<!-- Before -->
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="Damaged outdated bathroom before renovation with cracked yellow tiles, old leaky piping, and worn fixtures under dim artificial light, documentary realism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1l2WwkbKZYAfpJSl0wws1nJfe_QayD1AURVnAnI8wDbWDK-Z0RH22-9D7vUkkvqwUxKBwXBmPnrYoUTsvI-Mq6rP9CL6eJFCWcM2JD8pJNvSiUzhpd_4aWdjnLsf0g5Bf54Z_tD6jCpUWBwLwt6PPYpUC3QY1ZoWf2aERqfXPssiraWk_NlZZPzReI-4LWxo2K0uJnjYd2kcCnoAsqC_6dbCJEGl4XREFeUL7OW4"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">AVANT</span>
+</div>
+<!-- After -->
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="Luxury renovated contemporary bathroom with walk-in Italian shower, sleek slate grey large-format tiles, warm recessed LED lighting, and matte black brassware, architectural magazine quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvuWjmxIRzD23lsa7bjeJ9GUB1Zgetw5dsY3BWCbeV-Jm7rnBBSxxEt1-WaSfffbj8efi6xS5DSs1hWKWLxjlkPcgUJwt8c6KOu3SKit92pDQURkmqas9lCLTHtuijCPDIiG0eb7jInfCM4W9EibmBy8fg5aEkEGWMpBQWGMcLLS47yrtps5ItEYqNFgFTvZhDEg27pBMY1DDxZaGqkUtU-zN9kbblC5VinjTKhXo"/>
+<span class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">APRÈS</span>
+</div>
+</div>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Rénovation totale salle de bain 6m²</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Dépose complète, étanchéité sous carrelage et création d'une douche à l'italienne avec faïence effet marbre.
+            </p>
+</div>
+<!-- Card Footer Meta & CTA -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Budget chantier</span>
+<span class="font-label-md text-label-md font-bold text-primary">3 450 € TTC</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors cursor-pointer" type="button">
+<span>Voir le projet</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- PROJECT 2: Création Terrasse Bois & Pergola -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+<div>
+<!-- Pro Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a young male landscape architect wearing casual outdoor outdoor gear with a wooden measuring tape, sunny backdrop in a landscaped garden, friendly expressive gaze." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0L4xK-BK2yWnX1pVdp1QoqMK3WiXX0n3BZBbkrkMx54c62kAJjWpeTiBz8FmVVQPjV5qbrVoDXlPgqZ-zZL0bB-X6akGWgkhwqrSLZtNba4p_MKza_y6MNDI7CTdHWl11itib3sZ5nU77B9SPIG5Fvpo0TNqBDPboscRF-7VJrj7MfuHB3FPc4plmWmyQIfzbGUNfnQVvW8Zsn0ItQTAt4JFuLP3-Ugywh1kJhN8"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold flex items-center gap-1">
+                    Julien Meyer
+                    <span class="material-symbols-outlined text-xs text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Paysagiste • Strasbourg (67)</span>
+</div>
+</div>
+<span class="font-caption text-caption text-outline">Hier</span>
+</div>
+<!-- Before / After Dual Frame Display -->
+<div class="relative w-full rounded-xl overflow-hidden mb-space-sm bg-surface-container">
+<div class="grid grid-cols-2 gap-1 h-52">
+<!-- Before -->
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="Unkempt wild backyard garden with uneven muddy soil, overgrown weeds, and ruined concrete slab before landscaping, overcast sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMssN8uB_pN6qdiRJxzf6XYfC06mQiPOuBtFfSB2i1HLYx_o6OYmh-GCN8gVLad-oCues9LH0lSzEexYH64EfSj9Lp3n_YJNt1PiumQHNt_C299HmtsArTCRFm8a8FL5k8DpY-3dC_DoqmBY9OOetDvnsePNdDnUcyyAZjBbB20Tc_56Ub2EdmzxXIFnm5T8-wLF7cg5qzSL9Ho_0VUWmrGWbCGdaQqUf97YRPe3Q"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">AVANT</span>
+</div>
+<!-- After -->
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="Stunning modern outdoor deck in thermo-treated pine wood with integrated planter boxes, modern minimalist bioclimatic pergola, and ambient solar spotlights, beautiful sunset light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIPh3I4ibXChrGExeclhSxUx5TKofDtpV14bvDlvj06by2-TSaECtXbyTijAYFOb4r8D8nDOLD7zBJuwqN8c2xLXyXksq0TJa6rpxxKPn6CnAkSVxtbdrXmdGtxG9opx-5f0xHj-2y1IJbhxELMMS1buxrFO7_MGVS-yQKGOS8ef4qyQwy6KbHm93CL4P1WGu0g5a92xA_Z3za2PMWXjdMTrl5Bp55PAGyvzc0mYY"/>
+<span class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">APRÈS</span>
+</div>
+</div>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Terrasse bois 45m² sur plots &amp; gazon</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Terrassement complet, nivellement laser, pose d'un platelage en pin du Nord classe 4 et engazonnement renforcé.
+            </p>
+</div>
+<!-- Card Footer Meta & CTA -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Budget chantier</span>
+<span class="font-label-md text-label-md font-bold text-primary">5 200 € TTC</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors cursor-pointer" type="button">
+<span>Voir le projet</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- PROJECT 3: Rénovation & Aménagement Cuisine -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+<div>
+<!-- Pro Header -->
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait photo of a female interior designer and cabinet installer smiling, holding architectural swatches, bright clean studio environment with clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfZuT77V94pmwzviSxdxgcFnZxRdE_zhP4NmCcr1DQgUPawCbwLQu_Gw6jZJ9IUiZWjCPB994Y95YkoR8vInfUQnjKHXf2OYVAPe4B7_rxwNCZ3_NTRdqTJnOH4zJqLGzP7SpiaBWxTVD2VGi_4QCEc9cDgpVbdr0mW2EYlmLJ5fh4CqGT0YXKhr5IzbeB-7agajGCBn4odieDU0FLLjda4YOssz1SpkCIwRGC4l8"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold flex items-center gap-1">
+                    Sonia Belkacem
+                    <span class="material-symbols-outlined text-xs text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Menuisière Poseuse • Toulouse (31)</span>
+</div>
+</div>
+<span class="font-caption text-caption text-outline">Il y a 2 jours</span>
+</div>
+<!-- Before / After Dual Frame Display -->
+<div class="relative w-full rounded-xl overflow-hidden mb-space-sm bg-surface-container">
+<div class="grid grid-cols-2 gap-1 h-52">
+<!-- Before -->
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="Old dark wooden 1980s kitchen with cluttered countertops, peeling veneer cabinets, and poor lighting before transformation, authentic interior photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50zIssvAlUXHmPZ7m4f92tA0JpCM1SX7ju7YfPa5qjwKVVl2s5MbeXSuugQkMXZwFdAB-zN8UFaJui4WK03f0FVDfnGCY8IWYXJUkRBQHotazuTyeWQSD1sHOGPtWtvctM4TcXh92TiAzVwiYvjrEERgvof70ujrhduIak4fT7y_dZh43vTHIuUQqyfJ6VblS6u6e4yaHcSOfnqgb4uuwpPKq2YZCr_r1TbEpBqE"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">AVANT</span>
+</div>
+<!-- After -->
+<div class="relative w-full h-full">
+<img class="w-full h-full object-cover" data-alt="Open plan Scandinavian minimalist kitchen with handleless matte sage green cabinets, solid oak butcher block island, integrated induction cooktop, and brass fixtures, bright warm interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0-GYXwhRBGkU8l3skMP2eel47HPTZJEP2_CRpJUjbKZ3mTlVppxIep_pbKrxXFSvAd9_sn0JVNUa32Fxg7E2-RaCZ1bqAcbjAI3u-nQG_v4vHv23_7YAiOa4JMhW4SAm1ZQzhaNDiTRERz-e4Frb5bWpTtBfBrPrRTcRcFPFw1U6VVYTllDsAF-UUZMhO4cKovtJqVyuETkIR9DqmN5QtjFN_9mjlWZnZgkULLVs"/>
+<span class="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shadow-sm">APRÈS</span>
+</div>
+</div>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Cuisine ouverte avec îlot central en chêne</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Ouverture de cloison non porteuse, redistribution des arrivées plomberie et pose des meubles sur mesure.
+            </p>
+</div>
+<!-- Card Footer Meta & CTA -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Budget chantier</span>
+<span class="font-label-md text-label-md font-bold text-primary">4 800 € TTC</span>
+</div>
+<button class="inline-flex items-center gap-1 font-label-md text-label-md text-primary-container hover:text-primary transition-colors cursor-pointer" type="button">
+<span>Voir le projet</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- CALL TO ACTION FOR SERVICE PROVIDERS -->
+<section class="w-full max-w-[1280px] mx-auto px-gutter py-space-xl">
+<div class="bg-surface-container-high rounded-3xl p-space-lg md:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Vous êtes artisan ou indépendant ?</span>
+<h3 class="font-headline-lg text-headline-lg text-primary font-bold">Développez votre clientèle locale sans payer de commissions sur devis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Créez votre profil en 3 minutes, faites vérifier vos attestations professionnelles et publiez vos plus belles réalisations avant/après pour convaincre des clients sérieux.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-sm shrink-0 w-full md:w-auto">
+<a class="px-space-lg py-3 rounded-xl bg-secondary-container text-on-secondary-container font-label-lg text-label-lg hover:opacity-95 transition-opacity text-center" href="#">
+          Devenir Prestataire Vérifié
+        </a>
+<a class="px-space-lg py-3 rounded-xl bg-surface-container-lowest text-primary font-label-lg text-label-lg hover:bg-surface-container transition-colors text-center shadow-sm" href="#">
+          En savoir plus
+        </a>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_12px_rgba(23,74,112,0.03)] mt-space-xl"><div class="max-w-[1280px] mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="ProRelay Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VLxO1puQIvm0mZdPCnga_xqZgsM7UeHMrYmk4mK6VoZ8ap8qaETFOg-tucOT5HRZ2R5BU99y8e13GQajlJWcL3rg4xtZD1MrHZT_NT_ydYTddVhUBPS10WXh6BvsL1j_9ebyAyS9pcKrhjjkVhWJhC-hQJ6AWiO1R-WUQ_b6Ffdk2FRW3NzPUwM2Ep2fCDKNuunssW-fcLNcEYBdIO6IyNrpd1XQ26OYhi0p3Zxmo"/><span class="font-headline-sm text-headline-sm text-primary font-bold">ProRelay</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">La plateforme de confiance reliant clients exigeants et artisans certifiés. Comparez les réalisations avant/après réelles et réglez en direct sans frais cachés.</p><div class="flex flex-col gap-space-sm pt-space-xs"><div class="inline-flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-surface-container-low w-fit"><span class="material-symbols-outlined text-tertiary-container">payments</span><span class="font-label-md text-label-md text-on-surface">Paiement direct de la main à la main</span></div><div class="inline-flex items-center gap-space-sm px-space-md py-2 rounded-xl bg-surface-container-low w-fit"><span class="material-symbols-outlined text-tertiary-container">verified_user</span><span class="font-label-md text-label-md text-on-surface">Vérification d'identité &amp; diplômes contrôlés</span></div></div></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Catégories Clés</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Bâtiment &amp; Rénovation</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Plomberie &amp; Sanitaire</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Électricité &amp; Énergie</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Menuiserie &amp; Agencement</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Mécanique &amp; Dépannage</a></li><li><a class="hover:text-primary transition-colors" data-path="trouver-un-pro" href="#">Services Numériques &amp; Design</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Confiance &amp; Sécurité</h4><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Charte de vérification Pro</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Règles de paiement direct</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Médiation de litige</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Avis clients vérifiés</a></li><li><a class="hover:text-primary transition-colors" data-path="charte-de-confiance" href="#">Centre d'assistance</a></li></ul></div><div class="flex flex-col gap-space-sm"><h4 class="font-label-lg text-label-lg text-on-surface font-bold uppercase tracking-wider">Région &amp; Devises</h4><div class="flex flex-col gap-space-sm"><label class="font-caption text-caption text-on-surface-variant">Zone d'intervention</label><div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-base text-primary">language</span><select aria-label="Sélectionner la langue et la zone géographique" class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none w-full cursor-pointer"><option>Français (International)</option><option>English (Canada / Global)</option></select></div><label class="font-caption text-caption text-on-surface-variant mt-space-xs">Territoire &amp; Monnaie</label><div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface"><span class="material-symbols-outlined text-base text-primary">monetization_on</span><select aria-label="Sélectionner la devise et le pays" class="bg-transparent font-body-sm text-body-sm text-on-surface outline-none w-full cursor-pointer"><option>France • EUR (€)</option><option>Sénégal • XOF (FCFA)</option><option>Côte d'Ivoire • XOF (FCFA)</option><option>Canada • CAD ($)</option></select></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><p>© 2025 ProRelay Marketplace. Tous droits réservés. Transactions de gré à gré protégées.</p><div class="flex items-center gap-space-lg font-label-md text-label-md"><a class="hover:text-on-surface transition-colors" data-path="conditions-generales" href="#">Conditions Générales</a><a class="hover:text-on-surface transition-colors" data-path="confidentialite" href="#">Politique de Confidentialité</a><a class="hover:text-on-surface transition-colors" data-path="mentions-legales" href="#">Mentions Légales</a></div></div></div></footer></body></html>

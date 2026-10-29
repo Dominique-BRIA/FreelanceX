@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>ProRelay — SuperAdmin Console</title><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#346289","primary-container":"#174a70","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#6bd8cb","on-error":"#ffffff","on-tertiary-container":"#58c6b9","primary":"#003353","secondary-container":"#ff9247","primary-fixed":"#cee5ff","surface-container-highest":"#e0e3e5","error":"#ba1a1a","on-error-container":"#93000a","surface-variant":"#e0e3e5","error-container":"#ffdad6","surface-container-low":"#f2f4f6","inverse-surface":"#2d3133","surface-bright":"#f8f9fb","primary-fixed-dim":"#9fcbf7","on-surface-variant":"#42474e","on-tertiary-fixed-variant":"#005049","inverse-primary":"#9fcbf7","tertiary-container":"#005049","inverse-on-surface":"#eff1f3","on-surface":"#191c1e","on-secondary-container":"#6c3000","outline-variant":"#c2c7cf","surface-container-high":"#e6e8ea","on-primary-container":"#8db9e5","on-secondary-fixed":"#321300","on-secondary-fixed-variant":"#743500","outline":"#72777f","on-primary-fixed-variant":"#174a70","on-primary-fixed":"#001d33","on-background":"#191c1e","tertiary-fixed":"#89f5e7","surface":"#f8f9fb","surface-dim":"#d8dadc","secondary":"#994700","surface-container":"#eceef0","secondary-fixed":"#ffdbc8","background":"#f8f9fb","on-tertiary-fixed":"#00201d","on-primary":"#ffffff","on-secondary":"#ffffff","secondary-fixed-dim":"#ffb68a","on-tertiary":"#ffffff","tertiary":"#003732"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1.5rem","space-md":"1rem","space-lg":"1.5rem","space-sm":"0.5rem",margin:"2rem","space-xl":"2.5rem","space-xs":"0.25rem","margin-sm":"1rem","gutter-sm":"1rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],caption:["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],caption:["12px",{lineHeight:"16px",fontWeight:"500"}],"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"700"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"label-lg":["15px",{lineHeight:"22px",letterSpacing:"0.005em",fontWeight:"600"}],"body-md":["15px",{lineHeight:"24px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["44px",{lineHeight:"52px",letterSpacing:"-0.025em",fontWeight:"800"}],"headline-xl-mobile":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"800"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 bottom-0 w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(23,74,112,0.06)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><a class="flex items-center gap-space-xs text-primary font-headline-sm text-headline-sm tracking-tight" data-path="supervision-globale" href="#"><span class="material-symbols-outlined text-primary text-[26px]">admin_panel_settings</span><span>Pro<span class="text-secondary-container">Relay</span></span></a><span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider">SuperAdmin</span></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Gouvernance &amp; Opérations</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-label-md text-label-md rounded-xl shadow-[0_1px_3px_0_rgba(23,74,112,0.1)]"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="supervision-globale" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Supervision Globale</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="verification-kyc-et-decennale" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Vérification KYC &amp; Décennale</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="moderation-realisations" href="#"><span class="material-symbols-outlined text-[20px]">photo_library</span><span>Modération Réalisations</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="mediations-et-litiges" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Médiations &amp; Litiges</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-colors bg-primary-container text-on-primary-container font-label-md text-label-md rounded-xl shadow-[0_1px_3px_0_rgba(23,74,112,0.1)]" data-path="nomenclatures-et-metiers" href="#"><span class="material-symbols-outlined text-[20px]">category</span><span>Nomenclatures &amp; Métiers</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="parametres-et-devises" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Paramètres &amp; Devises</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="logs-daudit" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Logs d'Audit</span></a></nav></div><div class="p-space-md bg-surface-container-high/50 rounded-xl m-space-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-outline">SLA Décennales</span><span class="font-label-sm text-label-sm text-primary font-bold">99.4%</span></div><div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden"><div class="bg-tertiary-container h-full rounded-full w-[99%]"></div></div><div class="mt-space-sm flex items-center justify-between font-caption text-caption text-on-surface-variant"><span>Audit Engine</span><span class="text-tertiary-container font-bold">Online</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(23,74,112,0.04)]"><div class="h-16 w-full px-8 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm"><span class="material-symbols-outlined text-[15px] text-tertiary">shield_lock</span><span class="font-bold">TLS 1.3 Strict</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span><span>Connexion Sécurisée</span></div><span class="hidden lg:inline text-on-surface-variant font-caption text-caption">Opérations certifiées France / UE</span></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded-lg text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">euro</span><span>Devise active: EUR (€)</span></div><button aria-label="Notifications d'audit" class="p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden md:block"><span class="font-label-md text-label-md text-on-surface leading-tight">Marc Delacroix</span><span class="font-caption text-caption text-outline leading-tight">SuperAdmin Habilité</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative w-full pt-16 bg-surface min-h-screen px-8"><div class="flex flex-col w-full">
+<!-- Interactive script for switching tabs and toggling controls -->
+<script>
+    function switchSuperAdminTab(tabId) {
+      const tabs = ['btp-trades', 'currencies-regional', 'fraud-ai'];
+      tabs.forEach(id => {
+        const panel = document.getElementById('panel-' + id);
+        const btn = document.getElementById('btn-tab-' + id);
+        if (id === tabId) {
+          panel.classList.remove('hidden');
+          panel.classList.add('flex');
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        } else {
+          panel.classList.add('hidden');
+          panel.classList.remove('flex');
+          btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+          btn.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        }
+      });
+    }
+
+    function toggleDecennale(element) {
+      const isChecked = element.getAttribute('data-checked') === 'true';
+      const indicator = element.querySelector('.toggle-indicator');
+      const badge = element.closest('tr').querySelector('.status-badge');
+      
+      if (isChecked) {
+        element.setAttribute('data-checked', 'false');
+        element.classList.remove('bg-tertiary-container');
+        element.classList.add('bg-surface-container-highest');
+        indicator.classList.remove('translate-x-5');
+        indicator.classList.add('translate-x-0');
+        if(badge) {
+          badge.className = 'status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-surface-container-highest text-on-surface-variant';
+          badge.textContent = 'Facultative';
+        }
+      } else {
+        element.setAttribute('data-checked', 'true');
+        element.classList.add('bg-tertiary-container');
+        element.classList.remove('bg-surface-container-highest');
+        indicator.classList.add('translate-x-5');
+        indicator.classList.remove('translate-x-0');
+        if(badge) {
+          badge.className = 'status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-tertiary-fixed text-on-tertiary-fixed';
+          badge.textContent = 'Obligatoire (L.241-1)';
+        }
+      }
+    }
+
+    function notifyAuditCommit() {
+      const toast = document.getElementById('audit-toast');
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3500);
+    }
+  </script>
+<!-- Sticky Sub-Bar & Status System Header -->
+<section class="w-full pb-space-lg pt-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            Supervision BTP &amp; Conformité
+          </span>
+<span class="text-caption font-caption text-outline font-medium">Référence C-7740 / ISO 9001:2015</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Gouvernance Nomenclatures, Normes DTU &amp; Devises</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Paramétrage légal des 6 grands corps d’état du Bâtiment, règles de solvabilité transfrontalière et orchestration des flux d'assurance.</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm bg-surface-container-low p-2.5 rounded-xl">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface leading-none">Serveurs Opérationnels</span>
+<span class="font-caption text-caption text-outline">TLS 1.3 Strict · v3.4.1</span>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">shield_with_heart</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface leading-none">CSTB / AFNOR Sync</span>
+<span class="font-caption text-caption text-tertiary-container font-semibold">Flux temps réel (0.4s)</span>
+</div>
+</div>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm font-label-md text-label-md" onclick="notifyAuditCommit()">
+<span class="material-symbols-outlined text-[18px]">published_with_changes</span>
+<span>Publier les Altérations</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Metrics Highlight Strip (Asymmetric & Dense) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md pb-space-lg">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Corps d'état Référencés</span>
+<span class="p-2 rounded-lg bg-primary-fixed text-on-primary-fixed material-symbols-outlined text-[18px]">construction</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">6</span>
+<span class="font-caption text-caption text-tertiary-container font-bold">+18 sous-filières</span>
+</div>
+<div class="mt-2 text-caption font-caption text-on-surface-variant flex items-center justify-between">
+<span>Normes DTU indexées</span>
+<span class="font-semibold text-on-surface">42 Références</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Taux Adhésion Décennale</span>
+<span class="p-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed material-symbols-outlined text-[18px]">policy</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-tertiary-container">98.8%</span>
+<span class="font-caption text-caption text-tertiary-container font-bold">+0.4% vs M-1</span>
+</div>
+<div class="mt-2 text-caption font-caption text-on-surface-variant flex items-center justify-between">
+<span>Attestations vérifiées API</span>
+<span class="font-semibold text-on-surface">14 820 actives</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Devises Actives &amp; Escrow</span>
+<span class="p-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">4</span>
+<span class="font-caption text-caption text-on-surface-variant font-medium">EUR · CHF · GBP · USD</span>
+</div>
+<div class="mt-2 text-caption font-caption text-on-surface-variant flex items-center justify-between">
+<span>Seuil Anti-blanchiment</span>
+<span class="font-semibold text-secondary-container">1 000 € cash</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Faux Avis Interceptés (IA)</span>
+<span class="p-2 rounded-lg bg-primary-fixed text-on-primary-fixed material-symbols-outlined text-[18px]">psychology</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-error">431</span>
+<span class="font-caption text-caption text-error font-bold">99.1% précision</span>
+</div>
+<div class="mt-2 text-caption font-caption text-on-surface-variant flex items-center justify-between">
+<span>Moteur vocal &amp; textuel</span>
+<span class="font-semibold text-tertiary-container">Heuristique active</span>
+</div>
+</div>
+</section>
+<!-- Interactive Navigation Tabs -->
+<section class="pb-space-md">
+<div class="flex flex-wrap items-center gap-2 p-1.5 bg-surface-container-low rounded-xl">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary text-on-primary shadow-md font-label-md text-label-md transition-all" id="btn-tab-btp-trades" onclick="switchSuperAdminTab('btp-trades')">
+<span class="material-symbols-outlined text-[18px]">category</span>
+<span>1. Nomenclatures &amp; Métiers BTP</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container text-label-sm font-label-sm font-bold">6 Actifs</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" id="btn-tab-currencies-regional" onclick="switchSuperAdminTab('currencies-regional')">
+<span class="material-symbols-outlined text-[18px]">currency_exchange</span>
+<span>2. Devises &amp; Paramètres Internationaux</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant text-label-sm font-label-sm font-bold">Multi-juridictions</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" id="btn-tab-fraud-ai" onclick="switchSuperAdminTab('fraud-ai')">
+<span class="material-symbols-outlined text-[18px]">security</span>
+<span>3. Règles Modération &amp; Anti-fraude IA</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-label-sm font-label-sm font-bold">Assurances Directes</span>
+</button>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- TAB 1 : NOMENCLATURES & MÉTIERS BTP       -->
+<!-- ========================================== -->
+<div class="flex flex-col gap-space-lg pb-space-xl" id="panel-btp-trades">
+<!-- Action and Filter Bar -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm flex-1 max-w-lg">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Filtrer par corps d'état, code ROME, DTU ou artisan..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Filtres DTU</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Ajouter une catégorie métier</span>
+</button>
+</div>
+</div>
+<!-- Main Hierarchical Trades Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3.5 px-space-md">Code Métier</th>
+<th class="py-3.5 px-space-md">Libellé Officiel &amp; Filière BTP</th>
+<th class="py-3.5 px-space-md">Réf. Norme DTU / NF</th>
+<th class="py-3.5 px-space-md text-center">Garantie Décennale</th>
+<th class="py-3.5 px-space-md text-right">Artisans Qualifiés</th>
+<th class="py-3.5 px-space-md text-center">Contrôle API Assureur</th>
+<th class="py-3.5 px-space-md text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<!-- Row 1 : Maçonnerie -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-md font-mono text-caption text-primary font-bold">BTP-MAC-01</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">foundation</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Maçonnerie Générale &amp; Gros Œuvre</span>
+<span class="text-caption font-caption text-outline">Structures porteuses, béton armé, fondations</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono font-semibold text-caption">DTU 20.1</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline text-caption font-caption">NF P 10-202</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-11 h-6 bg-tertiary-container rounded-full p-0.5 transition-colors cursor-pointer flex items-center" data-checked="true" onclick="toggleDecennale(this)" type="button">
+<div class="toggle-indicator w-5 h-5 rounded-full bg-on-tertiary shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+<span class="status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-tertiary-fixed text-on-tertiary-fixed">Obligatoire (L.241-1)</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">3 420</span>
+<span class="text-caption font-caption text-tertiary-container font-medium">99.1% certifiés</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Auto-Check SMABTP
+                </span>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Éditer la nomenclature">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-high transition-colors" title="Archiver la catégorie">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 : Électricité -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-4 px-space-md font-mono text-caption text-primary font-bold">BTP-ELEC-02</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Électricité Basse Tension &amp; Domotique</span>
+<span class="text-caption font-caption text-outline">Tableaux, raccordements, IRVE, courants faibles</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono font-semibold text-caption">NF C 15-100</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline text-caption font-caption">UTE C 15-722</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-11 h-6 bg-tertiary-container rounded-full p-0.5 transition-colors cursor-pointer flex items-center" data-checked="true" onclick="toggleDecennale(this)" type="button">
+<div class="toggle-indicator w-5 h-5 rounded-full bg-on-tertiary shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+<span class="status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-tertiary-fixed text-on-tertiary-fixed">Obligatoire (L.241-1)</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">4 812</span>
+<span class="text-caption font-caption text-tertiary-container font-medium">99.7% certifiés</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Consuel Sync
+                </span>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 : Plomberie / Sanitaire -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-md font-mono text-caption text-primary font-bold">BTP-PLB-03</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed-dim text-on-primary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">water_damage</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Plomberie, Chauffage &amp; Sanitaire</span>
+<span class="text-caption font-caption text-outline">Canalisations, pompes à chaleur, réseaux EF/EC</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono font-semibold text-caption">DTU 60.1</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline text-caption font-caption">DTU 65.16</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-11 h-6 bg-tertiary-container rounded-full p-0.5 transition-colors cursor-pointer flex items-center" data-checked="true" onclick="toggleDecennale(this)" type="button">
+<div class="toggle-indicator w-5 h-5 rounded-full bg-on-tertiary shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+<span class="status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-tertiary-fixed text-on-tertiary-fixed">Obligatoire (L.241-1)</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">3 980</span>
+<span class="text-caption font-caption text-tertiary-container font-medium">98.4% certifiés</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Auto-Check AXA
+                </span>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 : Menuiserie / Ébénisterie -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-4 px-space-md font-mono text-caption text-primary font-bold">BTP-MEN-04</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">door_front</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Menuiserie &amp; Ébénisterie Extérieure/Intérieure</span>
+<span class="text-caption font-caption text-outline">Huisseries Alu/Bois/PVC, agencements sur-mesure</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono font-semibold text-caption">DTU 36.5</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline text-caption font-caption">Cahier CSTB 3521</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-11 h-6 bg-tertiary-container rounded-full p-0.5 transition-colors cursor-pointer flex items-center" data-checked="true" onclick="toggleDecennale(this)" type="button">
+<div class="toggle-indicator w-5 h-5 rounded-full bg-on-tertiary shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+<span class="status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-tertiary-fixed text-on-tertiary-fixed">Obligatoire (Clos/Couvert)</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">2 145</span>
+<span class="text-caption font-caption text-tertiary-container font-medium">97.9% certifiés</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Allianz Pro Direct
+                </span>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 : Carrelage / Faïence -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-4 px-space-md font-mono text-caption text-primary font-bold">BTP-CAR-05</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Carrelage, Faïence &amp; Revêtements Durs</span>
+<span class="text-caption font-caption text-outline">Chapes, étanchéité SPEC/SEL, grand format</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono font-semibold text-caption">DTU 52.2</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline text-caption font-caption">CPT 3634_V2</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-11 h-6 bg-tertiary-container rounded-full p-0.5 transition-colors cursor-pointer flex items-center" data-checked="true" onclick="toggleDecennale(this)" type="button">
+<div class="toggle-indicator w-5 h-5 rounded-full bg-on-tertiary shadow-sm transform translate-x-5 transition-transform"></div>
+</button>
+<span class="status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-tertiary-fixed text-on-tertiary-fixed">Obligatoire (Support)</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">1 870</span>
+<span class="text-caption font-caption text-tertiary-container font-medium">96.3% certifiés</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<span class="px-2 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Auto-Check SMABTP
+                </span>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 : Peinture / Finitions -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-4 px-space-md font-mono text-caption text-primary font-bold">BTP-PEI-06</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">format_paint</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Peinture, ITE &amp; Finitions Décoratives</span>
+<span class="text-caption font-caption text-outline">Revêtements muraux, ravalement, enduits chaux</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-mono font-semibold text-caption">DTU 59.1</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-outline text-caption font-caption">NF P 74-201</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex flex-col items-center gap-1">
+<button class="w-11 h-6 bg-surface-container-highest rounded-full p-0.5 transition-colors cursor-pointer flex items-center" data-checked="false" onclick="toggleDecennale(this)" type="button">
+<div class="toggle-indicator w-5 h-5 rounded-full bg-on-tertiary shadow-sm transform translate-x-0 transition-transform"></div>
+</button>
+<span class="status-badge px-2 py-0.5 rounded-full text-caption font-caption font-semibold bg-surface-container-highest text-on-surface-variant">Facultative (RC Pro seul)</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">4 210</span>
+<span class="text-caption font-caption text-on-surface-variant font-medium">RC Pro Validée</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-center">
+<span class="px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Contrôle RC Pro
+                </span>
+</td>
+<td class="py-4 px-space-md text-center">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-error hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Quick Add Drawer Preview / Inline Context -->
+<div class="bg-surface-container-low p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px] text-primary">sync_saved_locally</span>
+<span class="font-caption text-caption text-on-surface-variant">Synchronisation directe avec la table nationale ROME Pôle Emploi et le fichier central de la Fédération Française du Bâtiment (FFB).</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Page 1 de 1</span>
+<button class="p-1.5 rounded-lg bg-surface-container text-outline opacity-50 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container text-outline opacity-50 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Editorial Callout on Jurisdictions & DTU Standards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md mb-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container">verified</span>
+<span>Force Juridique du DTU</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            L'indexation d'une norme DTU conditionne la validation automatique de l'attestation décennale. En cas de sinistre, l'assureur vérifie l'adéquation exacte entre le devis émis et le code métier rattaché.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-caption text-caption text-outline">
+<span>Clause Art. 1792 Code Civil</span>
+<span class="text-tertiary-container font-semibold">Protégé</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md mb-2">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">shield</span>
+<span>Périmètre Assurance Obligatoire</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Tout artisan non détenteur d'un contrat en cours de validité pour les corps d'état à switch actif voit ses propositions d'honoraires automatiquement plafonnées à 0 € jusqu'à vérification d'un courtier agréé.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-caption text-caption text-outline">
+<span>Verrouillage Escrow</span>
+<span class="text-primary font-semibold">Strictement Appliqué</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md mb-2">
+<span class="material-symbols-outlined text-[20px] text-primary">edit_document</span>
+<span>Export &amp; Intégration API</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Les nomenclatures sont propagées aux modules de devisage mobile et aux applications compagnons des artisans via les endpoints JSON-LD normalisés.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-caption text-caption">
+<span class="text-outline">GET /api/v3/taxonomy</span>
+<span class="text-primary font-semibold font-mono">200 OK</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB 2 : DEVISES & PARAMÈTRES INTERNATIONAUX-->
+<!-- ========================================== -->
+<div class="hidden flex flex-col gap-space-lg pb-space-xl" id="panel-currencies-regional">
+<!-- Top Grid : Supported Currencies and Escrow Settings -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- Currency Table (8 cols desktop) -->
+<div class="xl:col-span-8 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Devises Autorisées &amp; Formats Monétaires</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configuration des devises de facturation et séquestre bancaire ségrégué.</p>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Ajouter Devise</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Devise</th>
+<th class="py-3 px-space-md">Code ISO</th>
+<th class="py-3 px-space-md">Format Affichage</th>
+<th class="py-3 px-space-md">Taux de Change (BCE)</th>
+<th class="py-3 px-space-md">Statut Escrow</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3.5 px-space-md font-semibold text-primary flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold">€</span>
+<span>Euro Union Européenne</span>
+</td>
+<td class="py-3.5 px-space-md font-mono text-caption font-bold">EUR (€)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">1 250,00 € (FR)</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption font-semibold">1.0000 (Base)</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption font-semibold">Actif Natif</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="p-1 rounded text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 bg-surface-container-low/20">
+<td class="py-3.5 px-space-md font-semibold text-primary flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold">CHF</span>
+<span>Franc Suisse</span>
+</td>
+<td class="py-3.5 px-space-md font-mono text-caption font-bold">CHF (CHF)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">1'250.00 CHF (CH)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">0.9682 CHF/EUR</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption font-semibold">Actif Frontalier</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="p-1 rounded text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50">
+<td class="py-3.5 px-space-md font-semibold text-primary flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">£</span>
+<span>Livre Sterling</span>
+</td>
+<td class="py-3.5 px-space-md font-mono text-caption font-bold">GBP (£)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">£1,250.00 (UK)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">0.8540 GBP/EUR</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption font-semibold">Actif</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="p-1 rounded text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 bg-surface-container-low/20">
+<td class="py-3.5 px-space-md font-semibold text-primary flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-bold">$</span>
+<span>Dollar Américain</span>
+</td>
+<td class="py-3.5 px-space-md font-mono text-caption font-bold">USD ($)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">$1,250.00 (US)</td>
+<td class="py-3.5 px-space-md font-mono text-caption">1.0825 USD/EUR</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-caption font-semibold">Marchés DOM/TOM</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="p-1 rounded text-outline hover:text-primary"><span class="material-symbols-outlined text-[18px]">settings</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-caption font-caption text-outline">
+<span>Actualisation automatisée via European Central Bank API toutes les heures.</span>
+<span class="text-tertiary-container font-semibold">Dernière synchro: il y a 14 min</span>
+</div>
+</div>
+<!-- Legal Thresholds & Anti-Money Laundering Safeguards (4 cols desktop) -->
+<div class="xl:col-span-4 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary-container">account_balance</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Seuils Légaux &amp; Tracfin</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Plafonds légaux de paiement de gré à gré (Art. L112-6 CMF et réglementations UE).</p>
+<div class="space-y-space-md">
+<!-- Threshold 1: Espèces -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Plafond Espèces (Résidents FR)</span>
+<span class="font-mono text-label-md font-bold text-error">1 000 €</span>
+</div>
+<p class="font-caption text-caption text-outline">Interdiction de saisie d'acompte en liquide au-delà de 1 000 € TTC.</p>
+</div>
+<!-- Threshold 2: Non-résidents -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Plafond Espèces (Non-résidents)</span>
+<span class="font-mono text-label-md font-bold text-secondary">15 000 €</span>
+</div>
+<p class="font-caption text-caption text-outline">Justificatif de domicile fiscal et passeport obligatoire sous 48h.</p>
+</div>
+<!-- Threshold 3: Virement Bancaire & Séquestre -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Virement Séquestre ProRelay</span>
+<span class="font-mono text-label-md font-bold text-tertiary-container">Sans Plafond</span>
+</div>
+<p class="font-caption text-caption text-outline">Contrôle KYC renforcé dès 50 000 € de marché unique.</p>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-2.5 rounded-xl bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Mettre à jour les plafonds Tracfin</span>
+</button>
+</div>
+</div>
+<!-- VAT Rates Matrix & Special Exemptions -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Taux de TVA par Défaut (Filières BTP France / DOM)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Attribution automatique selon la nature des devis générés et attestations fiscales n° 1301-SD.</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Régime CGI Art. 279-0 bis</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- VAT 1 : 10% -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-md bg-primary-container text-on-primary-container font-mono font-bold text-headline-sm">10.0%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Rénovation</span>
+</div>
+<h4 class="mt-3 font-label-lg text-label-lg font-bold text-on-surface">Amélioration, Transformation &amp; Entretien</h4>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">
+              Logements achevés depuis plus de 2 ans. Main-d'œuvre et matériaux fournis par le pro. Attestation simplifiée obligatoire.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-caption font-caption text-outline">
+<span>Code compta: TVA-REN-10</span>
+<span class="text-tertiary-container font-semibold">Par Défaut Rénov.</span>
+</div>
+</div>
+<!-- VAT 2 : 20% -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-highest text-on-surface font-mono font-bold text-headline-sm">20.0%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Neuf / Agrandissement</span>
+</div>
+<h4 class="mt-3 font-label-lg text-label-lg font-bold text-on-surface">Construction Neuve &amp; Gros Travaux</h4>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">
+              Surélévation, extension de plus de 10% de la surface de plancher, ou locaux achevés depuis moins de 2 ans.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-caption font-caption text-outline">
+<span>Code compta: TVA-STD-20</span>
+<span class="text-on-surface font-semibold">Taux Standard</span>
+</div>
+</div>
+<!-- VAT 3 : 5.5% -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-md bg-tertiary-container text-on-tertiary font-mono font-bold text-headline-sm">5.5%</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-container font-bold">Énergétique RGE</span>
+</div>
+<h4 class="mt-3 font-label-lg text-label-lg font-bold text-on-surface">Rénovation Énergétique &amp; Éco-primes</h4>
+<p class="mt-1 font-body-sm text-body-sm text-on-surface-variant">
+              Travaux d'isolation thermique, chaudières biomasse, PAC haute performance avec certification RGE en vigueur.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between text-caption font-caption text-outline">
+<span>Code compta: TVA-ECO-55</span>
+<span class="text-tertiary-container font-semibold">Exige Label RGE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- TAB 3 : RÈGLES MODÉRATION & ANTI-FRAUDE IA-->
+<!-- ========================================== -->
+<div class="hidden flex flex-col gap-space-lg pb-space-xl" id="panel-fraud-ai">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md">
+<!-- AI Review Sensitivity & Acoustic Detection (7 cols) -->
+<div class="xl:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-primary">record_voice_over</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Détection Faux Avis Vocaux &amp; Textuels</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Moteur Whisper v3 + LLM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-lg">
+            Ajustement de la sensibilité des classificateurs neuronaux analysant les intonations vocales, l'empreinte acoustique et la récurrence lexicale suspecte.
+          </p>
+<div class="space-y-space-lg">
+<!-- Slider 1: Fake Voice Review Sensitivity -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">hearing</span>
+<span>Sensibilité Détection Voix Synthétique / Deepfake</span>
+</label>
+<span class="font-mono text-label-md font-bold text-primary">88% (Élevé)</span>
+</div>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="50" type="range" value="88"/>
+<div class="flex justify-between text-caption font-caption text-outline">
+<span>Tolérant (50%)</span>
+<span>Standard (75%)</span>
+<span class="text-primary font-bold">Recommandé Plateforme (88%)</span>
+<span>Zéro Défaut (100%)</span>
+</div>
+</div>
+<!-- Slider 2: Acoustic Footprint / Cloned Audio Detection -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">graphic_eq</span>
+<span>Analyse Spectrale &amp; Bruit de Fond Réel (Chantier)</span>
+</label>
+<span class="font-mono text-label-md font-bold text-primary">94% (Strict)</span>
+</div>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="50" type="range" value="94"/>
+<p class="text-caption font-caption text-on-surface-variant">
+                Exige la présence d'acoustique environnementale conforme aux chantiers réels pour valider les témoignages audio post-réception de travaux.
+              </p>
+</div>
+<!-- Slider 3: Text Sentiment Anomaly -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">rate_review</span>
+<span>Détection Collusion Réseau d'IPs &amp; Avis Croisés</span>
+</label>
+<span class="font-mono text-label-md font-bold text-secondary-container">Seuil 2 récurrences / 7 jours</span>
+</div>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary-container" max="10" min="1" type="range" value="2"/>
+</div>
+</div>
+</div>
+<div class="mt-space-lg p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container">lock_clock</span>
+<span class="font-caption text-caption text-on-surface">Mise en quarantaine automatique des avis au-delà du seuil critique</span>
+</div>
+<span class="font-caption text-caption font-bold text-tertiary-container">Actif</span>
+</div>
+</div>
+<!-- Insurer API Connectors & Decennale Autocheck (5 cols) -->
+<div class="xl:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-tertiary-container">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Interconnexion Assureurs</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-outline font-label-sm text-label-sm">REST API v2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Vérification cryptographique instantanée des numéros de police et quittances de prime auprès des assureurs décennaux.
+          </p>
+<div class="space-y-space-sm">
+<!-- Assureur 1 : SMABTP -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center font-bold text-primary font-mono text-label-md shadow-sm">
+                  SMA
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">SMABTP Direct Connect</span>
+<span class="text-caption font-caption text-tertiary-container">Latence 120ms · 99.98% succès</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-bold">Connecté</span>
+</div>
+<!-- Assureur 2 : AXA -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center font-bold text-primary font-mono text-label-md shadow-sm">
+                  AXA
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">AXA Entreprises Construction</span>
+<span class="text-caption font-caption text-tertiary-container">Latence 145ms · Polices BTP</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-bold">Connecté</span>
+</div>
+<!-- Assureur 3 : Allianz -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center font-bold text-primary font-mono text-label-md shadow-sm">
+                  ALZ
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Allianz Pro Décennale</span>
+<span class="text-caption font-caption text-tertiary-container">Latence 180ms · Certificats PDF</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-bold">Connecté</span>
+</div>
+<!-- Assureur 4 : MAAF / Covéa -->
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center font-bold text-outline font-mono text-label-md shadow-sm">
+                  COV
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Covéa / MAAF Bâtiment</span>
+<span class="text-caption font-caption text-secondary-container">Fallback OCR actif</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-bold">Sync Hybride</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md">
+<button class="w-full py-2.5 rounded-xl bg-surface-container-high text-primary hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<span>Gérer les Clés Secrètes Assureurs (mTLS)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-Time Audit Log & Transactional Footer Bar -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">history_edu</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Journal d'Audit des Configurations Légales (Immuable)</h3>
+</div>
+<span class="font-caption text-caption text-outline font-mono">SHA-256 Hash Tree Verified</span>
+</div>
+<div class="space-y-2 font-mono text-caption text-on-surface-variant">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-3">
+<span class="text-outline">16:42:09 UTC</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-bold">PATCH</span>
+<span class="text-on-surface">DTU_INDEX / BTP-CAR-05 mise à jour vers réf. DTU 52.2 + CPT 3634</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">Par: marc.delacroix@prorelay.fr</span>
+<span class="text-tertiary-container font-semibold">Signé GPG</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-3">
+<span class="text-outline">14:15:33 UTC</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-bold">PUT</span>
+<span class="text-on-surface">FRAUD_DETECTION / Whisper-Sensibility relevée à 88% suite alerte voix de synthèse</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">Par: marc.delacroix@prorelay.fr</span>
+<span class="text-tertiary-container font-semibold">Signé GPG</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between flex-wrap gap-2">
+<div class="flex items-center gap-3">
+<span class="text-outline">09:02:11 UTC</span>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold">SYSTEM</span>
+<span class="text-on-surface">CURRENCY_SYNC / BCE taux réajustés CHF/EUR: 0.9682 · GBP/EUR: 0.8540</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-outline">Par: daemon-bce-hourly</span>
+<span class="text-tertiary-container font-semibold">Auto-Committed</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Notification Toast (Hidden by default, triggered on save) -->
+<div class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none bg-primary text-on-primary p-space-md rounded-xl shadow-xl flex items-center gap-3" id="audit-toast">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Modifications Enregistrées &amp; Hashées</span>
+<span class="font-caption text-caption text-on-primary/80">Entrée ajoutée au journal d'audit immuable avec horodatage UTC.</span>
+</div>
+</div>
+</div></main></div></body></html>
