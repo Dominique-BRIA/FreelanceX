@@ -61,11 +61,13 @@ export type Prestataire = {
   specialites: string[];
   services: Service[];
   teinte: string; // couleur de l'avatar
+  couverture?: string;
 };
 
 export const prestataires: Prestataire[] = [
   {
     id: "brice-tchoumi",
+    couverture: "/images/profil-brice-tchoumi.jpg",
     nom: "Brice Tchoumi",
     metier: "Menuisier agenceur",
     categorie: "batiment",
@@ -93,6 +95,7 @@ export const prestataires: Prestataire[] = [
   },
   {
     id: "aicha-nkoulou",
+    couverture: "/images/profil-aicha-nkoulou.jpg",
     nom: "Aïcha Nkoulou",
     metier: "Graphiste, identité visuelle",
     categorie: "graphisme",
@@ -118,6 +121,7 @@ export const prestataires: Prestataire[] = [
   },
   {
     id: "mireille-ngo-bassa",
+    couverture: "/images/profil-mireille-ngo-bassa.jpg",
     nom: "Mireille Ngo Bassa",
     metier: "Développeuse web et mobile",
     categorie: "informatique",
@@ -143,6 +147,7 @@ export const prestataires: Prestataire[] = [
   },
   {
     id: "jean-paul-mbarga",
+    couverture: "/images/profil-jean-paul-mbarga.jpg",
     nom: "Jean-Paul Mbarga",
     metier: "Électricien bâtiment",
     categorie: "plomberie",
@@ -168,6 +173,7 @@ export const prestataires: Prestataire[] = [
   },
   {
     id: "fatimatou-bello",
+    couverture: "/images/profil-fatimatou-bello.jpg",
     nom: "Fatimatou Bello",
     metier: "Traductrice français-anglais",
     categorie: "graphisme",
@@ -190,6 +196,7 @@ export const prestataires: Prestataire[] = [
   },
   {
     id: "herve-kamga",
+    couverture: "/images/profil-herve-kamga.jpg",
     nom: "Hervé Kamga",
     metier: "Photographe événementiel",
     categorie: "evenementiel",
@@ -234,6 +241,7 @@ export const prestataires: Prestataire[] = [
   },
   {
     id: "laure-fotso",
+    couverture: "/images/profil-laure-fotso.jpg",
     nom: "Laure Fotso",
     metier: "Coiffeuse à domicile",
     categorie: "beaute",
@@ -272,6 +280,20 @@ export type Realisation = {
   commentaires: number;
   avantApres: boolean;
   palette: [string, string];
+  photos?: { avant?: string; apres: string };
+};
+
+export type Commentaire = { id: string; auteur: string; texte: string; date: string };
+
+/** Quelques commentaires déjà publiés (le compteur des cartes inclut aussi des commentaires non affichés). */
+export const commentairesExistants: Record<string, Commentaire[]> = {
+  r1: [
+    { id: "c-r1-1", auteur: "Nadège Owona", texte: "Superbe finition ! C'est quel bois pour les portes ?", date: "hier" },
+    { id: "c-r1-2", auteur: "Brice Tchoumi", texte: "Merci Nadège, c'est de l'iroko verni mat.", date: "hier" },
+  ],
+  r2: [{ id: "c-r2-1", auteur: "Ruth Abena", texte: "Le logo donne vraiment envie d'y aller.", date: "il y a 3 jours" }],
+  r4: [{ id: "c-r4-1", auteur: "Laure Fotso", texte: "Je cherche la même chose pour mon salon !", date: "il y a 5 jours" }],
+  r6: [{ id: "c-r6-1", auteur: "Restaurant Le Wouri", texte: "Nos clients l'adorent. Merci Brice !", date: "il y a 2 semaines" }],
 };
 
 export const realisations: Realisation[] = [
@@ -287,6 +309,7 @@ export const realisations: Realisation[] = [
     commentaires: 9,
     avantApres: true,
     palette: ["from-stone-400 to-stone-600", "from-amber-600 to-amber-800"],
+    photos: { avant: "/images/r1-avant.jpg", apres: "/images/r1-apres.jpg" },
   },
   {
     id: "r2",
@@ -300,6 +323,7 @@ export const realisations: Realisation[] = [
     commentaires: 21,
     avantApres: false,
     palette: ["from-emerald-500 to-emerald-800", "from-emerald-500 to-emerald-800"],
+    photos: { apres: "/images/r2.jpg" },
   },
   {
     id: "r3",
@@ -313,6 +337,7 @@ export const realisations: Realisation[] = [
     commentaires: 6,
     avantApres: true,
     palette: ["from-zinc-500 to-zinc-700", "from-slate-300 to-slate-500"],
+    photos: { avant: "/images/r3-avant.jpg", apres: "/images/r3-apres.jpg" },
   },
   {
     id: "r4",
@@ -326,6 +351,7 @@ export const realisations: Realisation[] = [
     commentaires: 14,
     avantApres: false,
     palette: ["from-indigo-500 to-violet-700", "from-indigo-500 to-violet-700"],
+    photos: { apres: "/images/r4.jpg" },
   },
   {
     id: "r5",
@@ -339,6 +365,7 @@ export const realisations: Realisation[] = [
     commentaires: 4,
     avantApres: false,
     palette: ["from-sky-500 to-blue-800", "from-sky-500 to-blue-800"],
+    photos: { apres: "/images/r5.jpg" },
   },
   {
     id: "r6",
@@ -352,6 +379,7 @@ export const realisations: Realisation[] = [
     commentaires: 12,
     avantApres: true,
     palette: ["from-neutral-400 to-neutral-600", "from-orange-700 to-amber-900"],
+    photos: { avant: "/images/r6-avant.jpg", apres: "/images/r6-apres.jpg" },
   },
 ];
 
@@ -392,54 +420,57 @@ export type Demande = {
   echeance?: string;
 };
 
-export const CLIENT_DEMO = "Christian Ndjock";
+/** Compte connecté de la démonstration : Brice est client ET prestataire, il passe de l'un à l'autre. */
+export const UTILISATEUR_DEMO = "Brice Tchoumi";
+export const CLIENT_DEMO = UTILISATEUR_DEMO;
 export const PRESTATAIRE_DEMO = "brice-tchoumi";
 
 export const demandes: Demande[] = [
+  // Brice comme client : il fait appel à d'autres indépendants pour son atelier
   {
-    id: "DEM-1042",
-    titre: "Placard sur mesure, chambre parentale",
+    id: "DEM-1044",
+    titre: "Rénovation du tableau électrique de l'atelier",
     clientNom: CLIENT_DEMO,
-    clientVille: "Douala, Bonamoussadi",
-    prestataireId: "brice-tchoumi",
+    clientVille: "Douala, Bonapriso",
+    prestataireId: "jean-paul-mbarga",
     statut: "livree",
-    montant: 380000,
-    delai: "12 jours",
-    livrable: "Placard 3 portes coulissantes en iroko, 2,40 m × 2,20 m, penderie et étagères, pose comprise.",
-    date: "2 oct.",
+    montant: 135000,
+    delai: "2 jours",
+    livrable: "Remplacement du tableau, différentiel 30 mA, 8 disjoncteurs et prises de l'établi, essais compris.",
+    date: "20 oct.",
     echeance: "Validation automatique dans 4 jours",
   },
   {
     id: "DEM-1051",
-    titre: "Logo et menu pour mon restaurant",
+    titre: "Logo et enseigne pour l'atelier",
     clientNom: CLIENT_DEMO,
-    clientVille: "Douala, Bonamoussadi",
+    clientVille: "Douala, Bonapriso",
     prestataireId: "aicha-nkoulou",
     statut: "proposition",
     montant: 150000,
     delai: "7 jours",
-    livrable: "Logo (3 pistes, 2 allers-retours) et menu recto-verso, fichiers prêts à imprimer.",
+    livrable: "Logo (3 pistes, 2 allers-retours), maquette de l'enseigne et cartes de visite, fichiers prêts à imprimer.",
     date: "24 oct.",
     echeance: "Proposition valable 6 jours",
   },
   {
     id: "DEM-1038",
-    titre: "Site de réservation pour le restaurant",
+    titre: "Site vitrine de l'atelier",
     clientNom: CLIENT_DEMO,
-    clientVille: "Douala, Bonamoussadi",
+    clientVille: "Douala, Bonapriso",
     prestataireId: "mireille-ngo-bassa",
     statut: "en_cours",
-    montant: 650000,
+    montant: 450000,
     delai: "5 semaines",
-    livrable: "Site vitrine 5 pages et module de réservation avec rappel SMS.",
+    livrable: "Site vitrine 5 pages avec galerie de réalisations et formulaire de demande de devis.",
     date: "28 sept.",
     echeance: "Livraison prévue le 2 nov.",
   },
   {
     id: "DEM-1019",
-    titre: "Photos de l'inauguration",
+    titre: "Photos de l'inauguration du showroom",
     clientNom: CLIENT_DEMO,
-    clientVille: "Douala, Bonamoussadi",
+    clientVille: "Douala, Bonapriso",
     prestataireId: "herve-kamga",
     statut: "terminee",
     montant: 90000,
@@ -447,6 +478,20 @@ export const demandes: Demande[] = [
     livrable: "Reportage de 4 heures, 150 photos retouchées.",
     date: "12 sept.",
     echeance: "Avis à laisser",
+  },
+  // Brice comme prestataire : les demandes de ses clients
+  {
+    id: "DEM-1042",
+    titre: "Placard sur mesure, chambre parentale",
+    clientNom: "Christian Ndjock",
+    clientVille: "Douala, Bonamoussadi",
+    prestataireId: "brice-tchoumi",
+    statut: "livree",
+    montant: 380000,
+    delai: "12 jours",
+    livrable: "Placard 3 portes coulissantes en iroko, 2,40 m × 2,20 m, penderie et étagères, pose comprise.",
+    date: "2 oct.",
+    echeance: "Le client a 4 jours pour valider",
   },
   {
     id: "DEM-1060",
@@ -500,6 +545,11 @@ export const demandes: Demande[] = [
     date: "2 sept.",
   },
 ];
+
+/** Adresse du suivi d'une demande, selon que l'utilisateur y est client ou prestataire. */
+export function lienDemande(d: Demande): string {
+  return d.prestataireId === PRESTATAIRE_DEMO ? `/prestataire/demandes/${d.id}` : `/demandes/${d.id}`;
+}
 
 export function trouverDemande(id: string) {
   return demandes.find((d) => d.id === id);
@@ -662,15 +712,18 @@ export type Conversation = {
 };
 
 export const conversations: Conversation[] = [
-  { id: "c1", avec: "Brice Tchoumi", sujet: "Placard sur mesure", dernier: "Les photos de la pose sont dans le dossier.", heure: "10:42", nonLus: 2, demandeId: "DEM-1042" },
-  { id: "c2", avec: "Aïcha Nkoulou", sujet: "Logo et menu", dernier: "Je vous ai envoyé ma proposition.", heure: "Hier", nonLus: 0, demandeId: "DEM-1051" },
-  { id: "c3", avec: "Mireille Ngo Bassa", sujet: "Site de réservation", dernier: "La maquette de l'accueil est prête.", heure: "Lun.", nonLus: 0, demandeId: "DEM-1038" },
+  { id: "c1", avec: "Christian Ndjock", sujet: "Placard sur mesure (votre client)", dernier: "Merci Brice, je vérifie ce soir et je valide.", heure: "10:58", nonLus: 1, demandeId: "DEM-1042" },
+  { id: "c4", avec: "Jean-Paul Mbarga", sujet: "Tableau électrique de l'atelier", dernier: "Le tableau est posé, tout fonctionne.", heure: "09:20", nonLus: 1, demandeId: "DEM-1044" },
+  { id: "c2", avec: "Aïcha Nkoulou", sujet: "Logo et enseigne", dernier: "Je vous ai envoyé ma proposition.", heure: "Hier", nonLus: 0, demandeId: "DEM-1051" },
+  { id: "c3", avec: "Mireille Ngo Bassa", sujet: "Site vitrine de l'atelier", dernier: "La maquette de l'accueil est prête.", heure: "Lun.", nonLus: 0, demandeId: "DEM-1038" },
 ];
 
+/** Échange de la conversation c1, vu par Brice (moi = Brice, le prestataire). */
 export const messagesDemo = [
-  { de: "client", texte: "Bonjour Brice, j'ai vu votre dressing en iroko sur le fil. Je voudrais quelque chose de similaire pour ma chambre (2,40 m de large).", heure: "2 oct., 09:15" },
-  { de: "prestataire", texte: "Bonjour Christian, avec plaisir. Je passe prendre les cotes jeudi ? Je vous enverrai ensuite une proposition.", heure: "2 oct., 09:34" },
-  { de: "prestataire", texte: "Proposition envoyée : 380 000 FCFA, 12 jours, pose comprise.", heure: "5 oct., 17:02", proposition: true },
-  { de: "client", texte: "Parfait, j'accepte et je paie maintenant.", heure: "5 oct., 18:20" },
-  { de: "prestataire", texte: "La pose est terminée. Les photos de la pose sont dans le dossier.", heure: "Aujourd'hui, 10:42" },
+  { moi: false, texte: "Bonjour Brice, j'ai vu votre dressing en iroko sur le fil. Je voudrais quelque chose de similaire pour ma chambre (2,40 m de large).", heure: "2 oct., 09:15" },
+  { moi: true, texte: "Bonjour Christian, avec plaisir. Je passe prendre les cotes jeudi ? Je vous enverrai ensuite une proposition.", heure: "2 oct., 09:34" },
+  { moi: true, texte: "Proposition envoyée : 380 000 FCFA, 12 jours, pose comprise.", heure: "5 oct., 17:02", proposition: true },
+  { moi: false, texte: "Parfait, j'accepte et je paie maintenant.", heure: "5 oct., 18:20" },
+  { moi: true, texte: "La pose est terminée. Les photos de la pose sont dans le dossier.", heure: "Aujourd'hui, 10:42" },
+  { moi: false, texte: "Merci Brice, je vérifie ce soir et je valide.", heure: "Aujourd'hui, 10:58" },
 ] as const;

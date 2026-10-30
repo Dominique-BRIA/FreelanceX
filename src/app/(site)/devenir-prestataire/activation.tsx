@@ -75,7 +75,7 @@ export function Activation() {
               {[
                 "Les paiements faits sur la plateforme sont bloqués jusqu'à la validation du client, puis versés sur votre compte.",
                 "Une commission est prélevée au moment du versement, selon votre formule.",
-                "En cas de désaccord, l'équipe Freelance X tranche à partir des preuves des deux parties.",
+                "En cas de désaccord, l'équipe FreelanceX tranche à partir des preuves des deux parties.",
                 "Une fraude avérée entraîne un avertissement ; au troisième, le compte est bloqué.",
               ].map((t) => (
                 <li key={t} className="flex gap-3">

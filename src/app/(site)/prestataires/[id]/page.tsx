@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, Heart, Lock, MapPin, MessageSquare, ShieldCheck } from "lucide-react";
+import { Clock, ImagePlus, Lock, MapPin, MessageSquare, ShieldCheck, Wrench } from "lucide-react";
 import { Avatar, Badge, BoutonLien, Card, Certifie, Note } from "@/components/ui";
-import { CarteRealisation } from "@/components/cartes";
 import { Jauge } from "@/components/charts";
-import { prestataires, realisations, trouverPrestataire } from "@/data/mock";
+import { PRESTATAIRE_DEMO, prestataires, trouverPrestataire } from "@/data/mock";
 import { fcfa } from "@/lib/format";
 import { BoutonDemande } from "./demande-modale";
+import { BoutonFavori, RealisationsProfil, ServicesAjoutes } from "./elements-profil";
 
 export function generateStaticParams() {
   return prestataires.map((p) => ({ id: p.id }));
@@ -28,13 +29,21 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
   const { id } = await props.params;
   const p = trouverPrestataire(id);
   if (!p) notFound();
-  const sesRealisations = realisations.filter((r) => r.prestataireId === p.id);
+  const estMoi = p.id === PRESTATAIRE_DEMO;
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <Card className="p-6 sm:p-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-start">
-          <Avatar nom={p.nom} teinte={p.teinte} taille="xl" />
+      <Card className="overflow-hidden">
+        <div className="relative h-44 bg-gradient-to-br from-brand to-brand-dark sm:h-56">
+          {p.couverture && (
+            <Image src={p.couverture} alt={`Activité de ${p.nom}`} fill priority sizes="(min-width: 1280px) 1216px, 100vw" className="object-cover" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+        </div>
+        <div className="flex flex-col gap-6 p-6 sm:p-8 md:flex-row md:items-start">
+          <div className="relative z-10 -mt-20 w-fit rounded-full border-4 border-white sm:-mt-24">
+            <Avatar nom={p.nom} teinte={p.teinte} taille="xl" />
+          </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-3xl font-extrabold tracking-tight text-ink">{p.nom}</h1>
@@ -49,15 +58,25 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
             </div>
             <p className="mt-4 max-w-2xl leading-7 text-slate-600">{p.description}</p>
           </div>
-          <div className="flex w-full flex-col gap-2 md:w-64">
-            <BoutonDemande prestataire={p.nom} />
-            <BoutonLien href="/messagerie" variante="contour" className="w-full">
-              <MessageSquare className="size-4" /> Envoyer un message
-            </BoutonLien>
-            <button type="button" className="flex h-10 items-center justify-center gap-2 text-sm font-medium text-muted hover:text-brand">
-              <Heart className="size-4" /> Ajouter aux favoris
-            </button>
-          </div>
+          {estMoi ? (
+            <div className="flex w-full flex-col gap-2 md:w-64">
+              <p className="rounded-xl bg-brand-50 px-3 py-2 text-center text-sm font-medium text-brand">C&apos;est votre profil public</p>
+              <BoutonLien href="/prestataire/services" variante="contour" className="w-full">
+                <Wrench className="size-4" /> Gérer mes services
+              </BoutonLien>
+              <BoutonLien href="/prestataire/publier" variante="action" className="w-full">
+                <ImagePlus className="size-4" /> Publier une réalisation
+              </BoutonLien>
+            </div>
+          ) : (
+            <div className="flex w-full flex-col gap-2 md:w-64">
+              <BoutonDemande prestataire={p.nom} />
+              <BoutonLien href={`/messagerie?avec=${p.id}`} variante="contour" className="w-full">
+                <MessageSquare className="size-4" /> Envoyer un message
+              </BoutonLien>
+              <BoutonFavori prestataireId={p.id} />
+            </div>
+          )}
         </div>
       </Card>
 
@@ -79,23 +98,15 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
                     <p className="font-bold text-ink tabular">
                       {s.prix ? `${s.prix >= 50000 ? "Dès " : ""}${fcfa(s.prix)}${s.unite ? ` ${s.unite}` : ""}` : "Sur proposition"}
                     </p>
-                    <BoutonDemande prestataire={p.nom} service={s.titre} />
+                    {!estMoi && <BoutonDemande prestataire={p.nom} service={s.titre} />}
                   </div>
                 </Card>
               ))}
+              <ServicesAjoutes prestataireId={p.id} />
             </div>
           </section>
 
-          {sesRealisations.length > 0 && (
-            <section>
-              <h2 className="text-xl font-bold text-ink">Réalisations</h2>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                {sesRealisations.map((r) => (
-                  <CarteRealisation key={r.id} realisation={r} compacte />
-                ))}
-              </div>
-            </section>
-          )}
+          <RealisationsProfil prestataireId={p.id} />
 
           <section id="avis">
             <div className="flex items-end justify-between">
@@ -142,7 +153,7 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
             </div>
             {p.certifie && (
               <Link href="/certification" className="mt-5 block rounded-xl bg-trust-50 p-3 text-sm text-trust-dark hover:underline">
-                Identité vérifiée par Freelance X. Que garantit ce badge ?
+                Identité vérifiée par FreelanceX. Que garantit ce badge ?
               </Link>
             )}
           </Card>

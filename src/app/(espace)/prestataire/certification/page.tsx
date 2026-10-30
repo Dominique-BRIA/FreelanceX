@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BadgeCheck, FileCheck2, Lock } from "lucide-react";
+import { FileCheck2, Lock } from "lucide-react";
 import { TitrePage } from "@/components/espace";
-import { Badge, Bouton, Card } from "@/components/ui";
-import { fcfa } from "@/lib/format";
+import { Badge, Card } from "@/components/ui";
+import { StatutCertification } from "./statut";
 
 export const metadata: Metadata = { title: "Certification d'identité" };
 
@@ -20,19 +20,7 @@ export default function CertificationPrestataire() {
     <div className="space-y-8">
       <TitrePage titre="Certification d'identité" sousTitre="Le badge rassure les clients. Il ne certifie pas vos compétences." />
 
-      <Card className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center">
-        <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-trust-50 text-trust">
-          <BadgeCheck className="size-7" />
-        </span>
-        <div className="flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <h2 className="text-lg font-bold text-ink">Identité vérifiée</h2>
-            <Badge ton="trust">Active</Badge>
-          </div>
-          <p className="mt-1 text-sm text-muted">Valable jusqu&apos;au 14 janvier 2027. Vous serez prévenu un mois avant l&apos;expiration.</p>
-        </div>
-        <Bouton variante="contour">Renouveler · {fcfa(10000)}</Bouton>
-      </Card>
+      <StatutCertification />
 
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="p-6">

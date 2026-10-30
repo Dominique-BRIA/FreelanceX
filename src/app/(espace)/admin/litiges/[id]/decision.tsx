@@ -13,6 +13,7 @@ export function Decision({ litige }: { litige: Litige }) {
   const [partClient, setPartClient] = useState(30);
   const [mauvaiseFoi, setMauvaiseFoi] = useState<"" | "demandeur" | "defendeur">("");
   const [rendue, setRendue] = useState(litige.etat === "resolu");
+  const [complement, setComplement] = useState(false);
 
   const client = litige.demandeurRole === "client" ? litige.demandeur : litige.defendeur;
   const prestataire = litige.demandeurRole === "client" ? litige.defendeur : litige.demandeur;
@@ -109,7 +110,15 @@ export function Decision({ litige }: { litige: Litige }) {
       )}
 
       <Bouton className="mt-5 w-full" onClick={() => setRendue(true)}>Rendre la décision</Bouton>
-      <Bouton variante="discret" className="mt-2 w-full">Demander un complément de preuve</Bouton>
+      {complement ? (
+        <p className="mt-3 rounded-xl bg-brand-50 p-3 text-sm text-brand">
+          Complément demandé aux deux parties. Elles ont 3 jours pour déposer de nouvelles preuves.
+        </p>
+      ) : (
+        <Bouton variante="discret" className="mt-2 w-full" onClick={() => setComplement(true)}>
+          Demander un complément de preuve
+        </Bouton>
+      )}
     </Card>
   );
 }

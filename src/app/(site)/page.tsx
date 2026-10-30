@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, FileCheck2, Lock, MapPin, Search, ShieldCheck, Star, Wallet } from "lucide-react";
 import { BoutonLien, Card, EnTete } from "@/components/ui";
-import { CartePrestataire, CarteRealisation } from "@/components/cartes";
+import { CartePrestataire } from "@/components/cartes";
+import { Publication } from "@/components/publication";
 import { iconesCategorie } from "@/components/visuels";
 import { categories, prestataires, realisations } from "@/data/mock";
 import { compact } from "@/lib/format";
@@ -167,7 +168,7 @@ export default function Accueil() {
         />
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {realisations.slice(0, 3).map((r) => (
-            <CarteRealisation key={r.id} realisation={r} compacte />
+            <Publication key={r.id} realisation={r} compacte />
           ))}
         </div>
       </section>

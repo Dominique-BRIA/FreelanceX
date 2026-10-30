@@ -12,7 +12,7 @@ export default function PageCertification() {
       </span>
       <h1 className="mt-5 text-3xl font-extrabold tracking-tight text-brand">Que signifie le badge « Identité vérifiée » ?</h1>
       <p className="mt-3 text-lg text-muted">
-        Il indique que l&apos;équipe Freelance X a contrôlé l&apos;identité du prestataire. Il ne valide pas ses compétences.
+        Il indique que l&apos;équipe FreelanceX a contrôlé l&apos;identité du prestataire. Il ne valide pas ses compétences.
       </p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">

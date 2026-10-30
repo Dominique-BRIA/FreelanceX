@@ -14,10 +14,11 @@ import {
   Smartphone,
   Star,
   Unlock,
-  X,
 } from "lucide-react";
 import { Avatar, Badge, Bouton, BoutonLien, Card, Certifie, Note, StatutDemandeBadge } from "@/components/ui";
-import type { Demande, Prestataire, StatutDemande } from "@/data/mock";
+import { Modale } from "@/components/modale";
+import { useDemo } from "@/components/demo-store";
+import { conversations, type Demande, type Prestataire, type StatutDemande } from "@/data/mock";
 import { cx, fcfa } from "@/lib/format";
 
 const etapes = ["Proposition", "Paiement", "Travail", "Validation", "Terminé"];
@@ -40,8 +41,14 @@ function etapeActive(statut: StatutDemande): number {
 }
 
 export function SuiviDemande({ demande, prestataire }: { demande: Demande; prestataire: Prestataire }) {
-  const [statut, setStatut] = useState<StatutDemande>(demande.statut);
-  const [modale, setModale] = useState<null | "paiement" | "litige">(null);
+  // Le statut est partagé avec les tableaux de bord grâce à l'état de la démo.
+  const { statuts, changerStatut, envoyerMessage } = useDemo();
+  const statut = statuts[demande.id] ?? demande.statut;
+  const setStatut = (s: StatutDemande) => changerStatut(demande.id, s);
+  const conversation = conversations.find((c) => c.demandeId === demande.id)?.id ?? `nouvelle-${prestataire.id}`;
+  const [modale, setModale] = useState<null | "paiement" | "litige" | "modification">(null);
+  const [modificationEnvoyee, setModificationEnvoyee] = useState(false);
+  const [souhait, setSouhait] = useState("");
   const [moyen, setMoyen] = useState<"momo" | "carte">("momo");
   const [note, setNote] = useState(0);
   const [avisEnvoye, setAvisEnvoye] = useState(false);
@@ -91,7 +98,12 @@ export function SuiviDemande({ demande, prestataire }: { demande: Demande; prest
                 texte={`${prestataire.nom} propose ${fcfa(montant)} pour ce travail. ${demande.echeance ?? ""}.`}
               >
                 <Bouton variante="action" onClick={() => setStatut("acceptee")}>Accepter la proposition</Bouton>
-                <Bouton variante="contour">Demander une modification</Bouton>
+                <Bouton variante="contour" onClick={() => setModale("modification")}>Demander une modification</Bouton>
+                {modificationEnvoyee && (
+                  <p className="w-full text-sm font-medium text-trust-dark">
+                    Votre demande a été envoyée à {prestataire.nom.split(" ")[0]} dans la messagerie.
+                  </p>
+                )}
               </Action>
             )}
             {statut === "acceptee" && (
@@ -124,7 +136,7 @@ export function SuiviDemande({ demande, prestataire }: { demande: Demande; prest
             {statut === "en_litige" && (
               <Action
                 titre="Litige ouvert"
-                texte={`${prestataire.nom} a 3 jours pour répondre. L'équipe Freelance X examinera ensuite les preuves. Les fonds restent bloqués.`}
+                texte={`${prestataire.nom} a 3 jours pour répondre. L'équipe FreelanceX examinera ensuite les preuves. Les fonds restent bloqués.`}
                 icone={<AlertTriangle className="size-5" />}
                 ton="danger"
               />
@@ -150,7 +162,7 @@ export function SuiviDemande({ demande, prestataire }: { demande: Demande; prest
             {statut === "hors_plateforme" && (
               <Action
                 titre="Réglée hors plateforme"
-                texte="Vous avez choisi de payer directement le prestataire. Freelance X n'intervient pas : pas de séquestre, pas de litige ni d'avis officiel."
+                texte="Vous avez choisi de payer directement le prestataire. FreelanceX n'intervient pas : pas de séquestre, pas de litige ni d'avis officiel."
               />
             )}
             {statut === "remboursee" && <Action titre="Vous avez été remboursé" texte="Le litige a été tranché en votre faveur." />}
@@ -201,7 +213,7 @@ export function SuiviDemande({ demande, prestataire }: { demande: Demande; prest
               {prestataire.certifie && <Certifie court />}
               <Note note={prestataire.note} avis={prestataire.avis} />
             </div>
-            <BoutonLien href="/messagerie" variante="contour" taille="sm" className="mt-4 w-full">
+            <BoutonLien href={`/messagerie?avec=${prestataire.id}`} variante="contour" taille="sm" className="mt-4 w-full">
               <MessageSquare className="size-4" /> Messagerie
             </BoutonLien>
           </Card>
@@ -253,6 +265,31 @@ export function SuiviDemande({ demande, prestataire }: { demande: Demande; prest
             }}
           >
             <Lock className="size-4" /> Confirmer le paiement
+          </Bouton>
+        </Modale>
+      )}
+
+      {modale === "modification" && (
+        <Modale onFermer={() => setModale(null)} titre="Demander une modification">
+          <p className="text-sm text-muted">{prestataire.nom} recevra votre message et pourra envoyer une nouvelle version de sa proposition.</p>
+          <textarea
+            rows={4}
+            value={souhait}
+            onChange={(e) => setSouhait(e.target.value)}
+            placeholder="Ex. pouvez-vous inclure l'impression de 50 menus ?"
+            className="mt-4 w-full rounded-xl border border-line p-3 text-sm outline-none focus:border-brand"
+          />
+          <Bouton
+            className="mt-4 w-full"
+            disabled={!souhait.trim()}
+            onClick={() => {
+              envoyerMessage(conversation, { type: "texte", contenu: `Demande de modification : ${souhait.trim()}` });
+              setModificationEnvoyee(true);
+              setSouhait("");
+              setModale(null);
+            }}
+          >
+            Envoyer
           </Bouton>
         </Modale>
       )}
@@ -315,21 +352,6 @@ function Action({
         <h2 className="text-lg font-bold text-ink">{titre}</h2>
         <p className="mt-1 text-sm leading-6 text-muted">{texte}</p>
         {children && <div className="mt-5 flex flex-wrap gap-3">{children}</div>}
-      </div>
-    </div>
-  );
-}
-
-function Modale({ titre, onFermer, children }: { titre: string; onFermer: () => void; children: React.ReactNode }) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-4" role="dialog" aria-modal>
-      <button type="button" aria-label="Fermer" className="absolute inset-0 bg-slate-900/50" onClick={onFermer} />
-      <div className="relative w-full max-w-md rounded-t-3xl bg-white p-6 shadow-lift sm:rounded-3xl">
-        <button type="button" onClick={onFermer} className="absolute right-4 top-4 rounded-lg p-1 text-muted hover:bg-canvas" aria-label="Fermer">
-          <X className="size-5" />
-        </button>
-        <h2 className="pr-8 text-xl font-bold text-ink">{titre}</h2>
-        <div className="mt-2">{children}</div>
       </div>
     </div>
   );

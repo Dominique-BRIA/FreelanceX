@@ -9,6 +9,7 @@ import {
   ClipboardList,
   CreditCard,
   Gavel,
+  Heart,
   Images,
   LayoutDashboard,
   Menu,
@@ -17,12 +18,16 @@ import {
   Settings,
   ShieldCheck,
   Sparkles,
+  Store,
   Users,
+  Wrench,
   X,
   type LucideIcon,
 } from "lucide-react";
 import { Logo } from "@/components/visuels";
 import { Avatar } from "@/components/ui";
+import { useDemo } from "@/components/demo-store";
+import { UTILISATEUR_DEMO } from "@/data/mock";
 import { cx } from "@/lib/format";
 
 export type Role = "client" | "prestataire" | "admin";
@@ -34,13 +39,15 @@ const navigation: Record<Role, Lien[]> = {
     { href: "/client", libelle: "Vue d'ensemble", icone: LayoutDashboard },
     { href: "/client/demandes", libelle: "Mes demandes", icone: ClipboardList, compteur: 2 },
     { href: "/messagerie", libelle: "Messagerie", icone: MessageSquare, compteur: 2 },
+    { href: "/client/favoris", libelle: "Favoris", icone: Heart },
     { href: "/recherche", libelle: "Trouver un prestataire", icone: Search },
   ],
   prestataire: [
     { href: "/prestataire", libelle: "Vue d'ensemble", icone: LayoutDashboard },
     { href: "/prestataire/demandes", libelle: "Demandes", icone: ClipboardList, compteur: 1 },
+    { href: "/prestataire/services", libelle: "Services", icone: Wrench },
+    { href: "/prestataire/publier", libelle: "Publier une réalisation", icone: Images },
     { href: "/prestataire/paiements", libelle: "Paiements", icone: CreditCard },
-    { href: "/realisations", libelle: "Réalisations", icone: Images },
     { href: "/messagerie", libelle: "Messagerie", icone: MessageSquare },
     { href: "/prestataire/abonnement", libelle: "Abonnement", icone: Sparkles },
     { href: "/prestataire/certification", libelle: "Certification", icone: BadgeCheck },
@@ -54,23 +61,27 @@ const navigation: Record<Role, Lien[]> = {
   ],
 };
 
+// Brice possède les rôles client et prestataire : il passe de l'un à l'autre. L'administration est un compte d'équipe.
 const identites: Record<Role, { nom: string; detail: string; teinte: string }> = {
-  client: { nom: "Christian Ndjock", detail: "Client · Douala", teinte: "bg-brand" },
-  prestataire: { nom: "Brice Tchoumi", detail: "Menuisier · Formule Promax", teinte: "bg-amber-600" },
-  admin: { nom: "Estelle Mballa", detail: "Litiges et certifications", teinte: "bg-trust" },
+  client: { nom: UTILISATEUR_DEMO, detail: "Mode client", teinte: "bg-amber-600" },
+  prestataire: { nom: UTILISATEUR_DEMO, detail: "Mode prestataire", teinte: "bg-amber-600" },
+  admin: { nom: "Estelle Mballa", detail: "Équipe · litiges et certifications", teinte: "bg-trust" },
 };
 
-const autresEspaces: Record<Role, { href: string; libelle: string }[]> = {
-  client: [{ href: "/prestataire", libelle: "Espace prestataire" }],
-  prestataire: [{ href: "/client", libelle: "Espace client" }],
-  admin: [{ href: "/", libelle: "Voir le site public" }],
+const changementDeMode: Record<Role, { href: string; libelle: string }> = {
+  client: { href: "/prestataire", libelle: "Passer en mode prestataire" },
+  prestataire: { href: "/client", libelle: "Passer en mode client" },
+  admin: { href: "/", libelle: "Voir le site public" },
 };
 
 export function DashboardShell({ role, children }: { role: Role; children: ReactNode }) {
   const chemin = usePathname();
   const [ouvert, setOuvert] = useState(false);
+  const { formule } = useDemo();
   const sombre = role === "admin";
   const identite = identites[role];
+  const detail = role === "prestataire" ? `Mode prestataire · ${formule === "promax" ? "Promax" : formule === "pro" ? "Pro" : "Classique"}` : identite.detail;
+  const mode = changementDeMode[role];
 
   const barre = (
     <div className="flex h-full flex-col">
@@ -81,7 +92,7 @@ export function DashboardShell({ role, children }: { role: Role; children: React
         <Avatar nom={identite.nom} teinte={identite.teinte} taille="sm" />
         <div className="min-w-0">
           <p className={cx("truncate text-sm font-semibold", sombre ? "text-white" : "text-ink")}>{identite.nom}</p>
-          <p className={cx("truncate text-xs", sombre ? "text-white/60" : "text-muted")}>{identite.detail}</p>
+          <p className={cx("truncate text-xs", sombre ? "text-white/60" : "text-muted")}>{detail}</p>
         </div>
       </div>
       <nav className="mt-6 flex-1 space-y-1 px-3" aria-label="Navigation de l'espace">
@@ -121,19 +132,22 @@ export function DashboardShell({ role, children }: { role: Role; children: React
           );
         })}
       </nav>
-      <div className={cx("m-4 border-t pt-4", sombre ? "border-white/10" : "border-line")}>
-        {autresEspaces[role].map((e) => (
-          <Link
-            key={e.href}
-            href={e.href}
-            className={cx(
-              "flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium",
-              sombre ? "text-white/70 hover:text-white" : "text-muted hover:text-brand",
-            )}
-          >
-            <ArrowLeftRight className="size-4" /> {e.libelle}
+      <div className={cx("m-4 space-y-2 border-t pt-4", sombre ? "border-white/10" : "border-line")}>
+        <Link
+          href={mode.href}
+          onClick={() => setOuvert(false)}
+          className={cx(
+            "flex h-11 items-center justify-center gap-2 rounded-xl text-sm font-semibold",
+            sombre ? "bg-white/10 text-white hover:bg-white/20" : "bg-accent text-white hover:bg-accent-dark",
+          )}
+        >
+          <ArrowLeftRight className="size-4" /> {mode.libelle}
+        </Link>
+        {!sombre && (
+          <Link href="/" className="flex items-center justify-center gap-2 rounded-lg py-1.5 text-sm font-medium text-muted hover:text-brand">
+            <Store className="size-4" /> Retour à la marketplace
           </Link>
-        ))}
+        )}
       </div>
     </div>
   );

@@ -4,13 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowLeft, CheckCircle2, Lock, Upload } from "lucide-react";
 import { Badge, Bouton, Card, StatutDemandeBadge } from "@/components/ui";
+import { useDemo } from "@/components/demo-store";
 import type { Demande, StatutDemande } from "@/data/mock";
 import { fcfa } from "@/lib/format";
 
 const champ = "mt-1.5 h-11 w-full rounded-xl border border-line bg-white px-3 text-sm outline-none focus:border-brand focus:ring-4 focus:ring-brand/10";
 
 export function SuiviPrestataire({ demande }: { demande: Demande }) {
-  const [statut, setStatut] = useState<StatutDemande>(demande.statut);
+  const { statuts, changerStatut } = useDemo();
+  const statut = statuts[demande.id] ?? demande.statut;
+  const setStatut = (s: StatutDemande) => changerStatut(demande.id, s);
   const [reponduLitige, setReponduLitige] = useState(false);
   const commission = demande.montant ? Math.round(demande.montant * 0.05) : 0;
 
@@ -85,7 +88,7 @@ export function SuiviPrestataire({ demande }: { demande: Demande }) {
           )}
           {statut === "en_litige" &&
             (reponduLitige ? (
-              <Etat titre="Réponse envoyée" texte="L'équipe Freelance X examine les preuves des deux parties. Vous serez notifié de la décision." />
+              <Etat titre="Réponse envoyée" texte="L'équipe FreelanceX examine les preuves des deux parties. Vous serez notifié de la décision." />
             ) : (
               <div>
                 <Badge ton="danger">Litige LIT-208</Badge>

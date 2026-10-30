@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { BadgeCheck, Inbox, Lock, Plus, Star, Wallet } from "lucide-react";
 import { AFaire, LienTout, TitrePage } from "@/components/espace";
 import { Histogramme, Jauge } from "@/components/charts";
-import { Badge, BoutonLien, Card, Indicateur } from "@/components/ui";
+import { BoutonLien, Card, Indicateur } from "@/components/ui";
 import { fcfa } from "@/lib/format";
+import { CarteFormule } from "./carte-formule";
 
 export const metadata: Metadata = { title: "Espace prestataire" };
 
@@ -27,10 +27,10 @@ export default function TableauDeBordPrestataire() {
         sousTitre="Voici l'essentiel de votre activité cette semaine."
         actions={
           <>
-            <BoutonLien href="/realisations" variante="contour">
+            <BoutonLien href="/prestataire/services" variante="contour">
               <Plus className="size-4" /> Ajouter un service
             </BoutonLien>
-            <BoutonLien href="/realisations" variante="action">
+            <BoutonLien href="/prestataire/publier" variante="action">
               <Plus className="size-4" /> Publier une réalisation
             </BoutonLien>
           </>
@@ -46,9 +46,9 @@ export default function TableauDeBordPrestataire() {
 
       <AFaire
         taches={[
-          { titre: "Envoyer une proposition à Ruth Abena", detail: "Cuisine équipée · reçue aujourd'hui", action: "Proposer un prix", href: "/prestataire/demandes/DEM-1060", urgent: true },
+          { titre: "Envoyer une proposition à Ruth Abena", detail: "Cuisine équipée · reçue aujourd'hui", action: "Proposer un prix", href: "/prestataire/demandes/DEM-1060", urgent: true, demande: { id: "DEM-1060", statut: "envoyee" } },
           { titre: "Répondre au litige de Paul Essomba", detail: "Portes intérieures · avant le 31 oct. · 240 000 FCFA bloqués", action: "Répondre", href: "/prestataire/demandes/DEM-1033", urgent: true },
-          { titre: "Déclarer la fin du comptoir du Wouri", detail: "Livraison prévue le 31 oct. · ajoutez les photos du travail", action: "Déclarer", href: "/prestataire/demandes/DEM-1047" },
+          { titre: "Déclarer la fin du comptoir du Wouri", detail: "Livraison prévue le 31 oct. · ajoutez les photos du travail", action: "Déclarer", href: "/prestataire/demandes/DEM-1047", demande: { id: "DEM-1047", statut: "en_cours" } },
         ]}
       />
 
@@ -67,16 +67,7 @@ export default function TableauDeBordPrestataire() {
         </Card>
 
         <div className="space-y-4">
-          <Card className="p-5">
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-medium text-muted">Formule</p>
-              <Badge ton="accent">Promax</Badge>
-            </div>
-            <p className="mt-2 text-sm text-ink">Commission de 5 % · renouvelée le 14 nov.</p>
-            <Link href="/prestataire/abonnement" className="mt-3 inline-block text-sm font-semibold text-brand hover:underline">
-              Gérer l&apos;abonnement
-            </Link>
-          </Card>
+          <CarteFormule />
           <Card className="p-5">
             <div className="flex items-center justify-between">
               <p className="text-sm font-medium text-muted">Score de confiance</p>

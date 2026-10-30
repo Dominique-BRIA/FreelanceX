@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Avatar, Card, StatutDemandeBadge } from "@/components/ui";
+import { useDemo } from "@/components/demo-store";
 import type { StatutDemande } from "@/data/mock";
 import { cx, fcfa } from "@/lib/format";
 
@@ -24,14 +25,24 @@ const groupes: { id: string; libelle: string; statuts: StatutDemande[] }[] = [
   { id: "fin", libelle: "Terminées", statuts: ["terminee", "remboursee", "hors_plateforme"] },
 ];
 
-export function ListeDemandes({ lignes, prefixe }: { lignes: LigneDemande[]; prefixe: string }) {
+export function ListeDemandes({
+  lignes: initiales,
+  prefixe,
+  sansFiltres = false,
+}: {
+  lignes: LigneDemande[];
+  prefixe: string;
+  sansFiltres?: boolean;
+}) {
+  const { statuts } = useDemo();
+  const lignes = initiales.map((l) => ({ ...l, statut: statuts[l.id] ?? l.statut }));
   const [groupe, setGroupe] = useState("tout");
   const filtre = groupes.find((g) => g.id === groupe)!;
   const visibles = lignes.filter((l) => !filtre.statuts.length || filtre.statuts.includes(l.statut));
 
   return (
     <div>
-      <div className="flex gap-2 overflow-x-auto pb-1">
+      <div className={cx("flex gap-2 overflow-x-auto pb-1", sansFiltres && "hidden")}>
         {groupes.map((g) => {
           const n = lignes.filter((l) => !g.statuts.length || g.statuts.includes(l.statut)).length;
           return (
@@ -49,7 +60,7 @@ export function ListeDemandes({ lignes, prefixe }: { lignes: LigneDemande[]; pre
           );
         })}
       </div>
-      <Card className="mt-4 divide-y divide-line">
+      <Card className={cx("divide-y divide-line", !sansFiltres && "mt-4", sansFiltres && "border-0 shadow-none")}>
         {visibles.map((l) => (
           <Link key={l.id} href={`${prefixe}${l.id}`} className="flex flex-col gap-3 p-4 hover:bg-canvas sm:flex-row sm:items-center sm:gap-4">
             <div className="flex min-w-0 flex-1 items-center gap-3">
