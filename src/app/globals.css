@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Palette Freelance X : bleu marine (confiance), orange (action), turquoise (vérification) */
+@theme {
+  --color-brand: #174a70;
+  --color-brand-dark: #0f3554;
+  --color-brand-50: #eef4f9;
+  --color-brand-100: #d9e6f1;
+  --color-accent: #e67e35;
+  --color-accent-dark: #c9671f;
+  --color-accent-50: #fdf1e7;
+  --color-trust: #0d9488;
+  --color-trust-dark: #0f766e;
+  --color-trust-50: #e6f6f4;
+  --color-canvas: #f3f5f7;
+  --color-ink: #1e293b;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-danger: #dc2626;
+  --color-danger-50: #fef2f2;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 3px 0 rgb(23 74 112 / 0.05), 0 1px 2px -1px rgb(23 74 112 / 0.05);
+  --shadow-lift: 0 10px 15px -3px rgb(23 74 112 / 0.08), 0 4px 6px -4px rgb(23 74 112 / 0.05);
+}
+
+html {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
