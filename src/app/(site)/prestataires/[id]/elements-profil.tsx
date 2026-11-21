@@ -1,6 +1,7 @@
 "use client";
 
-import { Clock, Heart } from "lucide-react";
+import { useState } from "react";
+import { Clock, Flag, Heart } from "lucide-react";
 import { Card } from "@/components/ui";
 import { Publication } from "@/components/publication";
 import { useDemo } from "@/components/demo-store";
@@ -18,6 +19,23 @@ export function BoutonFavori({ prestataireId }: { prestataireId: string }) {
       className={cx("flex h-10 items-center justify-center gap-2 rounded-xl text-sm font-medium", actif ? "text-accent" : "text-muted hover:text-brand")}
     >
       <Heart className={cx("size-4", actif && "fill-accent")} /> {actif ? "Dans vos favoris" : "Ajouter aux favoris"}
+    </button>
+  );
+}
+
+/** Signalement d'un profil : dans la maquette, on affiche seulement la confirmation. */
+export function BoutonSignaler() {
+  const [signale, setSignale] = useState(false);
+  if (signale) {
+    return (
+      <p role="status" className="px-1 text-sm text-muted">
+        Merci, l&apos;équipe FreelanceX va examiner ce profil.
+      </p>
+    );
+  }
+  return (
+    <button type="button" onClick={() => setSignale(true)} className="flex items-center gap-2 px-1 text-sm font-medium text-muted hover:text-ink hover:underline">
+      <Flag className="size-4" /> Signaler ce profil
     </button>
   );
 }
