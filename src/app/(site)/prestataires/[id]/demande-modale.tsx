@@ -1,17 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ComponentProps } from "react";
 import { CheckCircle2, X } from "lucide-react";
 import { Bouton, BoutonLien } from "@/components/ui";
 
-export function BoutonDemande({ prestataire, service }: { prestataire: string; service?: string }) {
+type ProprietesBouton = ComponentProps<typeof Bouton>;
+
+export function BoutonDemande({
+  prestataire,
+  service,
+  libelle,
+  variante,
+  taille,
+}: {
+  prestataire: string;
+  service?: string;
+  /** Texte du bouton ; par défaut « Demander » (avec un service) ou « Demander une prestation ». */
+  libelle?: string;
+  /** Par défaut « contour » avec un service, « action » sinon. */
+  variante?: ProprietesBouton["variante"];
+  /** Par défaut « sm » avec un service, « md » sinon. En « md », le bouton prend toute la largeur. */
+  taille?: "sm" | "md";
+}) {
   const [ouvert, setOuvert] = useState(false);
   const [envoye, setEnvoye] = useState(false);
+  const tailleBouton = taille ?? (service ? "sm" : "md");
 
   return (
     <>
-      <Bouton variante={service ? "contour" : "action"} taille={service ? "sm" : "md"} onClick={() => setOuvert(true)} className={service ? "" : "w-full"}>
-        {service ? "Demander" : "Demander une prestation"}
+      <Bouton
+        variante={variante ?? (service ? "contour" : "action")}
+        taille={tailleBouton}
+        onClick={() => setOuvert(true)}
+        className={tailleBouton === "md" ? "w-full" : ""}
+      >
+        {libelle ?? (service ? "Demander" : "Demander une prestation")}
       </Bouton>
       {ouvert && (
         <div className="fixed inset-0 z-50 flex items-end justify-center p-0 sm:items-center sm:p-4" role="dialog" aria-modal>
