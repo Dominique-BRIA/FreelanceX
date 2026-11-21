@@ -114,7 +114,7 @@ export function DemoNav() {
                 <div>
                   <p className="font-bold text-ink">
                     Maquette FreelanceX{" "}
-                    <span className="ml-1 rounded-md bg-accent-50 px-1.5 py-0.5 font-mono text-xs text-accent-dark">
+                    <span className="ml-1 rounded-md bg-accent-50 px-1.5 py-0.5 font-mono text-xs text-accent-text">
                       {groupes.reduce((n, g) => n + g.ecrans.length, 0)} écrans
                     </span>
                   </p>
@@ -192,7 +192,7 @@ export function DemoNav() {
               onClick={fermer}
               className={cx(
                 "rounded-xl px-2.5 py-2 text-sm font-semibold sm:px-3",
-                groupe.id === g.id ? "bg-accent text-white" : "text-white/80 hover:bg-white/10 hover:text-white",
+                groupe.id === g.id ? "bg-accent text-ink" : "text-white/80 hover:bg-white/10 hover:text-white",
               )}
             >
               {libelles[g.id]}

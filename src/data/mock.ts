@@ -62,6 +62,8 @@ export type Prestataire = {
   services: Service[];
   teinte: string; // couleur de l'avatar
   couverture?: string;
+  // Cahier des charges v1.1, section 3.4 : paiement sécurisé (formule avancée) ou direct (formule basique).
+  modePaiement?: "securise" | "direct";
 };
 
 export const prestataires: Prestataire[] = [
@@ -78,6 +80,7 @@ export const prestataires: Prestataire[] = [
     avis: 38,
     prestations: 64,
     certifie: true,
+    modePaiement: "securise",
     formule: "promax",
     scoreConfiance: 96,
     prixDepart: 25000,
@@ -106,6 +109,7 @@ export const prestataires: Prestataire[] = [
     avis: 52,
     prestations: 97,
     certifie: true,
+    modePaiement: "securise",
     formule: "pro",
     scoreConfiance: 93,
     prixDepart: 60000,
@@ -158,6 +162,7 @@ export const prestataires: Prestataire[] = [
     avis: 29,
     prestations: 47,
     certifie: true,
+    modePaiement: "direct",
     formule: "classique",
     scoreConfiance: 88,
     prixDepart: 15000,
@@ -207,6 +212,7 @@ export const prestataires: Prestataire[] = [
     avis: 33,
     prestations: 52,
     certifie: true,
+    modePaiement: "direct",
     formule: "pro",
     scoreConfiance: 91,
     prixDepart: 75000,
@@ -383,25 +389,35 @@ export const realisations: Realisation[] = [
   },
 ];
 
+// Cahier des charges v1.1, section 6.1 : les 10 statuts de demande.
+// livree, remboursee et hors_plateforme sont gardés tant que d'autres écrans s'en servent.
 export type StatutDemande =
+  | "brouillon"
   | "envoyee"
+  | "en_discussion"
   | "proposition"
   | "acceptee"
   | "en_cours"
+  | "annulation_demandee"
   | "livree"
   | "en_litige"
   | "terminee"
+  | "annulee"
   | "remboursee"
   | "hors_plateforme";
 
 export const libellesStatut: Record<StatutDemande, string> = {
+  brouillon: "Brouillon",
   envoyee: "Envoyée",
+  en_discussion: "En discussion",
   proposition: "Proposition reçue",
   acceptee: "Acceptée",
   en_cours: "En cours",
+  annulation_demandee: "Annulation demandée",
   livree: "Livrée",
   en_litige: "En litige",
   terminee: "Terminée",
+  annulee: "Annulée",
   remboursee: "Remboursée",
   hors_plateforme: "Réglée hors plateforme",
 };

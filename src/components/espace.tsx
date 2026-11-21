@@ -55,7 +55,7 @@ export function AFaire({ taches, titre = "À faire maintenant" }: { taches: Tach
                 href={t.href}
                 className={cx(
                   "inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-xl px-3.5 text-sm font-semibold",
-                  t.urgent ? "bg-accent text-white hover:bg-accent-dark" : "bg-brand-50 text-brand hover:bg-brand-100",
+                  t.urgent ? "bg-accent text-ink hover:bg-accent-hover" : "bg-brand-50 text-brand hover:bg-brand-100",
                 )}
               >
                 {t.action} <ArrowRight className="size-4" />

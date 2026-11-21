@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, ImagePlus, Lock, MapPin, MessageSquare, ShieldCheck, Wrench } from "lucide-react";
-import { Avatar, Badge, BoutonLien, Card, Certifie, Note } from "@/components/ui";
+import { Banknote, Clock, ImagePlus, Lock, MapPin, MessageSquare, ShieldCheck, Wrench } from "lucide-react";
+import { Avatar, Badge, BoutonLien, Card, Certifie, Note, PaiementDirect, PaiementSecurise } from "@/components/ui";
 import { Jauge } from "@/components/charts";
 import { PRESTATAIRE_DEMO, prestataires, trouverPrestataire } from "@/data/mock";
 import { fcfa } from "@/lib/format";
 import { BoutonDemande } from "./demande-modale";
-import { BoutonFavori, RealisationsProfil, ServicesAjoutes } from "./elements-profil";
+import { BoutonFavori, BoutonSignaler, RealisationsProfil, ServicesAjoutes } from "./elements-profil";
 
 export function generateStaticParams() {
   return prestataires.map((p) => ({ id: p.id }));
@@ -30,6 +30,7 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
   const p = trouverPrestataire(id);
   if (!p) notFound();
   const estMoi = p.id === PRESTATAIRE_DEMO;
+  const prenom = p.nom.split(" ")[0];
 
   return (
     <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
@@ -42,15 +43,17 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
         </div>
         <div className="flex flex-col gap-6 p-6 sm:p-8 md:flex-row md:items-start">
           <div className="relative z-10 -mt-20 w-fit rounded-full border-4 border-white sm:-mt-24">
-            <Avatar nom={p.nom} teinte={p.teinte} taille="xl" />
+            <Avatar nom={p.nom} teinte={p.teinte} taille="xl" verifie={p.certifie} />
           </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="text-3xl font-extrabold tracking-tight text-ink">{p.nom}</h1>
               {p.certifie && <Certifie />}
-              {p.formule !== "classique" && <Badge ton="accent">{p.formule === "promax" ? "Promax" : "Pro"}</Badge>}
+              {/* Cahier des charges v1.1, section 3.4 : mode de paiement du prestataire. */}
+              {p.modePaiement === "securise" && <PaiementSecurise />}
+              {p.modePaiement === "direct" && <PaiementDirect />}
             </div>
-            <p className="mt-1 text-lg font-medium text-accent-dark">{p.metier}</p>
+            <p className="mt-1 text-lg font-medium text-accent-text">{p.metier}</p>
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
               <Note note={p.note} avis={p.avis} />
               <span className="flex items-center gap-1.5"><MapPin className="size-4" /> {p.zone}</span>
@@ -82,7 +85,7 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
         <div className="space-y-10">
-          <section>
+          <section id="services">
             <h2 className="text-xl font-bold text-ink">Services et tarifs</h2>
             <div className="mt-4 space-y-3">
               {p.services.map((s) => (
@@ -113,13 +116,14 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
               <h2 className="text-xl font-bold text-ink">Avis clients</h2>
               <Note note={p.note} avis={p.avis} />
             </div>
-            <p className="mt-1 text-sm text-muted">Seuls les clients ayant payé une prestation sur la plateforme peuvent laisser un avis.</p>
+            {/* Cahier des charges v1.1 : un seul avis, par le client d'une prestation terminée. */}
+            <p className="mt-1 text-sm text-muted">Seul le client d&apos;une prestation terminée peut laisser un avis, une seule fois.</p>
             <div className="mt-4 space-y-3">
               {avisDemo.map((a) => (
                 <Card key={a.auteur} className="p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="font-semibold text-ink">{a.auteur}</p>
-                    <Badge ton="trust"><ShieldCheck className="size-3.5" /> Prestation confirmée</Badge>
+                    <Badge ton="trust"><ShieldCheck className="size-3.5" /> Prestation terminée</Badge>
                   </div>
                   <div className="mt-1 flex items-center gap-2 text-xs text-muted">
                     <Note note={a.note} /> · {a.service} · {a.date}
@@ -157,15 +161,39 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
               </Link>
             )}
           </Card>
-          <Card className="p-5">
-            <p className="flex items-center gap-2 font-bold text-ink"><Lock className="size-4 text-brand" /> Paiement protégé</p>
-            <p className="mt-2 text-sm leading-6 text-muted">
-              Votre paiement reste bloqué sur la plateforme et n&apos;est versé à {p.nom.split(" ")[0]} qu&apos;une fois le
-              travail validé.
-            </p>
-          </Card>
+          {p.modePaiement === "securise" && (
+            <Card className="p-5">
+              <p className="flex items-center gap-2 font-bold text-ink"><Lock className="size-4 text-trust" /> Paiement sécurisé</p>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                Votre paiement reste bloqué sur FreelanceX et n&apos;est versé à {prenom} qu&apos;après votre confirmation. En
+                cas de désaccord, l&apos;équipe arbitre.
+              </p>
+            </Card>
+          )}
+          {p.modePaiement === "direct" && (
+            <Card className="p-5">
+              <p className="flex items-center gap-2 font-bold text-ink"><Banknote className="size-4 text-muted" /> Paiement direct</p>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                Vous payez {prenom} directement, comme convenu ensemble. FreelanceX ne garde pas l&apos;argent, mais vous pouvez
+                signaler un problème.
+              </p>
+            </Card>
+          )}
+          {!estMoi && <BoutonSignaler />}
         </aside>
       </div>
+
+      {/* Barre d'action mobile : collante en bas de l'écran, elle s'arrête à la fin de <main> et ne cache pas le pied de page. */}
+      {!estMoi && (
+        <div className="sticky bottom-0 z-40 -mx-4 mt-8 flex gap-3 border-t border-line bg-white px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] sm:-mx-6 sm:px-6 md:hidden">
+          <BoutonLien href={`/messagerie?avec=${p.id}`} variante="contour" className="w-11 shrink-0 px-0!" aria-label={`Envoyer un message à ${prenom}`}>
+            <MessageSquare className="size-5" />
+          </BoutonLien>
+          <div className="flex-1">
+            <BoutonDemande prestataire={p.nom} />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

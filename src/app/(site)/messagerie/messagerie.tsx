@@ -122,7 +122,7 @@ export function Messagerie() {
                     {dernier ? (dernier.type === "texte" ? dernier.contenu : dernier.type === "image" ? "Photo" : "Message vocal") : c.dernier || "Nouvelle conversation"}
                   </span>
                 </span>
-                {c.nonLus > 0 && conv.id !== c.id && <span className="mt-1 rounded-full bg-accent px-1.5 text-xs font-bold text-white">{c.nonLus}</span>}
+                {c.nonLus > 0 && conv.id !== c.id && <span className="mt-1 rounded-full bg-accent px-1.5 text-xs font-bold text-ink">{c.nonLus}</span>}
               </button>
             );
           })}
@@ -164,7 +164,7 @@ export function Messagerie() {
                   <div className="max-w-[80%]">
                     {"proposition" in m && m.proposition && demande ? (
                       <div className="rounded-2xl border border-accent/30 bg-accent-50 p-4">
-                        <p className="text-xs font-bold uppercase tracking-wide text-accent-dark">Proposition de prix</p>
+                        <p className="text-xs font-bold uppercase tracking-wide text-accent-text">Proposition de prix</p>
                         <p className="mt-1 text-xl font-bold text-ink tabular">{fcfa(demande.montant ?? 0)}</p>
                         <p className="text-sm text-slate-600">Délai : {demande.delai}</p>
                       </div>
