@@ -383,25 +383,35 @@ export const realisations: Realisation[] = [
   },
 ];
 
+// Cahier des charges v1.1, section 6.1 : les 10 statuts de demande.
+// livree, remboursee et hors_plateforme sont gardés tant que d'autres écrans s'en servent.
 export type StatutDemande =
+  | "brouillon"
   | "envoyee"
+  | "en_discussion"
   | "proposition"
   | "acceptee"
   | "en_cours"
+  | "annulation_demandee"
   | "livree"
   | "en_litige"
   | "terminee"
+  | "annulee"
   | "remboursee"
   | "hors_plateforme";
 
 export const libellesStatut: Record<StatutDemande, string> = {
+  brouillon: "Brouillon",
   envoyee: "Envoyée",
+  en_discussion: "En discussion",
   proposition: "Proposition reçue",
   acceptee: "Acceptée",
   en_cours: "En cours",
+  annulation_demandee: "Annulation demandée",
   livree: "Livrée",
   en_litige: "En litige",
   terminee: "Terminée",
+  annulee: "Annulée",
   remboursee: "Remboursée",
   hors_plateforme: "Réglée hors plateforme",
 };

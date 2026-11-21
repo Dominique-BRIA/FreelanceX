@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { BadgeCheck, Star } from "lucide-react";
+import { BadgeCheck, Banknote, Check, ShieldCheck, Star } from "lucide-react";
 import type { ComponentProps, ReactNode } from "react";
 import { cx, initiales } from "@/lib/format";
 import { libellesStatut, type StatutDemande } from "@/data/mock";
@@ -21,15 +22,11 @@ const tons: Record<Ton, string> = {
   attente: "bg-amber-50 text-amber-700",
 };
 
+const baseBadge = "inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold";
+
 export function Badge({ ton = "neutre", children, className }: { ton?: Ton; children: ReactNode; className?: string }) {
   return (
-    <span
-      className={cx(
-        "inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold",
-        tons[ton],
-        className,
-      )}
-    >
+    <span className={cx(baseBadge, tons[ton], className)}>
       {children}
     </span>
   );
@@ -79,22 +76,50 @@ export function Bouton({
 }
 
 const tailleAvatar = { sm: "size-8 text-xs", md: "size-11 text-sm", lg: "size-16 text-lg", xl: "size-24 text-2xl" };
+const pixelsAvatar = { sm: "32px", md: "44px", lg: "64px", xl: "96px" };
+const pastilleAvatar = { sm: "size-3.5", md: "size-4", lg: "size-5", xl: "size-7" };
+const cocheAvatar = { sm: "size-2.5", md: "size-3", lg: "size-3.5", xl: "size-5" };
 
 export function Avatar({
   nom,
   teinte = "bg-brand",
   taille = "md",
+  photo,
+  verifie = false,
 }: {
   nom: string;
   teinte?: string;
   taille?: keyof typeof tailleAvatar;
+  /** Chemin d'une photo (ex. /images/profil-….jpg) : remplace les initiales. */
+  photo?: string;
+  /** Ajoute la pastille turquoise de confiance (identité vérifiée). */
+  verifie?: boolean;
 }) {
-  return (
+  const rond = photo ? (
+    <span aria-hidden className={cx("relative inline-flex shrink-0 overflow-hidden rounded-full bg-canvas", tailleAvatar[taille])}>
+      <Image src={photo} alt="" fill sizes={pixelsAvatar[taille]} className="object-cover" />
+    </span>
+  ) : (
     <span
       aria-hidden
       className={cx("inline-flex shrink-0 items-center justify-center rounded-full font-bold text-white", teinte, tailleAvatar[taille])}
     >
       {initiales(nom)}
+    </span>
+  );
+  if (!verifie) return rond;
+  return (
+    <span className="relative inline-flex shrink-0">
+      {rond}
+      <span
+        className={cx(
+          "absolute -bottom-0.5 -right-0.5 flex items-center justify-center rounded-full bg-trust text-white ring-2 ring-white",
+          pastilleAvatar[taille],
+        )}
+      >
+        <Check className={cocheAvatar[taille]} strokeWidth={3} aria-hidden />
+        <span className="sr-only">Identité vérifiée</span>
+      </span>
     </span>
   );
 }
@@ -104,6 +129,24 @@ export function Certifie({ court = false }: { court?: boolean }) {
     <Badge ton="trust">
       <BadgeCheck className="size-3.5" />
       {court ? "Vérifié" : "Identité vérifiée"}
+    </Badge>
+  );
+}
+
+export function PaiementSecurise() {
+  return (
+    <Badge ton="trust">
+      <ShieldCheck className="size-3.5" />
+      Paiement sécurisé
+    </Badge>
+  );
+}
+
+export function PaiementDirect() {
+  return (
+    <Badge ton="neutre">
+      <Banknote className="size-3.5" />
+      Paiement direct
     </Badge>
   );
 }
@@ -118,20 +161,26 @@ export function Note({ note, avis }: { note: number; avis?: number }) {
   );
 }
 
-const tonsStatut: Record<StatutDemande, Ton> = {
-  envoyee: "attente",
-  proposition: "accent",
-  acceptee: "brand",
-  en_cours: "brand",
-  livree: "trust",
-  en_litige: "danger",
-  terminee: "neutre",
-  remboursee: "neutre",
-  hors_plateforme: "neutre",
+// Cahier des charges v1.1, section 6.1 : une couleur (fond / texte) par statut de demande.
+const couleursStatut: Record<StatutDemande, string> = {
+  brouillon: "bg-[#f1f5f9] text-[#475569]",
+  envoyee: "bg-[#eef3fb] text-[#0b3a86]",
+  en_discussion: "bg-[#f3e8ff] text-[#6d28d9]",
+  proposition: "bg-[#fff2e6] text-[#9a4508]",
+  acceptee: "bg-[#dcfce7] text-[#166534]",
+  en_cours: "bg-[#0b3a86] text-white",
+  annulation_demandee: "bg-[#fffbeb] text-[#b45309]",
+  terminee: "bg-[#166534] text-white",
+  en_litige: "bg-[#fef2f2] text-[#b91c1c]",
+  annulee: "bg-[#475569] text-white",
+  // Anciens statuts, gardés pour les écrans qui s'en servent encore.
+  livree: "bg-[#dcfce7] text-[#166534]",
+  remboursee: "bg-[#f1f5f9] text-[#475569]",
+  hors_plateforme: "bg-[#f1f5f9] text-[#475569]",
 };
 
 export function StatutDemandeBadge({ statut }: { statut: StatutDemande }) {
-  return <Badge ton={tonsStatut[statut]}>{libellesStatut[statut]}</Badge>;
+  return <span className={cx(baseBadge, couleursStatut[statut])}>{libellesStatut[statut]}</span>;
 }
 
 export function EnTete({
