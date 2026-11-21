@@ -82,7 +82,7 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
 
       <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px]">
         <div className="space-y-10">
-          <section>
+          <section id="services">
             <h2 className="text-xl font-bold text-ink">Services et tarifs</h2>
             <div className="mt-4 space-y-3">
               {p.services.map((s) => (

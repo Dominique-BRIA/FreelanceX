@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { CarteDemande, CartePrestataire, CarteService } from "@/components/cartes";
 import { Avatar, Bouton, Card, Certifie, Note, PaiementDirect, PaiementSecurise, StatutDemandeBadge } from "@/components/ui";
-import { libellesStatut, UTILISATEUR_DEMO, type StatutDemande } from "@/data/mock";
+import { demandes, libellesStatut, prestataires, UTILISATEUR_DEMO, type StatutDemande } from "@/data/mock";
 
 export const metadata: Metadata = { title: "Charte graphique FreelanceX" };
 
@@ -17,6 +18,10 @@ const couleurs = [
 ];
 
 const statuts = Object.keys(libellesStatut) as StatutDemande[];
+
+// Exemples réels de mock.ts pour la section « Cartes ».
+const prestataireExemple = prestataires.find((p) => p.id === "brice-tchoumi")!;
+const demandeExemple = demandes.find((d) => d.statut === "proposition") ?? demandes[0];
 
 function Section({ titre, children }: { titre: string; children: ReactNode }) {
   return (
@@ -101,6 +106,15 @@ export default function Charte() {
           ))}
         </div>
       </Section>
+
+      <section className="mt-10">
+        <h2 className="text-xl font-bold tracking-tight text-ink">Cartes</h2>
+        <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <CartePrestataire prestataire={prestataireExemple} />
+          <CarteService service={prestataireExemple.services[0]} prestataire={prestataireExemple} image="/images/r1-apres.jpg" />
+          <CarteDemande demande={demandeExemple} />
+        </div>
+      </section>
     </main>
   );
 }
