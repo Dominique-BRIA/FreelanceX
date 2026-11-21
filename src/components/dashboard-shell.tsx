@@ -122,7 +122,7 @@ export function DashboardShell({ role, children }: { role: Role; children: React
                 <span
                   className={cx(
                     "rounded-full px-2 text-xs font-bold",
-                    actif ? "bg-accent text-white" : sombre ? "bg-white/15 text-white" : "bg-accent-50 text-accent-dark",
+                    actif ? "bg-accent text-ink" : sombre ? "bg-white/15 text-white" : "bg-accent-50 text-accent-text",
                   )}
                 >
                   {compteur}
@@ -138,7 +138,7 @@ export function DashboardShell({ role, children }: { role: Role; children: React
           onClick={() => setOuvert(false)}
           className={cx(
             "flex h-11 items-center justify-center gap-2 rounded-xl text-sm font-semibold",
-            sombre ? "bg-white/10 text-white hover:bg-white/20" : "bg-accent text-white hover:bg-accent-dark",
+            sombre ? "bg-white/10 text-white hover:bg-white/20" : "bg-accent text-ink hover:bg-accent-hover",
           )}
         >
           <ArrowLeftRight className="size-4" /> {mode.libelle}

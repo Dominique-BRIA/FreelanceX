@@ -15,7 +15,7 @@ type Ton = "neutre" | "brand" | "accent" | "trust" | "danger" | "attente";
 const tons: Record<Ton, string> = {
   neutre: "bg-slate-100 text-slate-600",
   brand: "bg-brand-50 text-brand",
-  accent: "bg-accent-50 text-accent-dark",
+  accent: "bg-accent-50 text-accent-text",
   trust: "bg-trust-50 text-trust-dark",
   danger: "bg-danger-50 text-danger",
   attente: "bg-amber-50 text-amber-700",
@@ -40,7 +40,7 @@ type Taille = "sm" | "md" | "lg";
 
 const variantes: Record<Variante, string> = {
   primaire: "bg-brand text-white hover:bg-brand-dark",
-  action: "bg-accent text-white hover:bg-accent-dark",
+  action: "bg-accent text-ink hover:bg-accent-hover",
   contour: "border border-brand/30 bg-white text-brand hover:bg-brand-50",
   discret: "text-brand hover:bg-brand-50",
   danger: "border border-danger/30 bg-white text-danger hover:bg-danger-50",

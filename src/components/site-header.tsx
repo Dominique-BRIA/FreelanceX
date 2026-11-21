@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import {
-  ArrowLeftRight,
   ChevronDown,
   ClipboardList,
   Heart,
@@ -31,7 +30,7 @@ const liens = [
 
 const villes = ["Douala", "Yaoundé", "Bafoussam", "Garoua", "Kribi", "Buea"];
 
-/** Rôles du compte connecté : le bouton de mode ne propose que ceux-là. */
+/** Rôles du compte connecté : servent seulement au menu du compte. */
 const ROLES = { client: true, prestataire: true };
 
 function ChoixLieu() {
@@ -144,18 +143,12 @@ export function SiteHeader() {
             <MessageSquare className="size-5" />
             <span className="absolute right-1.5 top-1.5 size-2 rounded-full bg-accent ring-2 ring-white" />
           </Link>
-          {ROLES.prestataire ? (
-            <Link
-              href="/prestataire"
-              className="hidden h-10 items-center gap-2 whitespace-nowrap rounded-xl bg-accent px-4 text-sm font-semibold text-white hover:bg-accent-dark sm:flex"
-            >
-              <ArrowLeftRight className="size-4" /> Mode prestataire
-            </Link>
-          ) : (
-            <Link href="/devenir-prestataire" className="hidden h-10 items-center rounded-xl bg-accent px-4 text-sm font-semibold text-white hover:bg-accent-dark sm:flex">
-              Devenir prestataire
-            </Link>
-          )}
+          <Link
+            href="/devenir-prestataire"
+            className="hidden h-10 items-center whitespace-nowrap rounded-xl bg-accent px-4 text-sm font-semibold text-ink hover:bg-accent-hover sm:flex"
+          >
+            Devenir prestataire
+          </Link>
           <div className="hidden sm:block">
             <MenuCompte />
           </div>
@@ -178,17 +171,17 @@ export function SiteHeader() {
               <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Métier, service…" className="w-full bg-transparent text-sm outline-none" />
             </label>
           </form>
-          {[...liens, { href: "/messagerie", libelle: "Messagerie" }, { href: "/client", libelle: "Mon espace client" }].map((lien) => (
+          {[...liens, { href: "/messagerie", libelle: "Messagerie" }, { href: "/client", libelle: "Mon espace client" }, { href: "/prestataire", libelle: "Mon espace prestataire" }].map((lien) => (
             <Link key={lien.href} href={lien.href} onClick={() => setMenuOuvert(false)} className="block border-b border-line py-3 text-sm font-medium text-ink">
               {lien.libelle}
             </Link>
           ))}
           <Link
-            href="/prestataire"
+            href="/devenir-prestataire"
             onClick={() => setMenuOuvert(false)}
-            className="mt-3 flex h-11 items-center justify-center gap-2 rounded-xl bg-accent text-sm font-semibold text-white"
+            className="mt-3 flex h-11 items-center justify-center rounded-xl bg-accent text-sm font-semibold text-ink hover:bg-accent-hover"
           >
-            <ArrowLeftRight className="size-4" /> Passer en mode prestataire
+            Devenir prestataire
           </Link>
         </nav>
       )}

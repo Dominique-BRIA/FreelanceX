@@ -141,7 +141,7 @@ export default function Accueil() {
             {etapes.map(({ icone: Icone, titre, texte }, i) => (
               <li key={titre} className="rounded-2xl bg-white/10 p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex size-8 items-center justify-center rounded-full bg-accent text-sm font-bold">{i + 1}</span>
+                  <span className="flex size-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-ink">{i + 1}</span>
                   <Icone className="size-5 text-white/70" />
                 </div>
                 <p className="mt-4 font-bold">{titre}</p>

@@ -50,7 +50,7 @@ export default async function ProfilPrestataire(props: PageProps<"/prestataires/
               {p.certifie && <Certifie />}
               {p.formule !== "classique" && <Badge ton="accent">{p.formule === "promax" ? "Promax" : "Pro"}</Badge>}
             </div>
-            <p className="mt-1 text-lg font-medium text-accent-dark">{p.metier}</p>
+            <p className="mt-1 text-lg font-medium text-accent-text">{p.metier}</p>
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
               <Note note={p.note} avis={p.avis} />
               <span className="flex items-center gap-1.5"><MapPin className="size-4" /> {p.zone}</span>

@@ -26,7 +26,7 @@ export function Fil() {
           <SlidersHorizontal className="size-4 text-brand" /> Filtrer le fil
         </p>
         {filtre && (
-          <button type="button" onClick={() => setFiltre("")} className="text-xs font-semibold text-accent-dark hover:underline">
+          <button type="button" onClick={() => setFiltre("")} className="text-xs font-semibold text-accent-text hover:underline">
             Réinitialiser
           </button>
         )}
@@ -86,7 +86,7 @@ export function Fil() {
           <div className="space-y-4 lg:sticky lg:top-24">
             <div className="rounded-2xl bg-brand p-5 text-white">
               <div className="flex items-center justify-between">
-                <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-bold">Espace prestataire</span>
+                <span className="rounded-full bg-accent px-2.5 py-0.5 text-xs font-bold text-ink">Espace prestataire</span>
                 <Camera className="size-5 text-white/70" />
               </div>
               <p className="mt-3 text-lg font-bold">Valorisez votre travail</p>
