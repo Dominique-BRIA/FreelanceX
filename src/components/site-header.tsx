@@ -143,12 +143,6 @@ export function SiteHeader() {
             <MessageSquare className="size-5" />
             <span className="absolute right-1.5 top-1.5 size-2 rounded-full bg-accent ring-2 ring-white" />
           </Link>
-          <Link
-            href="/devenir-prestataire"
-            className="hidden h-10 items-center whitespace-nowrap rounded-xl bg-accent px-4 text-sm font-semibold text-ink hover:bg-accent-hover sm:flex"
-          >
-            Devenir prestataire
-          </Link>
           <div className="hidden sm:block">
             <MenuCompte />
           </div>
@@ -176,13 +170,6 @@ export function SiteHeader() {
               {lien.libelle}
             </Link>
           ))}
-          <Link
-            href="/devenir-prestataire"
-            onClick={() => setMenuOuvert(false)}
-            className="mt-3 flex h-11 items-center justify-center rounded-xl bg-accent text-sm font-semibold text-ink hover:bg-accent-hover"
-          >
-            Devenir prestataire
-          </Link>
         </nav>
       )}
     </header>
