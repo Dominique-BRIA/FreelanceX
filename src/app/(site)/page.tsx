@@ -1,20 +1,58 @@
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, FileCheck2, Lock, MapPin, Search, ShieldCheck, Star, Wallet } from "lucide-react";
+import { ArrowRight, Banknote, BadgeCheck, FileCheck2, MapPin, Search, ShieldCheck, Star, Wallet } from "lucide-react";
 import { BoutonLien, Card, EnTete } from "@/components/ui";
 import { CartePrestataire } from "@/components/cartes";
 import { Publication } from "@/components/publication";
 import { iconesCategorie } from "@/components/visuels";
 import { categories, prestataires, realisations } from "@/data/mock";
-import { compact } from "@/lib/format";
+import { cx } from "@/lib/format";
 
 const villes = ["Douala", "Yaoundé", "Bafoussam", "Garoua", "Kribi", "Buea"];
 
+// Cahier des charges v1.1 : le mode de paiement (sécurisé ou direct) dépend du prestataire.
 const etapes = [
-  { icone: Search, titre: "Trouvez", texte: "Comparez les profils, les réalisations et les avis de vraies prestations." },
-  { icone: FileCheck2, titre: "Recevez une proposition", texte: "Le prestataire fixe un montant, un délai et le travail attendu." },
-  { icone: Lock, titre: "Payez en sécurité", texte: "Votre argent reste bloqué sur la plateforme pendant le travail." },
-  { icone: BadgeCheck, titre: "Validez", texte: "Le prestataire est payé quand vous validez. En cas de souci, ouvrez un litige." },
+  { icone: Search, titre: "Trouvez", texte: "Comparez les profils, les réalisations et les avis." },
+  { icone: FileCheck2, titre: "Recevez une proposition", texte: "Le prestataire indique un montant, un délai et le travail attendu." },
+  { icone: Wallet, titre: "Acceptez et payez", texte: "Sur FreelanceX ou directement, selon le badge du prestataire." },
+  { icone: Star, titre: "Confirmez et notez", texte: "Confirmez la fin du travail, puis laissez votre avis." },
 ];
+
+const garanties = [
+  {
+    icone: BadgeCheck,
+    titre: "Identité vérifiée",
+    texte: "Le badge turquoise signifie que la pièce d'identité a été contrôlée par FreelanceX.",
+    couleurs: { pastille: "bg-trust-50 text-trust-dark", titre: "text-trust-dark" },
+  },
+  {
+    icone: ShieldCheck,
+    titre: "Paiement sécurisé, si vous le voulez",
+    texte: "Avec le badge Paiement sécurisé, l'argent reste bloqué jusqu'à votre confirmation.",
+    couleurs: { pastille: "bg-trust-50 text-trust-dark", titre: "text-trust-dark" },
+  },
+  {
+    icone: Star,
+    titre: "Avis de vrais clients",
+    texte: "Seul le client d'une prestation terminée peut noter, une seule fois.",
+    couleurs: { pastille: "bg-accent-50 text-accent-text", titre: "text-accent-text" },
+  },
+];
+
+const modesPaiement = [
+  {
+    icone: ShieldCheck,
+    titre: "Paiement sécurisé",
+    texte: "Vous payez sur FreelanceX. L'argent reste bloqué et n'est versé qu'après votre confirmation. En cas de désaccord, l'équipe arbitre.",
+  },
+  {
+    icone: Banknote,
+    titre: "Paiement direct",
+    texte: "Vous payez le prestataire directement, comme convenu. FreelanceX ne garde pas l'argent, mais vous pouvez signaler un problème.",
+  },
+];
+
+// Prestataires dont le mode de paiement est connu d'abord, 4 au maximum.
+const recommandes = [...prestataires].sort((a, b) => Number(!!b.modePaiement) - Number(!!a.modePaiement)).slice(0, 4);
 
 export default function Accueil() {
   return (
@@ -24,14 +62,14 @@ export default function Accueil() {
         <div className="mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 lg:pt-20">
           <div className="mx-auto max-w-3xl text-center">
             <p className="inline-flex items-center gap-2 rounded-full bg-trust-50 px-3 py-1 text-xs font-bold text-trust-dark">
-              <ShieldCheck className="size-4" /> Paiement protégé jusqu&apos;à la fin du travail
+              <BadgeCheck className="size-4" /> Des prestataires à l&apos;identité vérifiée
             </p>
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
               Trouvez le bon prestataire, <span className="text-accent">près de chez vous</span>
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted">
-              Artisans, créatifs, développeurs, formateurs : des indépendants vérifiés, et un paiement qui ne part qu&apos;une
-              fois le travail fait.
+              Artisans, créatifs, développeurs, formateurs : comparez leurs réalisations et leurs avis, échangez avec eux, puis
+              payez de la façon qui vous rassure.
             </p>
           </div>
 
@@ -73,18 +111,19 @@ export default function Accueil() {
             </p>
           </form>
 
-          <dl className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-4 text-center">
-            {[
-              { valeur: "2 300+", libelle: "prestataires" },
-              { valeur: "4,8 / 5", libelle: "note moyenne" },
-              { valeur: "100 %", libelle: "paiements protégés" },
-            ].map((s) => (
-              <div key={s.libelle}>
-                <dt className="text-2xl font-extrabold text-brand tabular">{s.valeur}</dt>
-                <dd className="text-sm text-muted">{s.libelle}</dd>
-              </div>
+          <ul className="mx-auto mt-12 grid max-w-5xl gap-4 md:grid-cols-3">
+            {garanties.map(({ icone: Icone, titre, texte, couleurs }) => (
+              <li key={titre}>
+                <Card className="h-full p-5">
+                  <span className={cx("flex size-10 items-center justify-center rounded-xl", couleurs.pastille)}>
+                    <Icone className="size-5" />
+                  </span>
+                  <p className={cx("mt-3 font-bold", couleurs.titre)}>{titre}</p>
+                  <p className="mt-1 text-sm leading-6 text-muted">{texte}</p>
+                </Card>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </section>
 
@@ -103,7 +142,7 @@ export default function Accueil() {
                   <Icone className="size-5" />
                 </span>
                 <p className="mt-3 text-sm font-semibold leading-snug text-ink">{c.nom}</p>
-                <p className="mt-1 text-xs text-muted">{compact(c.nombre)} prestataires</p>
+                <p className="mt-1 text-xs text-muted">{c.exemples}</p>
               </Link>
             );
           })}
@@ -113,7 +152,7 @@ export default function Accueil() {
       <section className="mx-auto max-w-7xl px-4 pt-16 sm:px-6">
         <EnTete
           titre="Prestataires recommandés"
-          sousTitre="Sélectionnés selon leurs avis, leur fiabilité et leur certification."
+          sousTitre="Sélectionnés selon leurs avis, leur fiabilité et leur identité vérifiée."
           action={
             <Link href="/recherche" className="flex items-center gap-1 text-sm font-semibold text-brand hover:underline">
               Tout voir <ArrowRight className="size-4" />
@@ -121,7 +160,7 @@ export default function Accueil() {
           }
         />
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {prestataires.slice(0, 4).map((p) => (
+          {recommandes.map((p) => (
             <CartePrestataire key={p.id} prestataire={p} />
           ))}
         </div>
@@ -130,11 +169,10 @@ export default function Accueil() {
       <section id="fonctionnement" className="mx-auto max-w-7xl scroll-mt-28 px-4 pt-20 sm:px-6">
         <div className="rounded-3xl bg-brand px-6 py-12 text-white sm:px-12">
           <div className="max-w-2xl">
-            <p className="text-sm font-bold uppercase tracking-wider text-accent">Paiement par séquestre</p>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-tight">Votre argent est protégé du début à la fin</h2>
+            <p className="text-sm font-bold uppercase tracking-wider text-brand-100">Comment ça marche</p>
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight">Vous savez toujours comment vous payez</h2>
             <p className="mt-3 text-white/75">
-              La plateforme garde le paiement jusqu&apos;à ce que vous validiez le travail. Si vous ne faites rien, il est
-              versé automatiquement après le délai prévu.
+              Le mode de paiement dépend du prestataire. Vous le voyez sur son profil avant d&apos;envoyer votre demande.
             </p>
           </div>
           <ol className="mt-10 grid gap-4 md:grid-cols-4">
@@ -149,10 +187,16 @@ export default function Accueil() {
               </li>
             ))}
           </ol>
-          <p className="mt-8 text-sm text-white/70">
-            Vous préférez payer en direct ? C&apos;est possible, mais la plateforme n&apos;intervient alors pas : ni séquestre,
-            ni litige, ni avis officiel.
-          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {modesPaiement.map(({ icone: Icone, titre, texte }) => (
+              <div key={titre} className="rounded-2xl border border-white/20 p-5">
+                <p className="flex items-center gap-2 font-bold">
+                  <Icone className="size-5 text-white/80" /> {titre}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-white/75">{texte}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -182,10 +226,8 @@ export default function Accueil() {
             <div>
               <h2 className="text-xl font-bold text-ink">Vous êtes indépendant ?</h2>
               <p className="mt-1 max-w-xl text-muted">
-                Activez votre espace prestataire depuis votre compte, publiez vos services et soyez payé à coup sûr.
-                <span className="ml-1 inline-flex items-center gap-1 font-medium text-ink">
-                  <Star className="size-4 fill-accent text-accent" /> Formule Classique gratuite.
-                </span>
+                Publiez vos services et vos réalisations. Deux formules : un abonnement sans commission avec paiement direct, ou
+                une commission avec paiement sécurisé.
               </p>
             </div>
           </div>
